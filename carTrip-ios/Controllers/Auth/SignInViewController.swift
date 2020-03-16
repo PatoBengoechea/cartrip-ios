@@ -12,7 +12,7 @@ class SignInViewController: UIViewController {
     
     //MARK: - @IBOutlet
     @IBOutlet var topView: UIView!
-    @IBOutlet var formView: UIView!
+    @IBOutlet var formView: CornerShadowView!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var loginButton: UIButton!
@@ -31,8 +31,10 @@ class SignInViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        formView.roundCorners(radius: 20, corners: [.topLeft, .topRight])
+        formView.addShadowAndCornerRadius(cornerRadius: 25, color: .black)
+        
         loginButton.roundCorners(radius: 10, corners: .allCorners)
+
         
         emailTextField.layer.cornerRadius = 20
         emailTextField.layer.borderColor = UIColor.primaryGreen.cgColor
@@ -71,5 +73,12 @@ class SignInViewController: UIViewController {
     
         
         signUpButton.setTitle(R.string.localizable.signUp(), for: .normal)
+        
+        let textRange = NSMakeRange(0, R.string.localizable.signUp().count)
+        let attributedText = NSMutableAttributedString(string: R.string.localizable.signUp())
+        attributedText.addAttribute(NSAttributedString.Key.underlineStyle , value: NSUnderlineStyle.single.rawValue, range: textRange)
+        attributedText.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], range: textRange)
+
+        signUpButton.setAttributedTitle(attributedText, for: .normal)
     }
 }

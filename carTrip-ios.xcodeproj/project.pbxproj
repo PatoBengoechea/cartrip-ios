@@ -19,6 +19,7 @@
 		6A80F3F624202BD800474555 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F3F524202BD800474555 /* SignInViewController.swift */; };
 		6A80F3FA24202CFB00474555 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A80F3FC24202CFB00474555 /* Localizable.strings */; };
 		6A80F401242030A700474555 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F400242030A700474555 /* Extensions.swift */; };
+		6A80F403242041ED00474555 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F402242041ED00474555 /* Constants.swift */; };
 		9E3114BAFF37C2EC5DCA137B /* Pods_carTrip_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5288481A041E734BC714DFA5 /* Pods_carTrip_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		6A80F3FB24202CFB00474555 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6A80F3FD24202D0000474555 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6A80F400242030A700474555 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		6A80F402242041ED00474555 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CCF543F599A723D5519F39B1 /* Pods-carTrip-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carTrip-ios.release.xcconfig"; path = "Target Support Files/Pods-carTrip-ios/Pods-carTrip-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				6A80F400242030A700474555 /* Extensions.swift */,
+				6A80F402242041ED00474555 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				6A80F3ED2420209A00474555 /* SplashViewController.swift in Sources */,
 				6A80F3F12420234300474555 /* R.generated.swift in Sources */,
 				6A80F401242030A700474555 /* Extensions.swift in Sources */,
+				6A80F403242041ED00474555 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

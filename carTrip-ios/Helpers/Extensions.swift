@@ -27,6 +27,14 @@ extension UIView {
             mask.path = path.cgPath
             layer.mask = mask
     }
+    
+    func addShadowAndCornerRadius(cornerRadius: CGFloat = 25, color: UIColor = .black) {
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+        self.layer.shadowRadius = 15.0
+        self.layer.shadowOpacity = 0.8
+        self.layer.cornerRadius = cornerRadius
+    }
 }
 
 
