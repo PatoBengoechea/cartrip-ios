@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jXu-CM-g4a">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="9l0-7e-fX6">
+            <objects>
+                <viewController id="09b-kW-wjk" customClass="RootViewController" customModule="carTrip_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kNw-XY-Bga">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="OB2-rt-iyM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UQc-lD-YsB"/>
+                    <connections>
+                        <segue destination="9oa-F6-JuB" kind="show" identifier="goToSplash" animates="NO" id="5id-6u-dM6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IQT-YI-dXG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-78" y="-143"/>
+        </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="sq7-G7-YMT">
+            <objects>
+                <viewController id="9oa-F6-JuB" customClass="SplashViewController" customModule="carTrip_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d5o-kH-wwI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="freeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="9r7-yf-wCo">
+                                <rect key="frame" x="87" y="411" width="240" height="128"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="nmp-V6-ANj">
+                                <rect key="frame" x="197" y="569" width="20" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9r7-yf-wCo" firstAttribute="centerY" secondItem="IBc-kf-isH" secondAttribute="centerY" id="IyV-dB-N61"/>
+                            <constraint firstItem="9r7-yf-wCo" firstAttribute="centerX" secondItem="IBc-kf-isH" secondAttribute="centerX" id="Nj6-vc-BSl"/>
+                            <constraint firstItem="9r7-yf-wCo" firstAttribute="height" secondItem="d5o-kH-wwI" secondAttribute="height" multiplier="0.142857" id="R5i-79-OFk"/>
+                            <constraint firstItem="9r7-yf-wCo" firstAttribute="width" secondItem="d5o-kH-wwI" secondAttribute="width" multiplier="0.57971" id="hNO-Gf-CbR"/>
+                            <constraint firstItem="nmp-V6-ANj" firstAttribute="top" secondItem="9r7-yf-wCo" secondAttribute="bottom" constant="30" id="nO5-Db-YC9"/>
+                            <constraint firstItem="nmp-V6-ANj" firstAttribute="centerX" secondItem="IBc-kf-isH" secondAttribute="centerX" id="qhN-ZY-Cd5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IBc-kf-isH"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gM5-sV-uyU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CZX-dX-I5L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="768" y="-143"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sfV-z0-VDZ">
+            <objects>
+                <navigationController id="jXu-CM-g4a" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="58F-Id-Kv3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="09b-kW-wjk" kind="relationship" relationship="rootViewController" id="pPV-y8-opf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AZ7-Xy-5Vl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-968" y="-142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="freeLogo" width="200" height="147"/>
+    </resources>
+</document>

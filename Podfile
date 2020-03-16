@@ -8,5 +8,5 @@ target 'carTrip-ios' do
   # Pods for carTrip-ios
 	pod 'SwiftyJSON'
 	pod 'Alamofire'
-
+	pod 'R.swift'
 end
