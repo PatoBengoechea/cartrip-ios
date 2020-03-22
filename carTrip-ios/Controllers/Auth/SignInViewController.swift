@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class SignInViewController: BaseViewController {
     
     //MARK: - @IBOutlet
     @IBOutlet var topView: UIView!
@@ -21,6 +21,13 @@ class SignInViewController: UIViewController {
     
     // MARK: - Properties
     weak var rootDelegate: RootViewControllerDelegate?
+    let presenter = SignInPresenter<SignInViewController>()
+    
+    // MARK: - @IBAction
+    @IBAction func onLoginButtonTapped() {
+        presenter.postLogIn()
+        performSegue(withIdentifier: R.segue.signInViewController.showHome.identifier, sender: nil)
+    }
     
     // MARK: - Override Functions
     override func viewDidLoad() {
@@ -31,20 +38,11 @@ class SignInViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        formView.addShadowAndCornerRadius(cornerRadius: 25, color: .black)
-        
-        loginButton.roundCorners(radius: 10, corners: .allCorners)
+        formView.roundCorners(radius: 25, corners: [.topRight, .topLeft])
 
-        
-        emailTextField.layer.cornerRadius = 20
-        emailTextField.layer.borderColor = UIColor.primaryGreen.cgColor
-        emailTextField.layer.borderWidth = 1
-        emailTextField.clipsToBounds = true
-        
-        passwordTextField.layer.cornerRadius = 20
-        passwordTextField.layer.borderColor = UIColor.primaryGreen.cgColor
-        passwordTextField.layer.borderWidth = 1
-        passwordTextField.clipsToBounds = true
+        emailTextField.addShadowAndCornerRadius(cornerRadius: 10, color: .black)
+        passwordTextField.addShadowAndCornerRadius(cornerRadius: 10, color: .black)
+        loginButton.addShadowAndCornerRadius(cornerRadius: 10, color: .black)
     }
     
     
@@ -52,10 +50,11 @@ class SignInViewController: UIViewController {
     private func setUp() {
         titleLabel.text = R.string.localizable.welcome()
         titleLabel.font = .monospacedDigitSystemFont(ofSize: 30, weight: UIFont.Weight(rawValue: 0.2))
-        titleLabel.textColor = .black
-        titleLabel.alpha = 0.3
+        titleLabel.textColor = .white
         
-        topView.backgroundColor = .primaryGreen
+        topView.backgroundColor = .white
+        
+        formView.backgroundColor = .blueCar
         
         emailTextField.placeholder = R.string.localizable.email()
         
@@ -64,12 +63,12 @@ class SignInViewController: UIViewController {
         loginButton.titleLabel?.text = R.string.localizable.signIn()
         signUpButton.titleLabel?.text = R.string.localizable.signUp()
         
-        emailTextField.font = .monospacedDigitSystemFont(ofSize: 20, weight: UIFont.Weight(rawValue: 0.3))
-        passwordTextField.font = .monospacedDigitSystemFont(ofSize: 20, weight: UIFont.Weight(rawValue: 0.3))
+        emailTextField.font = .monospacedDigitSystemFont(ofSize: 16, weight: UIFont.Weight(rawValue: 0.3))
+        passwordTextField.font = .monospacedDigitSystemFont(ofSize: 16, weight: UIFont.Weight(rawValue: 0.3))
         
-        loginButton.backgroundColor = .primaryGreen
+        loginButton.backgroundColor = .white
         loginButton.setTitle(R.string.localizable.signIn().capitalized, for: .normal)
-        loginButton.tintColor = .white
+        loginButton.tintColor = .blueCar
     
         
         signUpButton.setTitle(R.string.localizable.signUp(), for: .normal)
@@ -81,4 +80,22 @@ class SignInViewController: UIViewController {
 
         signUpButton.setAttributedTitle(attributedText, for: .normal)
     }
+}
+
+extension SignInViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        switch textField {
+        case emailTextField:
+            presenter.email = textField.text
+        case passwordTextField:
+            presenter.password = textField.text
+        default:
+            break
+        }
+    }
+}
+
+
+extension SignInViewController: SignInPresenterDelegate {
+    
 }

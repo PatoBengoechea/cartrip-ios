@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42A43BA9B746B729B55E3D55 /* Pods_carTrip_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B97B3E296B9CD3BA58656F73 /* Pods_carTrip_ios.framework */; };
 		6A32AC66241D98DF009BF0C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A32AC65241D98DF009BF0C8 /* AppDelegate.swift */; };
 		6A32AC68241D98DF009BF0C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A32AC67241D98DF009BF0C8 /* SceneDelegate.swift */; };
 		6A32AC6F241D98E1009BF0C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A32AC6E241D98E1009BF0C8 /* Assets.xcassets */; };
 		6A32AC72241D98E1009BF0C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A32AC70241D98E1009BF0C8 /* LaunchScreen.storyboard */; };
+		6A71B2F324254A9E006612F1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A71B2F224254A9E006612F1 /* HomeViewController.swift */; };
+		6A71B2F524254AA7006612F1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A71B2F424254AA7006612F1 /* Home.storyboard */; };
 		6A80F3E924201FCA00474555 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F3E824201FCA00474555 /* RootViewController.swift */; };
 		6A80F3EB2420200500474555 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A80F3EA2420200500474555 /* Root.storyboard */; };
 		6A80F3ED2420209A00474555 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F3EC2420209A00474555 /* SplashViewController.swift */; };
@@ -20,18 +23,25 @@
 		6A80F3FA24202CFB00474555 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A80F3FC24202CFB00474555 /* Localizable.strings */; };
 		6A80F401242030A700474555 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F400242030A700474555 /* Extensions.swift */; };
 		6A80F403242041ED00474555 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F402242041ED00474555 /* Constants.swift */; };
-		9E3114BAFF37C2EC5DCA137B /* Pods_carTrip_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5288481A041E734BC714DFA5 /* Pods_carTrip_ios.framework */; };
+		6A80F40724213E7400474555 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F40624213E7400474555 /* BasePresenter.swift */; };
+		6A80F40924213EED00474555 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F40824213EED00474555 /* SignInPresenter.swift */; };
+		6A80F40B24213F2500474555 /* PathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F40A24213F2500474555 /* PathBuilder.swift */; };
+		6A80F40D24213FB500474555 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F40C24213FB500474555 /* BaseResponse.swift */; };
+		6A80F40F2421425B00474555 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F40E2421425B00474555 /* ServiceManager.swift */; };
+		6A80F4112421437C00474555 /* BodyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F4102421437C00474555 /* BodyBuilder.swift */; };
+		6A80F413242145B300474555 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F412242145B300474555 /* UserManager.swift */; };
+		6AA2810E24253C5100544280 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA2810D24253C5100544280 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E2BE1B9C387829F6EF3C1C0 /* Pods-carTrip-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carTrip-ios.debug.xcconfig"; path = "Target Support Files/Pods-carTrip-ios/Pods-carTrip-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		5288481A041E734BC714DFA5 /* Pods_carTrip_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carTrip_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A32AC62241D98DF009BF0C8 /* carTrip-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "carTrip-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A32AC65241D98DF009BF0C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A32AC67241D98DF009BF0C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6A32AC6E241D98E1009BF0C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A32AC71241D98E1009BF0C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A32AC73241D98E1009BF0C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A71B2F224254A9E006612F1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6A71B2F424254AA7006612F1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		6A80F3E824201FCA00474555 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		6A80F3EA2420200500474555 /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
 		6A80F3EC2420209A00474555 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -43,7 +53,17 @@
 		6A80F3FD24202D0000474555 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6A80F400242030A700474555 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6A80F402242041ED00474555 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		CCF543F599A723D5519F39B1 /* Pods-carTrip-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carTrip-ios.release.xcconfig"; path = "Target Support Files/Pods-carTrip-ios/Pods-carTrip-ios.release.xcconfig"; sourceTree = "<group>"; };
+		6A80F40624213E7400474555 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		6A80F40824213EED00474555 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
+		6A80F40A24213F2500474555 /* PathBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathBuilder.swift; sourceTree = "<group>"; };
+		6A80F40C24213FB500474555 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		6A80F40E2421425B00474555 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		6A80F4102421437C00474555 /* BodyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyBuilder.swift; sourceTree = "<group>"; };
+		6A80F412242145B300474555 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		6AA2810D24253C5100544280 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B97B3E296B9CD3BA58656F73 /* Pods_carTrip_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carTrip_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDF07BF94FE93AFE7B1BCDBA /* Pods-carTrip-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carTrip-ios.release.xcconfig"; path = "Target Support Files/Pods-carTrip-ios/Pods-carTrip-ios.release.xcconfig"; sourceTree = "<group>"; };
+		E26607E9CDB0903A04AA2207 /* Pods-carTrip-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carTrip-ios.debug.xcconfig"; path = "Target Support Files/Pods-carTrip-ios/Pods-carTrip-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E3114BAFF37C2EC5DCA137B /* Pods_carTrip_ios.framework in Frameworks */,
+				42A43BA9B746B729B55E3D55 /* Pods_carTrip_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +84,7 @@
 				6A32AC64241D98DF009BF0C8 /* carTrip-ios */,
 				6A32AC63241D98DF009BF0C8 /* Products */,
 				E44A1461189A9947E67A12EF /* Pods */,
-				FB4A19EA06F2D83B1AE48FDF /* Frameworks */,
+				F796C032060D78EA4DAE25C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +99,7 @@
 		6A32AC64241D98DF009BF0C8 /* carTrip-ios */ = {
 			isa = PBXGroup;
 			children = (
+				6A80F40424213E5500474555 /* Presenter */,
 				6A80F3E4241D9C1700474555 /* Controllers */,
 				6A80F3E6241D9C2900474555 /* Services */,
 				6A80F3E5241D9C2100474555 /* Manager */,
@@ -89,10 +110,21 @@
 			path = "carTrip-ios";
 			sourceTree = "<group>";
 		};
+		6A71B2F124254A72006612F1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6A71B2F224254A9E006612F1 /* HomeViewController.swift */,
+				6A71B2F424254AA7006612F1 /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		6A80F3E4241D9C1700474555 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6AA2810D24253C5100544280 /* BaseViewController.swift */,
 				6A80F3F22420281600474555 /* Auth */,
+				6A71B2F124254A72006612F1 /* Home */,
 				6A80F3E7241DA01800474555 /* Root Controller */,
 			);
 			path = Controllers;
@@ -101,6 +133,7 @@
 		6A80F3E5241D9C2100474555 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				6A80F412242145B300474555 /* UserManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -108,6 +141,10 @@
 		6A80F3E6241D9C2900474555 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6A80F40A24213F2500474555 /* PathBuilder.swift */,
+				6A80F40C24213FB500474555 /* BaseResponse.swift */,
+				6A80F40E2421425B00474555 /* ServiceManager.swift */,
+				6A80F4102421437C00474555 /* BodyBuilder.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -153,19 +190,28 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		6A80F40424213E5500474555 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				6A80F40624213E7400474555 /* BasePresenter.swift */,
+				6A80F40824213EED00474555 /* SignInPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		E44A1461189A9947E67A12EF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2E2BE1B9C387829F6EF3C1C0 /* Pods-carTrip-ios.debug.xcconfig */,
-				CCF543F599A723D5519F39B1 /* Pods-carTrip-ios.release.xcconfig */,
+				E26607E9CDB0903A04AA2207 /* Pods-carTrip-ios.debug.xcconfig */,
+				CDF07BF94FE93AFE7B1BCDBA /* Pods-carTrip-ios.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		FB4A19EA06F2D83B1AE48FDF /* Frameworks */ = {
+		F796C032060D78EA4DAE25C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5288481A041E734BC714DFA5 /* Pods_carTrip_ios.framework */,
+				B97B3E296B9CD3BA58656F73 /* Pods_carTrip_ios.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -177,12 +223,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A32AC76241D98E1009BF0C8 /* Build configuration list for PBXNativeTarget "carTrip-ios" */;
 			buildPhases = (
-				117B5CB9ED68B8C91E77D4A4 /* [CP] Check Pods Manifest.lock */,
+				4E3BFE5A529F581DA81914FE /* [CP] Check Pods Manifest.lock */,
 				6A80F3EE2420222A00474555 /* R Swift */,
 				6A32AC5E241D98DE009BF0C8 /* Sources */,
 				6A32AC5F241D98DE009BF0C8 /* Frameworks */,
 				6A32AC60241D98DE009BF0C8 /* Resources */,
-				A568767121D9601E2951172A /* [CP] Embed Pods Frameworks */,
+				AF263C42F844BB4A71437172 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,6 +281,7 @@
 				6A80F3FA24202CFB00474555 /* Localizable.strings in Resources */,
 				6A80F3F42420282F00474555 /* Auth.storyboard in Resources */,
 				6A32AC72241D98E1009BF0C8 /* LaunchScreen.storyboard in Resources */,
+				6A71B2F524254AA7006612F1 /* Home.storyboard in Resources */,
 				6A32AC6F241D98E1009BF0C8 /* Assets.xcassets in Resources */,
 				6A80F3EB2420200500474555 /* Root.storyboard in Resources */,
 			);
@@ -243,7 +290,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		117B5CB9ED68B8C91E77D4A4 /* [CP] Check Pods Manifest.lock */ = {
+		4E3BFE5A529F581DA81914FE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -285,7 +332,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
-		A568767121D9601E2951172A /* [CP] Embed Pods Frameworks */ = {
+		AF263C42F844BB4A71437172 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -310,11 +357,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A32AC66241D98DF009BF0C8 /* AppDelegate.swift in Sources */,
+				6A80F40724213E7400474555 /* BasePresenter.swift in Sources */,
 				6A80F3E924201FCA00474555 /* RootViewController.swift in Sources */,
+				6A71B2F324254A9E006612F1 /* HomeViewController.swift in Sources */,
+				6A80F413242145B300474555 /* UserManager.swift in Sources */,
+				6A80F40D24213FB500474555 /* BaseResponse.swift in Sources */,
+				6A80F40F2421425B00474555 /* ServiceManager.swift in Sources */,
+				6A80F40B24213F2500474555 /* PathBuilder.swift in Sources */,
 				6A80F3F624202BD800474555 /* SignInViewController.swift in Sources */,
+				6A80F4112421437C00474555 /* BodyBuilder.swift in Sources */,
+				6A80F40924213EED00474555 /* SignInPresenter.swift in Sources */,
 				6A32AC68241D98DF009BF0C8 /* SceneDelegate.swift in Sources */,
 				6A80F3ED2420209A00474555 /* SplashViewController.swift in Sources */,
 				6A80F3F12420234300474555 /* R.generated.swift in Sources */,
+				6AA2810E24253C5100544280 /* BaseViewController.swift in Sources */,
 				6A80F401242030A700474555 /* Extensions.swift in Sources */,
 				6A80F403242041ED00474555 /* Constants.swift in Sources */,
 			);
@@ -462,7 +518,7 @@
 		};
 		6A32AC77241D98E1009BF0C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E2BE1B9C387829F6EF3C1C0 /* Pods-carTrip-ios.debug.xcconfig */;
+			baseConfigurationReference = E26607E9CDB0903A04AA2207 /* Pods-carTrip-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -480,7 +536,7 @@
 		};
 		6A32AC78241D98E1009BF0C8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCF543F599A723D5519F39B1 /* Pods-carTrip-ios.release.xcconfig */;
+			baseConfigurationReference = CDF07BF94FE93AFE7B1BCDBA /* Pods-carTrip-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

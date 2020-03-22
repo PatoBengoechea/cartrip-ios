@@ -40,8 +40,8 @@ extension UIView {
 
 // MARK: - UIColor
 extension UIColor {
-    class var primaryGreen: UIColor {
-        return UIColor(red: 142/255, green: 213/255, blue: 45/255, alpha: 1)
+    class var blueCar: UIColor {
+        return UIColor(red: 18/255, green: 75/255, blue: 84/255, alpha: 1)
     }
 }
 

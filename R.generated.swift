@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 2 view controllers.
   struct segue {
     /// This struct is generated for `RootViewController`, and contains static references to 1 segues.
     struct rootViewController {
@@ -108,15 +108,34 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This struct is generated for `SignInViewController`, and contains static references to 1 segues.
+    struct signInViewController {
+      /// Segue identifier `showHome`.
+      static let showHome: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SignInViewController, HomeViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showHome")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `showHome`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SignInViewController, HomeViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.signInViewController.showHome, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     fileprivate init() {}
   }
   #endif
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
     /// Storyboard `Auth`.
     static let auth = _R.storyboard.auth()
+    /// Storyboard `Home`.
+    static let home = _R.storyboard.home()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Root`.
@@ -126,6 +145,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Auth", bundle: ...)`
     static func auth(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.auth)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Home", bundle: ...)`
+    static func home(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.home)
     }
     #endif
 
@@ -300,6 +326,9 @@ struct _R: Rswift.Validatable {
       try auth.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try home.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -313,6 +342,23 @@ struct _R: Rswift.Validatable {
 
       let bundle = R.hostingBundle
       let name = "Auth"
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "freeLogo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'freeLogo' is used in storyboard 'Auth', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct home: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = HomeViewController
+
+      let bundle = R.hostingBundle
+      let name = "Home"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {

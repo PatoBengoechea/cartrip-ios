@@ -1,12 +1,12 @@
 PODS:
-  - Alamofire (5.0.2)
+  - Alamofire (4.9.1)
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (~> 4.9.1)
   - R.swift
   - SwiftyJSON
 
@@ -18,11 +18,11 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 1a3140d2c473fc4e9702634c975f4f497d596e12
+PODFILE CHECKSUM: 0e0ea64a87cb06c7fe77f920d9a9de59b6aee8b5
 
 COCOAPODS: 1.9.1
