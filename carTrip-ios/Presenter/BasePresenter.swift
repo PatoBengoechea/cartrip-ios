@@ -13,6 +13,8 @@ protocol BasePresenterDelegate: AnyObject {
     func finishedLoading()
     func onError(message: String)
 }
+
+
 extension BasePresenterDelegate {
     func startLoading() { }
     func finishedLoading() { }

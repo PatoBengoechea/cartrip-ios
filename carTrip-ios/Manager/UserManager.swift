@@ -7,6 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
+
+protocol UserManagerDelegate: BaseManagerDelegate {
+    func onLogin(user: User)
+}
 
 class UserManager {
     
@@ -17,11 +22,25 @@ class UserManager {
         return Static.instance
     }
     
-    func postLogin(user: String, password: String) {
-        ServiceManager.sharedInstance.getLogin(email: user, password: password, succesCallback: {
-            
+    var realm = try? Realm()
+    
+    func postLogin(user: String, password: String, delegate: UserManagerDelegate) {
+        delegate.onInitService()
+        ServiceManager.sharedInstance.getLogin(email: user, password: password, succesCallback: { user in
+            delegate.onLogin(user: user)
+            delegate.onFinishedService()
         }) { (message) in
-            print(message)
+            delegate.onError(message)
+            delegate.onFinishedService()
         }
+    }
+    
+    func save(_ user: User) {
+        realm?.add(user)
+    }
+    
+    func isLogged() -> Bool {
+        let user =  realm?.objects(User.self)
+        return user != nil
     }
 }

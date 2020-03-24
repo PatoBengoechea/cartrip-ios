@@ -17,7 +17,7 @@ class ServiceManager {
         return Static.instance
     }
     
-    func getLogin(email: String, password: String, succesCallback: @escaping ()->(), failureCallback: @escaping (String)->()) {
+    func getLogin(email: String, password: String, succesCallback: @escaping (User)->(), failureCallback: @escaping (String)->()) {
         let url = PathBuilder.sharedInstance.getLogin()
         let body = BodyBuilder.postLogUser(email: email, password: password)
         Alamofire.request(url,
@@ -27,8 +27,8 @@ class ServiceManager {
                           headers: nil).responseJSON { (dataResponse) in
                             let response = BaseResponse().create(response: dataResponse)
                             if response.status, let data = response.data {
-                                print(data)
-                                succesCallback()
+                                let user = User(data: data)
+                                succesCallback(user)
                             } else {
                                 print(response.message)
                                 failureCallback(response.message)

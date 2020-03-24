@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class SignInViewController: BaseViewController {
     
@@ -26,12 +27,12 @@ class SignInViewController: BaseViewController {
     // MARK: - @IBAction
     @IBAction func onLoginButtonTapped() {
         presenter.postLogIn()
-        performSegue(withIdentifier: R.segue.signInViewController.showHome.identifier, sender: nil)
     }
     
     // MARK: - Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.attachView(self)
         navigationController?.setNavigationBarHidden(true, animated: false)
         setUp()
     }
@@ -97,5 +98,19 @@ extension SignInViewController: UITextFieldDelegate {
 
 
 extension SignInViewController: SignInPresenterDelegate {
+    func onSuccesfullLogin() {
+        performSegue(withIdentifier: R.segue.signInViewController.showHome.identifier, sender: nil)
+    }
     
+    func startLoading() {
+        NVActivityIndicatorView.init(frame: CGRect(x: self.view.frame.height/2, y: self.view.frame.width/2, width: 30, height: 30), type: .ballGridPulse, color: .darkGray, padding: 20).startAnimating()
+    }
+    
+    func finishedLoading() {
+        
+    }
+    
+    func onError(message: String) {
+        
+    }
 }

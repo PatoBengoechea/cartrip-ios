@@ -10,5 +10,7 @@ target 'carTrip-ios' do
 	pod 'SwiftyJSON'
 	pod 'Alamofire', '~> 4.9.1'
   pod 'R.swift'
-  
+  pod 'RealmSwift'
+  pod 'NVActivityIndicatorView/AppExtension'
+
 end

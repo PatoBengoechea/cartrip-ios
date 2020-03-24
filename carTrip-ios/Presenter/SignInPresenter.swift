@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SignInPresenterDelegate: BasePresenterDelegate {
-    
+    func onSuccesfullLogin()
 }
 
 
@@ -20,7 +20,29 @@ class SignInPresenter<T: SignInPresenterDelegate>: BasePresenter<T> {
     
     func postLogIn() {
             if let us = email, let pwd = password {
-            UserManager.instance.postLogin(user: us, password: pwd)
+                UserManager.instance.postLogin(user: us, password: pwd, delegate: self)
         }
     }
+}
+
+// MARK: - User Manager Delegate
+extension SignInPresenter: UserManagerDelegate {
+    func onLogin(user: User) {
+        delegate?.onSuccesfullLogin()
+        UserManager.instance
+    }
+    
+    func onInitService() {
+        delegate?.startLoading()
+    }
+    
+    func onFinishedService() {
+        delegate?.finishedLoading()
+    }
+    
+    func onError(_ message: String) {
+        
+    }
+    
+    
 }
