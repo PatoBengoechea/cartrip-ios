@@ -42,6 +42,16 @@ extension UIView {
         self.layer.shadowOffset = shadowOffset
         self.layer.shadowRadius = radius
     }
+    
+    func hidde() {
+        self.alpha = 0
+        self.isHidden = true
+    }
+    
+    func appear() {
+        self.alpha = 1
+        self.isHidden = false
+    }
 }
 
 

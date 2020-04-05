@@ -301,12 +301,43 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 7 images.
   struct image {
+    /// Image `car-solid`.
+    static let carSolid = Rswift.ImageResource(bundle: R.hostingBundle, name: "car-solid")
+    /// Image `crosshairs-solid`.
+    static let crosshairsSolid = Rswift.ImageResource(bundle: R.hostingBundle, name: "crosshairs-solid")
+    /// Image `ellipsis-v-solid`.
+    static let ellipsisVSolid = Rswift.ImageResource(bundle: R.hostingBundle, name: "ellipsis-v-solid")
     /// Image `ford-mondeo-2019-delantera`.
     static let fordMondeo2019Delantera = Rswift.ImageResource(bundle: R.hostingBundle, name: "ford-mondeo-2019-delantera")
     /// Image `freeLogo`.
     static let freeLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "freeLogo")
+    /// Image `route-solid`.
+    static let routeSolid = Rswift.ImageResource(bundle: R.hostingBundle, name: "route-solid")
+    /// Image `user-solid`.
+    static let userSolid = Rswift.ImageResource(bundle: R.hostingBundle, name: "user-solid")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "car-solid", bundle: ..., traitCollection: ...)`
+    static func carSolid(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.carSolid, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "crosshairs-solid", bundle: ..., traitCollection: ...)`
+    static func crosshairsSolid(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.crosshairsSolid, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ellipsis-v-solid", bundle: ..., traitCollection: ...)`
+    static func ellipsisVSolid(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ellipsisVSolid, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "ford-mondeo-2019-delantera", bundle: ..., traitCollection: ...)`
@@ -319,6 +350,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "freeLogo", bundle: ..., traitCollection: ...)`
     static func freeLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.freeLogo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "route-solid", bundle: ..., traitCollection: ...)`
+    static func routeSolid(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.routeSolid, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "user-solid", bundle: ..., traitCollection: ...)`
+    static func userSolid(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.userSolid, compatibleWith: traitCollection)
     }
     #endif
 
@@ -586,6 +631,11 @@ struct _R: Rswift.Validatable {
       let name = "Home"
 
       static func validate() throws {
+        if UIKit.UIImage(named: "car-solid", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'car-solid' is used in storyboard 'Home', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "crosshairs-solid", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'crosshairs-solid' is used in storyboard 'Home', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ellipsis-v-solid", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ellipsis-v-solid' is used in storyboard 'Home', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "route-solid", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'route-solid' is used in storyboard 'Home', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "user-solid", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user-solid' is used in storyboard 'Home', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
