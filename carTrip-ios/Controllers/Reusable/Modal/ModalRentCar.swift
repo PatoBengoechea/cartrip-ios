@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class ModalRentCar: UIViewController {
     
@@ -24,7 +25,7 @@ class ModalRentCar: UIViewController {
     
     // MARK: - Properties
     private var completion: (() -> Void)?
-    private var carName: String?
+    private var car: CarForRoadViewModel?
     
     // MARK: - @IBAction
     @IBAction private func rentButtonTapped() {
@@ -37,9 +38,9 @@ class ModalRentCar: UIViewController {
     
     
     // MARK: - init
-    init(car: String, completion: @escaping () -> Void) {
+    init(car: CarForRoadViewModel, completion: @escaping () -> Void) {
         super.init(nibName: nil, bundle: nil)
-        carName = car
+        self.car = car
         self.completion = completion
         
         self.modalPresentationStyle = .overFullScreen
@@ -97,7 +98,7 @@ class ModalRentCar: UIViewController {
     }
     
     private func setUp() {
-        carLabel.text = carName
+        carLabel.text = car?.car?.fullName
         carLabel.textColor = .blueCar
         carLabel.font = .gothamRoundedMedium(20)
         
@@ -120,6 +121,24 @@ class ModalRentCar: UIViewController {
         self.titleLabel.alpha = 0
         self.carLabel.alpha = 0
         self.rentButton.alpha = 0
+        
+        configureImage()
+    }
+    
+    private func configureImage() {
+        let url = URL(string: car?.car?.img_path ?? "")
+        let processor = DownsamplingImageProcessor(size: carImage.bounds.size)
+        >> RoundCornerImageProcessor(cornerRadius: 20)
+        carImage.kf.indicatorType = .activity
+        carImage.kf.setImage(
+            with: url,
+            placeholder: UIImage(named: R.image.freeLogo.name),
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
     }
     
     // MARK: - Functions

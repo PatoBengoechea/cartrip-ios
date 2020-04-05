@@ -231,7 +231,7 @@ extension HomeViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let car = view.annotation as? CarForRoadViewModel {
-            let dialog = ModalRentCar(car: car.car?.fullName ?? "" , completion: imprimir)
+            let dialog = ModalRentCar(car: car , completion: imprimir)
             dialog.present()    
         }
         mapView.deselectAnnotation(view.annotation, animated: true)

@@ -12,5 +12,6 @@ target 'carTrip-ios' do
   pod 'R.swift'
   pod 'RealmSwift'
   pod 'NVActivityIndicatorView/AppExtension'
+  pod 'Kingfisher'
 
 end
