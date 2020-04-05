@@ -23,23 +23,23 @@ class BaseResponse {
         message = "Hubo un error en la conexion"
     }
     
-    func create(response: DataResponse<Any>) -> Self {
+    func create(response: AFDataResponse<Any>) -> Self {
         if let statusCode = response.response?.statusCode, statusCode == 200 {
-            if let value = response.result.value {
+            if let value = response.data {
                 status = true
                 data = JSON(value)["data"]
                 message = ""
             } else {
                 status = false
                 data = nil
-                if let value = response.result.value {
+                if let value = response.data {
                     message = JSON(value)["message"].stringValue
                 }
             }
         } else {
             status = false
             data = nil
-            if let value = response.result.value {
+            if let value = response.data {
                 message = JSON(value)["message"].stringValue
             }
         }

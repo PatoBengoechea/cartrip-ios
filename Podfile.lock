@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.9.1)
+  - Alamofire (5.0.5)
   - NVActivityIndicatorView/AppExtension (4.8.0)
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
@@ -12,7 +12,7 @@ PODS:
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.9.1)
+  - Alamofire
   - NVActivityIndicatorView/AppExtension
   - R.swift
   - RealmSwift
@@ -29,7 +29,7 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
@@ -37,6 +37,6 @@ SPEC CHECKSUMS:
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 130392bfe12311e6dffdd57a26d251354f74d024
+PODFILE CHECKSUM: c4c5b376a172406b135fe26df49c6ad9adcc658f
 
 COCOAPODS: 1.9.1

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ModalRentCar" customModule="carTrip_ios" customModuleProvider="target">
+            <connections>
+                <outlet property="bodyView" destination="EMH-Ma-MnZ" id="v4k-xJ-KR1"/>
+                <outlet property="carImage" destination="BTE-ub-09q" id="HMy-RK-SGa"/>
+                <outlet property="carLabel" destination="VcT-jZ-OlW" id="OiK-Pe-3gy"/>
+                <outlet property="heightModal" destination="v3i-ZO-LMy" id="78o-rw-uzt"/>
+                <outlet property="leadingModal" destination="vjd-rR-9Y6" id="oby-NZ-Gim"/>
+                <outlet property="modalView" destination="prL-Dc-9rt" id="Q5a-8Y-zzS"/>
+                <outlet property="rentButton" destination="A9U-oT-bIU" id="HFy-OC-gA2"/>
+                <outlet property="titleLabel" destination="lgb-a8-Qgv" id="g72-Sh-iIX"/>
+                <outlet property="titleView" destination="AC6-Sj-b8M" id="ztT-ga-Dk0"/>
+                <outlet property="trailingModal" destination="cVL-Zm-Vea" id="zuj-9x-EN1"/>
+                <outlet property="view" destination="iN0-l3-epB" id="0vw-PB-qBL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view alpha="0.5" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Phy-Vu-IQA" customClass="UIControl">
+                    <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <action selector="dismiss" destination="-1" eventType="touchUpInside" id="20s-Wh-1sT"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prL-Dc-9rt">
+                    <rect key="frame" x="30" y="253" width="354" height="400"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AC6-Sj-b8M">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="80"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quieres dar un paseo?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgb-a8-Qgv">
+                                    <rect key="frame" x="20" y="25" width="314" height="35"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="lgb-a8-Qgv" secondAttribute="trailing" constant="20" id="JVU-1R-ywM"/>
+                                <constraint firstItem="lgb-a8-Qgv" firstAttribute="leading" secondItem="AC6-Sj-b8M" secondAttribute="leading" constant="20" id="WZS-bK-65k"/>
+                                <constraint firstAttribute="height" constant="80" id="kAd-kD-00f"/>
+                                <constraint firstAttribute="bottom" secondItem="lgb-a8-Qgv" secondAttribute="bottom" constant="20" id="oQl-mK-gdG"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMH-Ma-MnZ">
+                            <rect key="frame" x="0.0" y="80" width="354" height="260"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ford Mondeo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcT-jZ-OlW">
+                                    <rect key="frame" x="30" y="15" width="294" height="27.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ford-mondeo-2019-delantera" translatesAutoresizingMaskIntoConstraints="NO" id="BTE-ub-09q">
+                                    <rect key="frame" x="27" y="62.5" width="300" height="160"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="BTE-ub-09q" secondAttribute="height" multiplier="15:8" id="OFN-P6-IhN"/>
+                                        <constraint firstAttribute="width" constant="300" id="xYD-rg-ngv"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="BTE-ub-09q" firstAttribute="top" secondItem="VcT-jZ-OlW" secondAttribute="bottom" constant="20" id="HMA-ie-0zZ"/>
+                                <constraint firstItem="BTE-ub-09q" firstAttribute="centerX" secondItem="EMH-Ma-MnZ" secondAttribute="centerX" id="URu-Bu-PuG"/>
+                                <constraint firstItem="VcT-jZ-OlW" firstAttribute="leading" secondItem="EMH-Ma-MnZ" secondAttribute="leading" constant="30" id="cRd-is-Tz8"/>
+                                <constraint firstItem="VcT-jZ-OlW" firstAttribute="top" secondItem="EMH-Ma-MnZ" secondAttribute="top" constant="15" id="pLw-Pb-o45"/>
+                                <constraint firstAttribute="trailing" secondItem="VcT-jZ-OlW" secondAttribute="trailing" constant="30" id="yGb-Uc-hvg"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9U-oT-bIU">
+                            <rect key="frame" x="0.0" y="340" width="354" height="60"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="DPj-T4-Tqa"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                            <state key="normal" title="Alquilar">
+                                <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="rentButtonTapped" destination="-1" eventType="touchUpInside" id="iU5-VX-ePv"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="A9U-oT-bIU" secondAttribute="trailing" id="9ww-6W-afY"/>
+                        <constraint firstItem="EMH-Ma-MnZ" firstAttribute="leading" secondItem="prL-Dc-9rt" secondAttribute="leading" id="U0J-Ty-lBh"/>
+                        <constraint firstItem="AC6-Sj-b8M" firstAttribute="leading" secondItem="prL-Dc-9rt" secondAttribute="leading" id="XRN-fM-sM0"/>
+                        <constraint firstAttribute="trailing" secondItem="AC6-Sj-b8M" secondAttribute="trailing" id="ZQx-pZ-Lqn"/>
+                        <constraint firstAttribute="bottom" secondItem="A9U-oT-bIU" secondAttribute="bottom" id="ZSp-LG-8ug"/>
+                        <constraint firstAttribute="trailing" secondItem="EMH-Ma-MnZ" secondAttribute="trailing" id="bu2-FR-Tjr"/>
+                        <constraint firstItem="A9U-oT-bIU" firstAttribute="top" secondItem="EMH-Ma-MnZ" secondAttribute="bottom" id="e3D-eD-Ret"/>
+                        <constraint firstItem="EMH-Ma-MnZ" firstAttribute="top" secondItem="AC6-Sj-b8M" secondAttribute="bottom" id="gIJ-5u-tii"/>
+                        <constraint firstItem="A9U-oT-bIU" firstAttribute="leading" secondItem="prL-Dc-9rt" secondAttribute="leading" id="i8n-yC-JdC"/>
+                        <constraint firstItem="AC6-Sj-b8M" firstAttribute="top" secondItem="prL-Dc-9rt" secondAttribute="top" id="pcK-Va-165"/>
+                        <constraint firstAttribute="height" constant="400" id="v3i-ZO-LMy"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Phy-Vu-IQA" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="1gw-Jg-XoV"/>
+                <constraint firstItem="prL-Dc-9rt" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="7fj-SO-hgW"/>
+                <constraint firstItem="prL-Dc-9rt" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="8TR-ZG-kHf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="prL-Dc-9rt" secondAttribute="trailing" constant="30" id="cVL-Zm-Vea"/>
+                <constraint firstItem="Phy-Vu-IQA" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="g41-5P-whm"/>
+                <constraint firstItem="Phy-Vu-IQA" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="l42-hB-smB"/>
+                <constraint firstItem="Phy-Vu-IQA" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="n4u-1g-NHw"/>
+                <constraint firstItem="prL-Dc-9rt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="vjd-rR-9Y6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="132" y="102"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ford-mondeo-2019-delantera" width="1280" height="836"/>
+    </resources>
+</document>

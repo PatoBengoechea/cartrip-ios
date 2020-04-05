@@ -13,3 +13,7 @@ protocol BaseManagerDelegate {
     func onFinishedService()
     func onError(_ message: String)
 }
+
+class BaseManager {
+    
+}

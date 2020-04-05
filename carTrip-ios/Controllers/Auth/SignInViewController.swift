@@ -35,6 +35,8 @@ class SignInViewController: BaseViewController {
         presenter.attachView(self)
         navigationController?.setNavigationBarHidden(true, animated: false)
         setUp()
+        presenter.email = "pato.bengoechea@gmail.com"
+        presenter.password = "admin"
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -52,6 +54,7 @@ class SignInViewController: BaseViewController {
         titleLabel.text = R.string.localizable.welcome()
         titleLabel.font = .monospacedDigitSystemFont(ofSize: 30, weight: UIFont.Weight(rawValue: 0.2))
         titleLabel.textColor = .white
+        titleLabel.font = .gothamRoundedMedium(20)
         
         topView.backgroundColor = .white
         
@@ -64,11 +67,14 @@ class SignInViewController: BaseViewController {
         loginButton.titleLabel?.text = R.string.localizable.signIn()
         signUpButton.titleLabel?.text = R.string.localizable.signUp()
         
-        emailTextField.font = .monospacedDigitSystemFont(ofSize: 16, weight: UIFont.Weight(rawValue: 0.3))
-        passwordTextField.font = .monospacedDigitSystemFont(ofSize: 16, weight: UIFont.Weight(rawValue: 0.3))
+        emailTextField.font = .gothamRoundedMedium(20)
+        emailTextField.textColor = .darkGray
+        passwordTextField.font = .gothamRoundedMedium(20)
+        passwordTextField.textColor = .darkGray
         
         loginButton.backgroundColor = .white
         loginButton.setTitle(R.string.localizable.signIn().capitalized, for: .normal)
+        loginButton.titleLabel?.font = .gothamRoundedMedium(20)
         loginButton.tintColor = .blueCar
     
         
@@ -78,6 +84,7 @@ class SignInViewController: BaseViewController {
         let attributedText = NSMutableAttributedString(string: R.string.localizable.signUp())
         attributedText.addAttribute(NSAttributedString.Key.underlineStyle , value: NSUnderlineStyle.single.rawValue, range: textRange)
         attributedText.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], range: textRange)
+        attributedText.addAttributes([NSAttributedString.Key.font: UIFont.gothamRoundedBoldItalic(14)], range: textRange)
 
         signUpButton.setAttributedTitle(attributedText, for: .normal)
     }

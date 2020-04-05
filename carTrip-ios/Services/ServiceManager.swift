@@ -20,7 +20,7 @@ class ServiceManager {
     func getLogin(email: String, password: String, succesCallback: @escaping (User)->(), failureCallback: @escaping (String)->()) {
         let url = PathBuilder.sharedInstance.getLogin()
         let body = BodyBuilder.postLogUser(email: email, password: password)
-        Alamofire.request(url,
+        AF.request(url,
                           method: .post,
                           parameters: body,
                           encoding: JSONEncoding.default,
@@ -35,4 +35,23 @@ class ServiceManager {
                             }
         }
     }
+    
+    func getCarForRoad(succesCallback: @escaping ([CarForRoad])-> Void, failureCallback: @escaping (String)-> Void) {
+        let url = PathBuilder.sharedInstance.getCarsForRoad()
+        AF.request(url,
+                   method: .get,
+                   parameters: nil,
+                   encoding: JSONEncoding.default,
+                   headers: nil,
+                   interceptor: nil).responseJSON { (serviceResponse) in
+                    let response = BaseResponse().create(response: serviceResponse)
+                    if response.status, let data = response.data {
+                        let cars = CarForRoad.parse(data: data)
+                        succesCallback(cars)
+                    } else {
+                        failureCallback(response.message)
+                    }
+        }
+    }
+    
 }

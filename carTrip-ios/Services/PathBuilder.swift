@@ -23,4 +23,8 @@ class PathBuilder  {
     func getLogin() -> String {
         return "\(url)/login"
     }
+    
+    func getCarsForRoad() -> String {
+        return "\(url)/carForRoad"
+    }
 }

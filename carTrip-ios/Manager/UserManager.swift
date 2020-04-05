@@ -13,7 +13,7 @@ protocol UserManagerDelegate: BaseManagerDelegate {
     func onLogin(user: User)
 }
 
-class UserManager {
+class UserManager: BaseManager {
     
     class var instance: UserManager {
         struct Static {

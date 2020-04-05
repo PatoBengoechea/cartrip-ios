@@ -67,6 +67,4 @@ class BaseViewController: UIViewController {
            self.view.frame.origin.y = 0
            self.view.layoutIfNeeded()
        }
-    
-
 }

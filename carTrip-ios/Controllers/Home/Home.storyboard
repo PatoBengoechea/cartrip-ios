@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xYB-5c-Ti8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xYB-5c-Ti8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,15 +11,15 @@
         <scene sceneID="2lM-Bu-3zB">
             <objects>
                 <viewController id="xYB-5c-Ti8" customClass="HomeViewController" customModule="carTrip_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="yy0-F2-5hD">
+                    <view key="view" contentMode="scaleToFill" id="yy0-F2-5hD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fnz-fY-1Dg">
-                                <rect key="frame" x="0.0" y="44" width="280" height="168"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fnz-fY-1Dg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="6XS-E3-FBQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="168"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="yy0-F2-5hD" id="5ab-4i-aHh"/>
@@ -31,7 +31,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="fnz-fY-1Dg" firstAttribute="leading" secondItem="lWU-pR-KkP" secondAttribute="leading" id="glW-Oh-hnh"/>
-                            <constraint firstItem="lWU-pR-KkP" firstAttribute="bottom" secondItem="fnz-fY-1Dg" secondAttribute="bottom" id="ihc-N3-Ex9"/>
+                            <constraint firstAttribute="bottom" secondItem="fnz-fY-1Dg" secondAttribute="bottom" id="ihc-N3-Ex9"/>
                             <constraint firstItem="fnz-fY-1Dg" firstAttribute="top" secondItem="yy0-F2-5hD" secondAttribute="top" id="j5g-u1-apC"/>
                             <constraint firstItem="lWU-pR-KkP" firstAttribute="trailing" secondItem="fnz-fY-1Dg" secondAttribute="trailing" id="otg-8v-8SJ"/>
                         </constraints>
