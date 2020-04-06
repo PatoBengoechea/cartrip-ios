@@ -174,8 +174,10 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.file` struct is generated, and contains static references to 11 files.
+  /// This `R.file` struct is generated, and contains static references to 12 files.
   struct file {
+    /// Resource file `14717-sedan-car-animation.json`.
+    static let sedanCarAnimationJson = Rswift.FileResource(bundle: R.hostingBundle, name: "14717-sedan-car-animation", pathExtension: "json")
     /// Resource file `GothamRounded-Bold.otf`.
     static let gothamRoundedBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "GothamRounded-Bold", pathExtension: "otf")
     /// Resource file `GothamRounded-BoldItalic.otf`.
@@ -198,6 +200,12 @@ struct R: Rswift.Validatable {
     static let gothamRoundedLight_21020Ttf = Rswift.FileResource(bundle: R.hostingBundle, name: "GothamRoundedLight_21020", pathExtension: "ttf")
     /// Resource file `GothamRoundedMedium_21022.ttf`.
     static let gothamRoundedMedium_21022Ttf = Rswift.FileResource(bundle: R.hostingBundle, name: "GothamRoundedMedium_21022", pathExtension: "ttf")
+
+    /// `bundle.url(forResource: "14717-sedan-car-animation", withExtension: "json")`
+    static func sedanCarAnimationJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sedanCarAnimationJson
+      return fileResource.bundle.url(forResource: fileResource)
+    }
 
     /// `bundle.url(forResource: "GothamRounded-Bold", withExtension: "otf")`
     static func gothamRoundedBoldOtf(_: Void = ()) -> Foundation.URL? {
@@ -370,10 +378,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
+    /// Nib `Loader`.
+    static let loader = _R.nib._Loader()
     /// Nib `ModalRentCar`.
     static let modalRentCar = _R.nib._ModalRentCar()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "Loader", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.loader) instead")
+    static func loader(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.loader)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "ModalRentCar", in: bundle)`
@@ -382,6 +400,10 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.modalRentCar)
     }
     #endif
+
+    static func loader(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> Loader? {
+      return R.nib.loader.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? Loader
+    }
 
     static func modalRentCar(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.modalRentCar.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
@@ -566,6 +588,17 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _ModalRentCar.validate()
+    }
+
+    struct _Loader: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "Loader"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> Loader? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? Loader
+      }
+
+      fileprivate init() {}
     }
 
     struct _ModalRentCar: Rswift.NibResourceType, Rswift.Validatable {

@@ -38,7 +38,9 @@ extension HomePresenter: CarManagerDelegate {
     }
     
     func onFinishedService() {
-        delegate?.finishedLoading()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.delegate?.finishedLoading()
+        }
     }
     
     func onError(_ message: String) {

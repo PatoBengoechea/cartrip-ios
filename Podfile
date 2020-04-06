@@ -13,5 +13,6 @@ target 'carTrip-ios' do
   pod 'RealmSwift'
   pod 'NVActivityIndicatorView/AppExtension'
   pod 'Kingfisher'
+  pod 'lottie-ios'
 
 end

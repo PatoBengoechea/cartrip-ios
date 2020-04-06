@@ -3,6 +3,7 @@ PODS:
   - Kingfisher (5.13.2):
     - Kingfisher/Core (= 5.13.2)
   - Kingfisher/Core (5.13.2)
+  - lottie-ios (3.1.6)
   - NVActivityIndicatorView/AppExtension (4.8.0)
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
@@ -17,6 +18,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Kingfisher
+  - lottie-ios
   - NVActivityIndicatorView/AppExtension
   - R.swift
   - RealmSwift
@@ -26,6 +28,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
+    - lottie-ios
     - NVActivityIndicatorView
     - R.swift
     - R.swift.Library
@@ -36,6 +39,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
+  lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
@@ -43,6 +47,6 @@ SPEC CHECKSUMS:
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: c3f8939330daded7519cbcccf639dd99be63921d
+PODFILE CHECKSUM: 39fabb18fc2ab125a3ddf33ef1eb80224ee4c0ce
 
 COCOAPODS: 1.9.1

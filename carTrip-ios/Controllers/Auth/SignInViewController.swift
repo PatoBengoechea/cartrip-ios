@@ -110,14 +110,14 @@ extension SignInViewController: SignInPresenterDelegate {
     }
     
     func startLoading() {
-        NVActivityIndicatorView.init(frame: CGRect(x: self.view.frame.height/2, y: self.view.frame.width/2, width: 30, height: 30), type: .ballGridPulse, color: .darkGray, padding: 20).startAnimating()
+        Loader.showLoader()
     }
     
     func finishedLoading() {
-        
+        Loader.dismiss()
     }
     
     func onError(message: String) {
-        
+        Loader.dismiss()
     }
 }

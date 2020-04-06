@@ -223,6 +223,14 @@ extension HomeViewController: HomePresenterDelegate {
         mapView.addAnnotations(presenter.dataCarForRoad)
     }
     
+    func startLoading() {
+        Loader.showLoader()
+    }
+    
+    func finishedLoading() {
+        Loader.dismiss()
+    }
+    
     
 }
 
