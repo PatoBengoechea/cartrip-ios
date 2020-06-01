@@ -46,7 +46,7 @@ class ServiceManager {
                    interceptor: nil).responseJSON { (serviceResponse) in
                     let response = BaseResponse().create(response: serviceResponse)
                     if response.status, let data = response.data {
-                        let cars = CarForRoad.parse(data: data)
+                        let cars = CarForRoad.parse(data: data["cars"].array ?? [])
                         succesCallback(cars)
                     } else {
                         failureCallback(response.message)

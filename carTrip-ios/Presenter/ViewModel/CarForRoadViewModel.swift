@@ -10,9 +10,9 @@ import Foundation
 import MapKit
 
 class CarForRoadViewModel: MKPointAnnotation {
-    var idCarForRoad: String?
-    var available: Bool?
-    var forService: Bool?
+    var idCarForRoad: String
+    var available: Bool
+    var forService: Bool
     var longitude: Double?
     var latitude: Double?
     var location: CLLocationCoordinate2D { return CLLocationCoordinate2D(latitude: latitude ?? 0, longitude: longitude ?? 0)}
@@ -23,10 +23,10 @@ class CarForRoadViewModel: MKPointAnnotation {
     
     init(_ model: CarForRoad) {
         idCarForRoad = String(describing: model.idCarForRoad)
-        available = model.available
-        forService = model.forService
-        longitude = model.longitude
-        latitude = model.latitude
+        available = model.available ?? false
+        forService = model.forService ?? false
+        longitude = Double(model.longitude)
+        latitude = Double(model.latitude)
         car = CarViewModel(model.car)
     }
 }

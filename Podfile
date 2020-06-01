@@ -10,7 +10,6 @@ target 'carTrip-ios' do
 	pod 'SwiftyJSON'
 	pod 'Alamofire'
   pod 'R.swift'
-  pod 'RealmSwift'
   pod 'NVActivityIndicatorView/AppExtension'
   pod 'Kingfisher'
   pod 'lottie-ios'
