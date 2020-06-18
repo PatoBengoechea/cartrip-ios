@@ -118,3 +118,26 @@ extension UIFont {
     }
 }
 
+// MARK: - UILabel
+extension UILabel {
+    func set(font: UIFont, color: UIColor) {
+        self.font = font
+        self.textColor = color
+    }
+    
+    func set(numberOfLines lines: Int, adjustFont: Bool) {
+        self.numberOfLines = lines
+        self.adjustsFontSizeToFitWidth = adjustFont
+    }
+}
+
+// MARK: - String
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+}

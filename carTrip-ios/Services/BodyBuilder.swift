@@ -15,4 +15,16 @@ class BodyBuilder  {
         dict["password"] = password
         return dict
     }
+    
+    static func registerUser(user: UserInputModel) -> [String: Any] {
+        var dict = [String: Any]()
+        dict["name"] = user.name
+        dict["lastname"] = user.lastName
+        dict["email"] = user.email
+        dict["password"] = user.password
+        dict["dni"] = user.dni
+        dict["birthdate"] = DateFormatter().string(from: user.birthdate ?? Date())
+        
+        return dict
+    }
 }

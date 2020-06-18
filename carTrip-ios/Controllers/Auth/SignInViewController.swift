@@ -29,6 +29,10 @@ class SignInViewController: BaseViewController {
         presenter.postLogIn()
     }
     
+    @IBAction func goToRegister() {
+        performSegue(withIdentifier: R.segue.signInViewController.goToRegister.identifier, sender: nil)
+    }
+    
     // MARK: - Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,14 +71,14 @@ class SignInViewController: BaseViewController {
         loginButton.titleLabel?.text = R.string.localizable.signIn()
         signUpButton.titleLabel?.text = R.string.localizable.signUp()
         
-        emailTextField.font = .gothamRoundedMedium(20)
+        emailTextField.font = .gothamRoundedMedium(14)
         emailTextField.textColor = .darkGray
-        passwordTextField.font = .gothamRoundedMedium(20)
+        passwordTextField.font = .gothamRoundedMedium(14)
         passwordTextField.textColor = .darkGray
         
         loginButton.backgroundColor = .white
         loginButton.setTitle(R.string.localizable.signIn().capitalized, for: .normal)
-        loginButton.titleLabel?.font = .gothamRoundedMedium(20)
+        loginButton.titleLabel?.font = .gothamRoundedMedium(14)
         loginButton.tintColor = .blueCar
     
         
@@ -82,14 +86,15 @@ class SignInViewController: BaseViewController {
         
         let textRange = NSMakeRange(0, R.string.localizable.signUp().count)
         let attributedText = NSMutableAttributedString(string: R.string.localizable.signUp())
-        attributedText.addAttribute(NSAttributedString.Key.underlineStyle , value: NSUnderlineStyle.single.rawValue, range: textRange)
-        attributedText.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], range: textRange)
-        attributedText.addAttributes([NSAttributedString.Key.font: UIFont.gothamRoundedBoldItalic(14)], range: textRange)
+//        attributedText.addAttribute(NSAttributedString.Key.underlineStyle , value: NSUnderlineStyle.single.rawValue, range: textRange)
+        attributedText.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], range: textRange)
+        attributedText.addAttributes([NSAttributedString.Key.font: UIFont.gothamRoundedLight(14)], range: textRange)
 
         signUpButton.setAttributedTitle(attributedText, for: .normal)
     }
 }
 
+// MARK: - Text Field Delegate
 extension SignInViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         switch textField {
@@ -103,7 +108,7 @@ extension SignInViewController: UITextFieldDelegate {
     }
 }
 
-
+// MARK: - Presenter Delegate
 extension SignInViewController: SignInPresenterDelegate {
     func onSuccesfullLogin() {
         performSegue(withIdentifier: R.segue.signInViewController.showHome.identifier, sender: nil)

@@ -54,4 +54,19 @@ class ServiceManager {
         }
     }
     
+    func registerUser(user: UserInputModel, successCallback: @escaping ()-> Void, failureCallback: @escaping (String) -> Void) {
+        let url = PathBuilder.sharedInstance.registerUser()
+        let body = BodyBuilder.registerUser(user: user)
+        Session.default.request(url,
+                                method: .post,
+                                parameters: body).responseJSON { (serviceResponse) in
+                                    let response = BaseResponse().create(response: serviceResponse)
+                                    if response.status, let _ = response.data {
+                                        successCallback()
+                                    } else {
+                                        failureCallback(response.message)
+                                    }
+        }
+    }
+    
 }

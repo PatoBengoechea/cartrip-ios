@@ -127,15 +127,11 @@ class ModalRentCar: UIViewController {
     
     private func configureImage() {
         let url = URL(string: car?.car?.img_path ?? "")
-        let processor = DownsamplingImageProcessor(size: carImage.bounds.size)
-        >> RoundCornerImageProcessor(cornerRadius: 20)
         carImage.kf.indicatorType = .activity
         carImage.kf.setImage(
             with: url,
             placeholder: UIImage(named: R.image.freeLogo.name),
             options: [
-                .processor(processor),
-                .scaleFactor(UIScreen.main.scale),
                 .transition(.fade(1)),
                 .cacheOriginalImage
             ])

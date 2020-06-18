@@ -37,6 +37,9 @@
 		6A80F40F2421425B00474555 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F40E2421425B00474555 /* ServiceManager.swift */; };
 		6A80F4112421437C00474555 /* BodyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F4102421437C00474555 /* BodyBuilder.swift */; };
 		6A80F413242145B300474555 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F412242145B300474555 /* UserManager.swift */; };
+		6A833B1E249ADF450000FF5B /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A833B1D249ADF450000FF5B /* RegisterPresenter.swift */; };
+		6A833B20249AEBAB0000FF5B /* UserInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A833B1F249AEBAB0000FF5B /* UserInputModel.swift */; };
+		6A833B23249AF35C0000FF5B /* PersonalDataRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A833B22249AF35C0000FF5B /* PersonalDataRegisterViewController.swift */; };
 		6AA18783243951AD004A568B /* GothamRounded-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AA18777243951AC004A568B /* GothamRounded-BookItalic.otf */; };
 		6AA18784243951AD004A568B /* GothamRounded-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AA18778243951AC004A568B /* GothamRounded-BoldItalic.otf */; };
 		6AA18785243951AD004A568B /* GothamRounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AA18779243951AD004A568B /* GothamRounded-Medium.otf */; };
@@ -57,6 +60,8 @@
 		6AD5535C2435177100EE6517 /* CarForRoadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5535B2435177100EE6517 /* CarForRoadViewModel.swift */; };
 		6AD5535E243517CA00EE6517 /* CarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5535D243517CA00EE6517 /* CarViewModel.swift */; };
 		6AD5536024351A0E00EE6517 /* TypeCarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5535F24351A0E00EE6517 /* TypeCarViewModel.swift */; };
+		6AEB322C2490512700984196 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB322B2490512700984196 /* RegisterViewController.swift */; };
+		6AEB322E249073F800984196 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB322D249073F800984196 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +98,9 @@
 		6A80F40E2421425B00474555 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		6A80F4102421437C00474555 /* BodyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyBuilder.swift; sourceTree = "<group>"; };
 		6A80F412242145B300474555 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		6A833B1D249ADF450000FF5B /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		6A833B1F249AEBAB0000FF5B /* UserInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputModel.swift; sourceTree = "<group>"; };
+		6A833B22249AF35C0000FF5B /* PersonalDataRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataRegisterViewController.swift; sourceTree = "<group>"; };
 		6AA18777243951AC004A568B /* GothamRounded-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamRounded-BookItalic.otf"; sourceTree = "<group>"; };
 		6AA18778243951AC004A568B /* GothamRounded-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamRounded-BoldItalic.otf"; sourceTree = "<group>"; };
 		6AA18779243951AD004A568B /* GothamRounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamRounded-Medium.otf"; sourceTree = "<group>"; };
@@ -114,6 +122,8 @@
 		6AD5535B2435177100EE6517 /* CarForRoadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarForRoadViewModel.swift; sourceTree = "<group>"; };
 		6AD5535D243517CA00EE6517 /* CarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewModel.swift; sourceTree = "<group>"; };
 		6AD5535F24351A0E00EE6517 /* TypeCarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCarViewModel.swift; sourceTree = "<group>"; };
+		6AEB322B2490512700984196 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		6AEB322D249073F800984196 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		B97B3E296B9CD3BA58656F73 /* Pods_carTrip_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carTrip_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF07BF94FE93AFE7B1BCDBA /* Pods-carTrip-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carTrip-ios.release.xcconfig"; path = "Target Support Files/Pods-carTrip-ios/Pods-carTrip-ios.release.xcconfig"; sourceTree = "<group>"; };
 		E26607E9CDB0903A04AA2207 /* Pods-carTrip-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carTrip-ios.debug.xcconfig"; path = "Target Support Files/Pods-carTrip-ios/Pods-carTrip-ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +284,7 @@
 			children = (
 				6A80F3F32420282F00474555 /* Auth.storyboard */,
 				6A80F3F524202BD800474555 /* SignInViewController.swift */,
+				6A833B1C249ADDF70000FF5B /* Register */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -283,6 +294,7 @@
 			children = (
 				6A80F400242030A700474555 /* Extensions.swift */,
 				6A80F402242041ED00474555 /* Constants.swift */,
+				6AEB322D249073F800984196 /* Helper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -290,12 +302,31 @@
 		6A80F40424213E5500474555 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				6AD5535A2435176200EE6517 /* ViewModel */,
+				6A833B21249AEC370000FF5B /* InputModel */,
 				6A80F40624213E7400474555 /* BasePresenter.swift */,
 				6A80F40824213EED00474555 /* SignInPresenter.swift */,
 				6AD553542434D8AC00EE6517 /* HomePresenter.swift */,
-				6AD5535A2435176200EE6517 /* ViewModel */,
+				6A833B1D249ADF450000FF5B /* RegisterPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		6A833B1C249ADDF70000FF5B /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				6AEB322B2490512700984196 /* RegisterViewController.swift */,
+				6A833B22249AF35C0000FF5B /* PersonalDataRegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		6A833B21249AEC370000FF5B /* InputModel */ = {
+			isa = PBXGroup;
+			children = (
+				6A833B1F249AEBAB0000FF5B /* UserInputModel.swift */,
+			);
+			path = InputModel;
 			sourceTree = "<group>";
 		};
 		6AA1877624395194004A568B /* Fonts */ = {
@@ -503,6 +534,7 @@
 				6AD553502433F67D00EE6517 /* Car.swift in Sources */,
 				6AD5536024351A0E00EE6517 /* TypeCarViewModel.swift in Sources */,
 				6AD553572434D9BE00EE6517 /* CarManager.swift in Sources */,
+				6A833B23249AF35C0000FF5B /* PersonalDataRegisterViewController.swift in Sources */,
 				6AD5535C2435177100EE6517 /* CarForRoadViewModel.swift in Sources */,
 				6AD553532433F6AE00EE6517 /* CarForRoad.swift in Sources */,
 				6A80F40724213E7400474555 /* BasePresenter.swift in Sources */,
@@ -512,6 +544,8 @@
 				6AD553592435005D00EE6517 /* TypeCar.swift in Sources */,
 				6A39B24A2439212100803B14 /* ModalRentCar.swift in Sources */,
 				6A80F413242145B300474555 /* UserManager.swift in Sources */,
+				6AEB322E249073F800984196 /* Helper.swift in Sources */,
+				6A833B1E249ADF450000FF5B /* RegisterPresenter.swift in Sources */,
 				6A80F40D24213FB500474555 /* BaseResponse.swift in Sources */,
 				6A80F40F2421425B00474555 /* ServiceManager.swift in Sources */,
 				6A80F40B24213F2500474555 /* PathBuilder.swift in Sources */,
@@ -519,6 +553,8 @@
 				6A80F4112421437C00474555 /* BodyBuilder.swift in Sources */,
 				6A80F40924213EED00474555 /* SignInPresenter.swift in Sources */,
 				6A32AC68241D98DF009BF0C8 /* SceneDelegate.swift in Sources */,
+				6AEB322C2490512700984196 /* RegisterViewController.swift in Sources */,
+				6A833B20249AEBAB0000FF5B /* UserInputModel.swift in Sources */,
 				6A80F3ED2420209A00474555 /* SplashViewController.swift in Sources */,
 				6AD5535E243517CA00EE6517 /* CarViewModel.swift in Sources */,
 				6A80F3F12420234300474555 /* R.generated.swift in Sources */,

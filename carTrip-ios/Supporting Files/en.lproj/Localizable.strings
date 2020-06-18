@@ -7,13 +7,19 @@
 */
 
 
-"welcome" = "welcome";
-"sign in" = "sign in";
-"welcome" = "welcome";
-"email" = "email";
-"password" = "password";
-"sign up" = "sign up";
+"Welcome" = "Welcome";
+"Sign in" = "Sign in";
+"Email" = "Email";
+"Password" = "Password";
+"Sign up" = "Sign up";
 
 
-"let's go to take a drive"="let's go to take a drive";
-"rent"="rent";
+"Let's go to take a drive"="Let's go to take a drive";
+"Rent"="Rent";
+
+// MARK: - Register
+"Next"="Next";
+"Already have account?"="Already have account?";
+"Name"="Name";
+"Last name"="Last name";
+"DNI"="DNI";

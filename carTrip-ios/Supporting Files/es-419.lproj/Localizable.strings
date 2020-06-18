@@ -7,12 +7,19 @@
 */
 
 
-"welcome" = "bienvenido";
-"sign in" = "ingresar";
-"welcome" = "bienvenido";
-"email" = "email";
-"password" = "contraseña";
-"sign up" = "registrarse";
+"Welcome" = "Bienvenido";
+"Sign in" = "Ingresar";
+"Welcome" = "Bienvenido";
+"Email" = "Email";
+"Password" = "Contraseña";
+"Sign up" = "Registrarse";
 
-"let's go to take a drive"="vamos a dar un paseo";
-"rent"="alquilar";
+"Let's go to take a drive"="vamos a dar un paseo";
+"Rent"="alquilar";
+
+// MARK: - Register
+"Next"="Siguiente";
+"Already have account?"="¿Ya tienes una cuennta?";
+"Name"="Nombre";
+"Last name"="Apellido";
+"DNI"="DNI";
