@@ -49,14 +49,6 @@ class PersonalDataRegisterViewController: RegisterBaseViewController {
         
     }
     
-    override func keyboardWillHide(_ keyboardHeight: CGFloat) {
-        
-    }
-    
-    override func keyboardWillShow(_ keyboardHeight: CGFloat) {
-        
-    }
-    
     // MARK: - Private Functions
     private func customize() {
         topView.backgroundColor = .white
@@ -111,9 +103,9 @@ class PersonalDataRegisterViewController: RegisterBaseViewController {
         toolbar.sizeToFit()
         
         //done button & cancel button
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(donedatePicker))
+        let doneButton = UIBarButtonItem(title: R.string.localizable.done(), style: UIBarButtonItem.Style.done, target: self, action: #selector(donedatePicker))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.done, target: self, action: #selector(cancelDatePicker))
+        let cancelButton = UIBarButtonItem(title: R.string.localizable.cancel(), style: UIBarButtonItem.Style.done, target: self, action: #selector(cancelDatePicker))
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
         
         // add toolbar to textField
@@ -163,7 +155,6 @@ extension PersonalDataRegisterViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         switch textField {
         case birthDateTextField:
-            print("Date")
             showDatePicker()
         default:
             break

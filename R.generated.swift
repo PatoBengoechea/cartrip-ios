@@ -447,7 +447,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 13 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 15 localization keys.
     struct localizable {
       /// en translation: Already have account?
       ///
@@ -457,10 +457,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let birthdate = Rswift.StringResource(key: "Birthdate", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es-419
+      static let cancel = Rswift.StringResource(key: "Cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: DNI
       ///
       /// Locales: en, es-419
       static let dnI = Rswift.StringResource(key: "DNI", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Done
+      ///
+      /// Locales: en, es-419
+      static let done = Rswift.StringResource(key: "Done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Email
       ///
       /// Locales: en, es-419
@@ -532,6 +540,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Birthdate", bundle: bundle, comment: "")
       }
 
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es-419
+      static func cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Cancel"
+        }
+
+        return NSLocalizedString("Cancel", bundle: bundle, comment: "")
+      }
+
       /// en translation: DNI
       ///
       /// Locales: en, es-419
@@ -545,6 +568,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("DNI", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Done
+      ///
+      /// Locales: en, es-419
+      static func done(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Done", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Done"
+        }
+
+        return NSLocalizedString("Done", bundle: bundle, comment: "")
       }
 
       /// en translation: Email

@@ -24,3 +24,5 @@
 "Last name"="Apellido";
 "DNI"="DNI";
 "Birthdate"="Fecha de nacimiento";
+"Done"="Aceptar";
+"Cancel"="Cancelar";
