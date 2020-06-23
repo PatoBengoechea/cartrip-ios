@@ -11,11 +11,12 @@ import RealmSwift
 
 protocol UserManagerDelegate: BaseManagerDelegate {
     func onLogin(user: User)
+    func onRegister()
 }
 
 class UserManager: BaseManager {
     
-    class var instance: UserManager {
+    class var sharedInstance: UserManager {
         struct Static {
             static let instance = UserManager()
         }
@@ -33,6 +34,17 @@ class UserManager: BaseManager {
             delegate.onError(message)
             delegate.onFinishedService()
         }
+    }
+    
+    func registerUser(user: UserInputModel, delegate: UserManagerDelegate) {
+        delegate.onInitService()
+        ServiceManager.sharedInstance.registerUser(user: user, successCallback: {
+            delegate.onFinishedService()
+            delegate.onRegister()
+        }, failureCallback: { message in
+            delegate.onFinishedService()
+            delegate.onError(message)
+        })
     }
     
     func save(_ user: User) {

@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Auth Navigation Controller-->
         <scene sceneID="ykP-Zq-khI">
             <objects>
-                <navigationController id="DEn-VG-Yct" sceneMemberID="viewController">
+                <navigationController id="DEn-VG-Yct" customClass="AuthNavigationController" customModule="carTrip_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BgI-W6-4nb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -57,7 +57,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jHF-rg-aXw" customClass="CornerShadowView" customModule="carTrip_ios" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="288" width="414" height="608"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f9O-x4-uMN">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f9O-x4-uMN" customClass="CarTripTextField" customModule="carTrip_ios" customModuleProvider="target">
                                         <rect key="frame" x="40" y="40" width="334" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="tqn-Kz-Nc9"/>
@@ -68,7 +68,7 @@
                                             <outlet property="delegate" destination="er8-ZM-WrN" id="ZHa-w4-UyK"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wCO-WL-e4I">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wCO-WL-e4I" customClass="CarTripTextField" customModule="carTrip_ios" customModuleProvider="target">
                                         <rect key="frame" x="40" y="135" width="334" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -180,7 +180,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N52-Ih-hu0">
                                 <rect key="frame" x="0.0" y="216" width="414" height="680"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mQA-oi-fid">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mQA-oi-fid" customClass="CarTripTextField" customModule="carTrip_ios" customModuleProvider="target">
                                         <rect key="frame" x="40" y="162.5" width="334" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -189,7 +189,7 @@
                                             <outlet property="delegate" destination="cdJ-Js-sgA" id="3kW-l7-eBy"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QWV-XQ-RMM">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QWV-XQ-RMM" customClass="CarTripTextField" customModule="carTrip_ios" customModuleProvider="target">
                                         <rect key="frame" x="40" y="267.5" width="334" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="kZd-F4-TMt"/>
@@ -201,7 +201,7 @@
                                             <outlet property="delegate" destination="cdJ-Js-sgA" id="Ngj-lm-hPk"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JCd-3g-7Xb">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JCd-3g-7Xb" customClass="CarTripTextField" customModule="carTrip_ios" customModuleProvider="target">
                                         <rect key="frame" x="40" y="352.5" width="334" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -309,7 +309,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbm-9X-Z2z">
                                 <rect key="frame" x="0.0" y="216" width="414" height="646"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g9V-8U-EjW">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g9V-8U-EjW" customClass="CarTripTextField" customModule="carTrip_ios" customModuleProvider="target">
                                         <rect key="frame" x="40" y="30" width="334" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -319,8 +319,8 @@
                                             <outlet property="delegate" destination="Lho-oj-exJ" id="D1a-oa-SFr"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xyg-Wt-45D">
-                                        <rect key="frame" x="40" y="135" width="334" height="45"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xyg-Wt-45D" customClass="CarTripTextField" customModule="carTrip_ios" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="105" width="334" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="3Ga-5C-pEJ"/>
                                         </constraints>
@@ -332,8 +332,8 @@
                                             <outlet property="delegate" destination="Lho-oj-exJ" id="1GU-tz-gfJ"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Lr-W9-HtF">
-                                        <rect key="frame" x="40" y="240" width="334" height="45"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Lr-W9-HtF" customClass="CarTripTextField" customModule="carTrip_ios" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="210" width="334" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -342,15 +342,14 @@
                                             <outlet property="delegate" destination="Lho-oj-exJ" id="xpa-7r-8H6"/>
                                         </connections>
                                     </textField>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="YFB-m5-4uZ">
-                                        <rect key="frame" x="40" y="315" width="334" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="jLF-Lt-Oik"/>
-                                        </constraints>
-                                        <date key="minimumDate" timeIntervalSinceReferenceDate="-3187251792">
-                                            <!--1900-01-01 12:16:48 +0000-->
-                                        </date>
-                                    </datePicker>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Px-7T-KpA" customClass="CarTripTextField" customModule="carTrip_ios" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="285" width="334" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Lho-oj-exJ" id="ho1-Zf-ZKT"/>
+                                        </connections>
+                                    </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CGF-hK-ecm" customClass="UIControl">
                                         <rect key="frame" x="0.0" y="596" width="414" height="50"/>
                                         <subviews>
@@ -375,8 +374,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="YFB-m5-4uZ" firstAttribute="trailing" secondItem="0Lr-W9-HtF" secondAttribute="trailing" id="1Ts-3K-DIS"/>
-                                    <constraint firstItem="YFB-m5-4uZ" firstAttribute="top" secondItem="0Lr-W9-HtF" secondAttribute="bottom" constant="30" id="3kP-jY-X43"/>
+                                    <constraint firstItem="6Px-7T-KpA" firstAttribute="leading" secondItem="0Lr-W9-HtF" secondAttribute="leading" id="E0g-Ti-Cnr"/>
                                     <constraint firstItem="g9V-8U-EjW" firstAttribute="trailing" secondItem="xyg-Wt-45D" secondAttribute="trailing" id="FSE-wk-Pq2"/>
                                     <constraint firstAttribute="trailing" secondItem="xyg-Wt-45D" secondAttribute="trailing" constant="40" id="GDs-Nk-qBJ"/>
                                     <constraint firstItem="0Lr-W9-HtF" firstAttribute="height" secondItem="xyg-Wt-45D" secondAttribute="height" id="HW4-4r-fVR"/>
@@ -386,12 +384,14 @@
                                     <constraint firstItem="xyg-Wt-45D" firstAttribute="leading" secondItem="Rbm-9X-Z2z" secondAttribute="leading" constant="40" id="MWS-hk-uEh"/>
                                     <constraint firstAttribute="trailing" secondItem="CGF-hK-ecm" secondAttribute="trailing" id="WE7-OU-h9g"/>
                                     <constraint firstAttribute="bottom" secondItem="CGF-hK-ecm" secondAttribute="bottom" id="cIQ-0C-Ll6"/>
-                                    <constraint firstItem="YFB-m5-4uZ" firstAttribute="leading" secondItem="0Lr-W9-HtF" secondAttribute="leading" id="d1e-RW-LIJ"/>
+                                    <constraint firstItem="6Px-7T-KpA" firstAttribute="trailing" secondItem="0Lr-W9-HtF" secondAttribute="trailing" id="i21-yu-U6o"/>
+                                    <constraint firstItem="6Px-7T-KpA" firstAttribute="height" secondItem="0Lr-W9-HtF" secondAttribute="height" id="ipi-Yd-Kyj"/>
                                     <constraint firstItem="CGF-hK-ecm" firstAttribute="leading" secondItem="Rbm-9X-Z2z" secondAttribute="leading" id="o7X-vs-wxV"/>
                                     <constraint firstItem="0Lr-W9-HtF" firstAttribute="leading" secondItem="xyg-Wt-45D" secondAttribute="leading" id="paL-RF-lOW"/>
-                                    <constraint firstItem="xyg-Wt-45D" firstAttribute="top" secondItem="g9V-8U-EjW" secondAttribute="bottom" constant="60" id="qnC-fH-C5O"/>
+                                    <constraint firstItem="xyg-Wt-45D" firstAttribute="top" secondItem="g9V-8U-EjW" secondAttribute="bottom" constant="30" id="qnC-fH-C5O"/>
                                     <constraint firstItem="0Lr-W9-HtF" firstAttribute="trailing" secondItem="xyg-Wt-45D" secondAttribute="trailing" id="uLI-Du-aOj"/>
                                     <constraint firstItem="0Lr-W9-HtF" firstAttribute="top" secondItem="xyg-Wt-45D" secondAttribute="bottom" constant="60" id="vIN-M5-jRy"/>
+                                    <constraint firstItem="6Px-7T-KpA" firstAttribute="top" secondItem="0Lr-W9-HtF" secondAttribute="bottom" constant="30" id="yK5-U2-hjb"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -409,7 +409,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="mfW-o1-IAX"/>
                     <connections>
-                        <outlet property="birthDatePicker" destination="YFB-m5-4uZ" id="7Ux-jo-AfE"/>
+                        <outlet property="birthDateTextField" destination="6Px-7T-KpA" id="a8K-5L-Nd8"/>
                         <outlet property="bottomView" destination="Rbm-9X-Z2z" id="GTp-2i-coV"/>
                         <outlet property="dniTextField" destination="0Lr-W9-HtF" id="Tn4-fD-cUb"/>
                         <outlet property="haveAccountLabel" destination="vID-ej-Wh7" id="Uoo-P8-cJv"/>

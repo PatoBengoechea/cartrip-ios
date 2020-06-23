@@ -131,7 +131,7 @@ struct R: Rswift.Validatable {
       /// Segue identifier `goToRegister`.
       static let goToRegister: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SignInViewController, RegisterViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToRegister")
       /// Segue identifier `showHome`.
-      static let showHome: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SignInViewController, HomeViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showHome")
+      static let showHome: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SignInViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showHome")
 
       #if os(iOS) || os(tvOS)
       /// Optionally returns a typed version of segue `goToRegister`.
@@ -146,7 +146,7 @@ struct R: Rswift.Validatable {
       /// Optionally returns a typed version of segue `showHome`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SignInViewController, HomeViewController>? {
+      static func showHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SignInViewController, UIKit.UINavigationController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.signInViewController.showHome, segue: segue)
       }
       #endif
@@ -447,12 +447,16 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 12 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 13 localization keys.
     struct localizable {
       /// en translation: Already have account?
       ///
       /// Locales: en, es-419
       static let alreadyHaveAccount = Rswift.StringResource(key: "Already have account?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Birthdate
+      ///
+      /// Locales: en, es-419
+      static let birthdate = Rswift.StringResource(key: "Birthdate", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: DNI
       ///
       /// Locales: en, es-419
@@ -511,6 +515,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Already have account?", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Birthdate
+      ///
+      /// Locales: en, es-419
+      static func birthdate(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Birthdate", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Birthdate"
+        }
+
+        return NSLocalizedString("Birthdate", bundle: bundle, comment: "")
       }
 
       /// en translation: DNI
@@ -764,7 +783,7 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct auth: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UINavigationController
+      typealias InitialController = AuthNavigationController
 
       let bundle = R.hostingBundle
       let name = "Auth"
@@ -781,7 +800,7 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct home: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = HomeViewController
+      typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
       let name = "Home"

@@ -23,7 +23,7 @@ class BodyBuilder  {
         dict["email"] = user.email
         dict["password"] = user.password
         dict["dni"] = user.dni
-        dict["birthdate"] = DateFormatter().string(from: user.birthdate ?? Date())
+        dict["birthdate"] = user.birthDate
         
         return dict
     }

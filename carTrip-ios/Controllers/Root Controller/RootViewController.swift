@@ -10,6 +10,7 @@ import UIKit
 
 protocol RootViewControllerDelegate: AnyObject {
     func showlogIn()
+    func showHome()
 }
 
 class RootViewController: UIViewController {
@@ -18,6 +19,7 @@ class RootViewController: UIViewController {
     
     static var instance = RootViewController()
     private var _logInNavigationController: UINavigationController?
+    private var _homeNavigationController: UINavigationController?
 
     var loginNavigationController: UINavigationController {
         if _logInNavigationController == nil {
@@ -30,6 +32,17 @@ class RootViewController: UIViewController {
         return _logInNavigationController!
     }
 
+    var homeNavigationController: UINavigationController {
+        if _homeNavigationController == nil {
+            _homeNavigationController = UINavigationController.initFrom(R.storyboard.home.name)
+            if let nav = _homeNavigationController, let cont = nav.root as? HomeViewController {
+                cont.rootDelegate = self
+                return nav
+            }
+        }
+        return _homeNavigationController!
+    }
+    
     // MARK: - Override functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,5 +64,8 @@ extension RootViewController: RootViewControllerDelegate {
         UIApplication.shared.keyWindow?.rootViewController = loginNavigationController
     }
     
+    func showHome() {
+        UIApplication.shared.keyWindow?.rootViewController = homeNavigationController
+    }
     
 }

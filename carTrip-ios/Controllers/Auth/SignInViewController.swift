@@ -9,24 +9,49 @@
 import UIKit
 import NVActivityIndicatorView
 
-class SignInViewController: BaseViewController {
+class AuthNavigationController: UINavigationController, RegisterPresenterDelegate {
+    
+    func onLogin() {
+        (viewControllers.last as? SignInViewController)?.onLogin()
+    }
+    
+    func onRegister() {
+        (viewControllers.last as? PersonalDataRegisterViewController)?.onRegister()
+    }
+    
+    
+    var authPresenter = RegisterPresenter<AuthNavigationController>()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        authPresenter.attachView(self)
+    }
+}
+
+class RegisterBaseViewController: BaseViewController {
+    var presenter: RegisterPresenter<AuthNavigationController>? {
+        return (navigationController as? AuthNavigationController)?.authPresenter
+    }
+}
+
+
+class SignInViewController: RegisterBaseViewController {
     
     //MARK: - @IBOutlet
     @IBOutlet var topView: UIView!
     @IBOutlet var formView: CornerShadowView!
-    @IBOutlet var emailTextField: UITextField!
-    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var emailTextField: CarTripTextField!
+    @IBOutlet var passwordTextField: CarTripTextField!
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var signUpButton: UIButton!
     @IBOutlet var titleLabel: UILabel!
     
     // MARK: - Properties
     weak var rootDelegate: RootViewControllerDelegate?
-    let presenter = SignInPresenter<SignInViewController>()
     
     // MARK: - @IBAction
     @IBAction func onLoginButtonTapped() {
-        presenter.postLogIn()
+        presenter?.loginUser()
     }
     
     @IBAction func goToRegister() {
@@ -36,20 +61,25 @@ class SignInViewController: BaseViewController {
     // MARK: - Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.attachView(self)
         navigationController?.setNavigationBarHidden(true, animated: false)
         setUp()
-        presenter.email = "pato.bengoechea@gmail.com"
-        presenter.password = "admin"
+        presenter?.setEmail("pato.bengoechea@gmail.com")
+        presenter?.setPassword("admin")
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         formView.roundCorners(radius: 25, corners: [.topRight, .topLeft])
 
-        emailTextField.addShadowAndCornerRadius(cornerRadius: 10, color: .black)
-        passwordTextField.addShadowAndCornerRadius(cornerRadius: 10, color: .black)
-        loginButton.addShadowAndCornerRadius(cornerRadius: 10, color: .black)
+        emailTextField.carTripRadius()
+        passwordTextField.carTripRadius()
+        loginButton.setCornerRadius(cornerRadius: 10)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? RegisterViewController {
+            dest.rootDelegate = rootDelegate
+        }
     }
     
     
@@ -86,7 +116,6 @@ class SignInViewController: BaseViewController {
         
         let textRange = NSMakeRange(0, R.string.localizable.signUp().count)
         let attributedText = NSMutableAttributedString(string: R.string.localizable.signUp())
-//        attributedText.addAttribute(NSAttributedString.Key.underlineStyle , value: NSUnderlineStyle.single.rawValue, range: textRange)
         attributedText.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], range: textRange)
         attributedText.addAttributes([NSAttributedString.Key.font: UIFont.gothamRoundedLight(14)], range: textRange)
 
@@ -99,9 +128,9 @@ extension SignInViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         switch textField {
         case emailTextField:
-            presenter.email = textField.text
+            presenter?.setEmail(textField.text)
         case passwordTextField:
-            presenter.password = textField.text
+            presenter?.setPassword(textField.text)
         default:
             break
         }
@@ -109,20 +138,8 @@ extension SignInViewController: UITextFieldDelegate {
 }
 
 // MARK: - Presenter Delegate
-extension SignInViewController: SignInPresenterDelegate {
-    func onSuccesfullLogin() {
-        performSegue(withIdentifier: R.segue.signInViewController.showHome.identifier, sender: nil)
-    }
-    
-    func startLoading() {
-        Loader.showLoader()
-    }
-    
-    func finishedLoading() {
-        Loader.dismiss()
-    }
-    
-    func onError(message: String) {
-        Loader.dismiss()
+extension SignInViewController: RegisterPresenterDelegate {    
+    func onLogin() {
+        rootDelegate?.showHome()
     }
 }

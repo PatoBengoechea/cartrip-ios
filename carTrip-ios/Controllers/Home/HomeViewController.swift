@@ -34,6 +34,7 @@ class HomeViewController: UIViewController {
     var locationManager = CLLocationManager.init()
     let presenter = HomePresenter<HomeViewController>()
     var menuVisible: Bool = false { willSet { menu() }}
+    weak var rootDelegate: RootViewControllerDelegate?
     
     // MARK: - @IBAction
     @IBAction private func menuButtonTapped() {

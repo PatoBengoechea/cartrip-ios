@@ -19,7 +19,7 @@ class SplashViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
-            print(UserManager.instance.isLogged())
+            print(UserManager.sharedInstance.isLogged())
             self.rootDelegate?.showlogIn()
         }
     }

@@ -9,7 +9,13 @@
 import Foundation
 
 protocol RegisterPresenterDelegate: BasePresenterDelegate {
-    
+    func onLogin()
+    func onRegister()
+}
+
+extension BasePresenterDelegate {
+    func onLogin() { }
+    func onRegister() { }
 }
 
 class RegisterPresenter<T: RegisterPresenterDelegate>: BasePresenter<T> {
@@ -37,6 +43,39 @@ class RegisterPresenter<T: RegisterPresenterDelegate>: BasePresenter<T> {
     }
     
     func setBirthDate(_ birthDate: Date) {
-        inputModel.birthdate = birthDate
+        inputModel.setBirthDate(date: birthDate)
     }
+    
+    func registerUser() {
+        UserManager.sharedInstance.registerUser(user: inputModel, delegate: self)
+    }
+    
+    func loginUser() {
+        UserManager.sharedInstance.postLogin(user: inputModel.email ?? "", password: inputModel.password ?? "", delegate: self)
+    }
+}
+
+// MARK: - User Manager Delegate
+extension RegisterPresenter: UserManagerDelegate {
+    func onLogin(user: User) {
+        delegate?.onLogin()
+    }
+    
+    func onRegister() {
+        delegate?.onRegister()
+    }
+    
+    func onInitService() {
+        delegate?.startLoading()
+    }
+    
+    func onFinishedService() {
+        delegate?.finishedLoading()
+    }
+    
+    func onError(_ message: String) {
+        delegate?.onError(message: message)
+    }
+    
+    
 }

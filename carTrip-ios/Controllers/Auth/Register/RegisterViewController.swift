@@ -8,37 +8,22 @@
 
 import UIKit
 
-class AuthNavigationController: UINavigationController, RegisterPresenterDelegate {
-    
-    var authPresenter = RegisterPresenter<AuthNavigationController>()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        authPresenter.attachView(self)
-    }
-}
-
-class RegisterBaseViewController: BaseViewController {
-    var presenter: RegisterPresenter<AuthNavigationController>? {
-        return (navigationController as? AuthNavigationController)?.authPresenter
-    }
-}
-
 class RegisterViewController: RegisterBaseViewController {
     
     // MARK: - @IBOutlet
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var bottomView: UIView!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var rePasswordTextField: UITextField!
+    @IBOutlet weak var emailTextField: CarTripTextField!
+    @IBOutlet weak var passwordTextField: CarTripTextField!
+    @IBOutlet weak var rePasswordTextField: CarTripTextField!
     @IBOutlet weak var haveAccountView: UIControl!
     @IBOutlet weak var haveAccountLabel: UILabel!
 
     // MARK: - Properties
     private var isValidEmail: Bool = false
     private var arePasswordsEqual: Bool = false
+    weak var rootDelegate: RootViewControllerDelegate?
     
     // MARK: - @IBAction
     @IBAction func back() {
@@ -61,10 +46,16 @@ class RegisterViewController: RegisterBaseViewController {
         
         bottomView.roundCorners(radius: 25, corners: [.topRight, .topLeft])
         
-        emailTextField.addShadowAndCornerRadius(cornerRadius: 10, color: .black)
-        passwordTextField.addShadowAndCornerRadius(cornerRadius: 10, color: .black)
-        rePasswordTextField.addShadowAndCornerRadius(cornerRadius: 10, color: .black)
+        emailTextField.carTripRadius()
+        passwordTextField.carTripRadius()
+        rePasswordTextField.carTripRadius()
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? PersonalDataRegisterViewController {
+            dest.rootDelegate = rootDelegate
+        }
     }
     
     // MARK: - Functions

@@ -52,6 +52,11 @@ extension UIView {
         self.alpha = 1
         self.isHidden = false
     }
+    
+    func setCornerRadius(cornerRadius: CGFloat) {
+        self.layer.cornerRadius = cornerRadius
+        self.clipsToBounds = true
+    }
 }
 
 
@@ -140,4 +145,33 @@ extension String {
     mutating func capitalizeFirstLetter() {
         self = self.capitalizingFirstLetter()
     }
+}
+
+// MARK: UI TextField
+class CarTripTextField: UITextField {
+    let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 5)
+
+    override open func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+
+    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+
+    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+    func carTripRadius() {
+        self.setCornerRadius(cornerRadius: 20)
+    }
+}
+
+// MARK: - Date
+extension Date {
+    func dateToString() -> String {
+       let formatter = DateFormatter()
+       formatter.dateStyle = .short
+       return formatter.string(from: self)
+   }
 }
