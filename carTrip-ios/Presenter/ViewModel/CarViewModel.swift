@@ -11,7 +11,7 @@ import Foundation
 struct CarViewModel {
     var name: String?
     var brand: String?
-    var fullName: String { return "\(brand!) \(name!)"  }
+    var fullName: String { return "\(brand ?? "") \(name ?? "")"  }
     var img_path: String?
     var type: TypeCarViewModel?
     
