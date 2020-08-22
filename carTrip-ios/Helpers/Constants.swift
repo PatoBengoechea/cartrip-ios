@@ -33,3 +33,15 @@ class CornerShadowView: UIControl {
         // self.layer.rasterizationScale = UIScreen.main.scale
     }
 }
+
+class DefaultManager {
+    
+    enum DefaultManagerKey: String {
+        case idUser
+    }
+    
+    static func set<T>(value: T, forKey key: DefaultManagerKey) {
+        UserDefaults.standard.set(value, forKey: key.rawValue)
+    }
+
+}

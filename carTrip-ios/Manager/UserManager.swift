@@ -28,6 +28,7 @@ class UserManager: BaseManager {
     func postLogin(user: String, password: String, delegate: UserManagerDelegate) {
         delegate.onInitService()
         ServiceManager.sharedInstance.getLogin(email: user, password: password, succesCallback: { user in
+            DefaultManager.set(value: user.idUser, forKey: .idUser)
             delegate.onLogin(user: user)
             delegate.onFinishedService()
         }) { (message) in

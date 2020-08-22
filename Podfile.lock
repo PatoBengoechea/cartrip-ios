@@ -8,11 +8,6 @@ PODS:
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
-  - Realm (4.3.2):
-    - Realm/Headers (= 4.3.2)
-  - Realm/Headers (4.3.2)
-  - RealmSwift (4.3.2):
-    - Realm (= 4.3.2)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
@@ -21,7 +16,6 @@ DEPENDENCIES:
   - lottie-ios
   - NVActivityIndicatorView/AppExtension
   - R.swift
-  - RealmSwift
   - SwiftyJSON
 
 SPEC REPOS:
@@ -32,8 +26,6 @@ SPEC REPOS:
     - NVActivityIndicatorView
     - R.swift
     - R.swift.Library
-    - Realm
-    - RealmSwift
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -43,10 +35,8 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
-  Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
-  RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 39fabb18fc2ab125a3ddf33ef1eb80224ee4c0ce
+PODFILE CHECKSUM: b3cbf58d5214a7a2465ce278da733325ccdc0866
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3
