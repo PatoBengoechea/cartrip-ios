@@ -90,8 +90,25 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 3 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 4 view controllers.
   struct segue {
+    /// This struct is generated for `HomeViewController`, and contains static references to 1 segues.
+    struct homeViewController {
+      /// Segue identifier `goToRent`.
+      static let goToRent: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, RentViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToRent")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `goToRent`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func goToRent(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HomeViewController, RentViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.homeViewController.goToRent, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This struct is generated for `RegisterViewController`, and contains static references to 1 segues.
     struct registerViewController {
       /// Segue identifier `goToPersonalData`.
@@ -456,7 +473,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 15 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 16 localization keys.
     struct localizable {
       /// en translation: Already have account?
       ///
@@ -506,6 +523,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let rent = Rswift.StringResource(key: "Rent", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Rent your car
+      ///
+      /// Locales: en, es-419
+      static let rentYourCar = Rswift.StringResource(key: "Rent your car", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Sign in
       ///
       /// Locales: en, es-419
@@ -697,6 +718,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Rent", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Rent your car
+      ///
+      /// Locales: en, es-419
+      static func rentYourCar(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Rent your car", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Rent your car"
+        }
+
+        return NSLocalizedString("Rent your car", bundle: bundle, comment: "")
       }
 
       /// en translation: Sign in

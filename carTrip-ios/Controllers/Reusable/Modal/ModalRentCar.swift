@@ -29,7 +29,9 @@ class ModalRentCar: UIViewController {
     
     // MARK: - @IBAction
     @IBAction private func rentButtonTapped() {
-        completion?()
+        dismiss(animated: true) { [unowned self ] in
+            self.completion?()
+        }
     }
     
     @IBAction private func dismiss() {

@@ -35,6 +35,7 @@ class HomeViewController: UIViewController {
     let presenter = HomePresenter<HomeViewController>()
     var menuVisible: Bool = false { willSet { menu() }}
     weak var rootDelegate: RootViewControllerDelegate?
+    private var selectedCar: CarForRoadViewModel?
     
     // MARK: - @IBAction
     @IBAction private func menuButtonTapped() {
@@ -67,7 +68,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.attachView(self)
-        navigationController?.setNavigationBarHidden(true, animated: false)
         service()
         configureMap()
         configureView()
@@ -89,6 +89,8 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        
         self.routeView.alpha = 0
         self.routeButton.alpha = 0
         
@@ -104,6 +106,13 @@ class HomeViewController: UIViewController {
         
         view.layoutIfNeeded()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let rentVC = segue.destination as? RentViewController, let car = sender as? CarForRoadViewModel {
+            rentVC.currentCar = car
+        }
+    }
+    
     // MARK: - Private Functions
     private func service() {
         presenter.getCarForRoad()
@@ -214,8 +223,8 @@ class HomeViewController: UIViewController {
         mapView.setRegion(mapCoordinate, animated: true)
     }
     
-    func imprimir() {
-        print("Rented")
+    func goToRent() {
+        performSegue(withIdentifier: R.segue.homeViewController.goToRent.identifier, sender: selectedCar)
     }
 }
 
@@ -241,7 +250,8 @@ extension HomeViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let car = view.annotation as? CarForRoadViewModel {
-            let dialog = ModalRentCar(car: car , completion: imprimir)
+            selectedCar = car
+            let dialog = ModalRentCar(car: car , completion: goToRent)
             dialog.present()    
         }
         mapView.deselectAnnotation(view.annotation, animated: true)

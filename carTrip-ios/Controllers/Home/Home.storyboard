@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1po-Kc-kQD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1po-Kc-kQD">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -28,13 +28,14 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jx7-Kf-Ko0">
-                                <rect key="frame" x="314" y="572" width="60" height="60"/>
+                                <rect key="frame" x="314" y="602" width="60" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50T-Sa-JKF">
                                         <rect key="frame" x="15" y="15" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="50T-Sa-JKF" secondAttribute="height" multiplier="1:1" id="eB8-MX-BJm"/>
                                         </constraints>
+                                        <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
                                         <state key="normal" image="crosshairs-solid"/>
                                         <connections>
                                             <action selector="positionButtonTapped" destination="xYB-5c-Ti8" eventType="touchUpInside" id="YhJ-lk-OgM"/>
@@ -56,7 +57,8 @@
                                             <constraint firstAttribute="height" constant="30" id="TSp-gO-Kh8"/>
                                             <constraint firstAttribute="width" secondItem="leL-w2-oE9" secondAttribute="height" multiplier="123:256" id="oth-OD-bil"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="ellipsis-v-solid"/>
+                                        <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                        <state key="normal" image="ellipsis-v-solid"/>
                                         <connections>
                                             <action selector="menuButtonTapped" destination="xYB-5c-Ti8" eventType="touchUpInside" id="ynq-bv-gDY"/>
                                         </connections>
@@ -78,6 +80,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="qgg-ij-QnH" secondAttribute="height" multiplier="1:1" id="pKG-fs-bF8"/>
                                         </constraints>
+                                        <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
                                         <state key="normal" image="route-solid"/>
                                     </button>
                                 </subviews>
@@ -95,6 +98,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xIw-tf-MON" secondAttribute="height" multiplier="1:1" id="KZw-VF-Rj7"/>
                                         </constraints>
+                                        <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
                                         <state key="normal" image="car-solid"/>
                                     </button>
                                 </subviews>
@@ -112,6 +116,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="N4M-uK-vcN" secondAttribute="height" multiplier="7:8" id="vro-ow-MrB"/>
                                         </constraints>
+                                        <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
                                         <state key="normal" image="user-solid"/>
                                     </button>
                                 </subviews>
@@ -146,7 +151,7 @@
                             <constraint firstItem="bxc-Ma-Tt1" firstAttribute="top" secondItem="M1l-Hq-LbP" secondAttribute="bottom" constant="40" id="iNi-12-GbY"/>
                             <constraint firstAttribute="bottom" secondItem="fnz-fY-1Dg" secondAttribute="bottom" id="ihc-N3-Ex9"/>
                             <constraint firstItem="fnz-fY-1Dg" firstAttribute="top" secondItem="yy0-F2-5hD" secondAttribute="top" id="j5g-u1-apC"/>
-                            <constraint firstItem="bxc-Ma-Tt1" firstAttribute="top" secondItem="Jx7-Kf-Ko0" secondAttribute="bottom" constant="150" id="jQa-1v-ViL"/>
+                            <constraint firstItem="bxc-Ma-Tt1" firstAttribute="top" secondItem="Jx7-Kf-Ko0" secondAttribute="bottom" constant="120" id="jQa-1v-ViL"/>
                             <constraint firstItem="lWU-pR-KkP" firstAttribute="trailing" secondItem="fnz-fY-1Dg" secondAttribute="trailing" id="otg-8v-8SJ"/>
                             <constraint firstItem="wIQ-mv-4rP" firstAttribute="width" secondItem="bxc-Ma-Tt1" secondAttribute="width" id="vOT-UP-h2O"/>
                             <constraint firstItem="xIw-tf-MON" firstAttribute="height" secondItem="leL-w2-oE9" secondAttribute="height" id="vsb-LV-6hf"/>
@@ -171,11 +176,28 @@
                         <outlet property="routeBotton" destination="iNi-12-GbY" id="YOn-gM-vz3"/>
                         <outlet property="routeButton" destination="qgg-ij-QnH" id="6Rj-HT-Gih"/>
                         <outlet property="routeView" destination="M1l-Hq-LbP" id="oOP-fQ-3p9"/>
+                        <segue destination="kdY-2h-MVl" kind="show" identifier="goToRent" id="Jj9-tL-Bgw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFB-15-BYV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="128.98550724637681" y="143.97321428571428"/>
+        </scene>
+        <!--Rent View Controller-->
+        <scene sceneID="pFr-0l-5WJ">
+            <objects>
+                <viewController id="kdY-2h-MVl" customClass="RentViewController" customModule="carTrip_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SuY-xU-f9U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="nE7-Dj-91R"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ozr-3g-V1f"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Lh-a7-kQW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1014" y="144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z0y-Zg-J6Q">
@@ -196,9 +218,9 @@
     </scenes>
     <resources>
         <image name="car-solid" width="512" height="512"/>
-        <image name="crosshairs-solid" width="512" height="512"/>
-        <image name="ellipsis-v-solid" width="192" height="512"/>
-        <image name="route-solid" width="512" height="512"/>
-        <image name="user-solid" width="448" height="512"/>
+        <image name="crosshairs-solid" width="170.5" height="170.5"/>
+        <image name="ellipsis-v-solid" width="64" height="170.5"/>
+        <image name="route-solid" width="170.5" height="170.5"/>
+        <image name="user-solid" width="149" height="170.5"/>
     </resources>
 </document>
