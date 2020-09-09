@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "route-solid@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "route-solid@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

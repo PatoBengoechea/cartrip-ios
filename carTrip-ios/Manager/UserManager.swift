@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import RealmSwift
 
 protocol UserManagerDelegate: BaseManagerDelegate {
     func onLogin(user: User)
@@ -23,7 +22,6 @@ class UserManager: BaseManager {
         return Static.instance
     }
     
-    var realm = try? Realm()
     
     func postLogin(user: String, password: String, delegate: UserManagerDelegate) {
         delegate.onInitService()
@@ -48,12 +46,10 @@ class UserManager: BaseManager {
         })
     }
     
-    func save(_ user: User) {
-        realm?.add(user)
-    }
     
     func isLogged() -> Bool {
-        let user =  realm?.objects(User.self)
-        return user != nil
+        guard let _ = UserDefaults.standard.string(forKey: "idUser") else { return false}
+        return true
+        
     }
 }

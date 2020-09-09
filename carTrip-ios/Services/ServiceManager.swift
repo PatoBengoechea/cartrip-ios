@@ -13,7 +13,8 @@ import SwiftyJSON
 class ServiceManager {
     
     class var sharedInstance: ServiceManager {
-        struct Static { static let instance = ServiceManager()}
+        struct Static {
+            static let instance = ServiceManager()}
         return Static.instance
     }
     

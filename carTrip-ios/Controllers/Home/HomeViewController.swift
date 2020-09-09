@@ -67,6 +67,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.attachView(self)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         service()
         configureMap()
         configureView()
