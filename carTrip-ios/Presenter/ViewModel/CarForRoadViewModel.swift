@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 
 class CarForRoadViewModel: MKPointAnnotation {
-    var idCarForRoad: String
+    var idCarForRoad: Int
     var available: Bool
     var forService: Bool
     var longitude: Double?
@@ -22,7 +22,7 @@ class CarForRoadViewModel: MKPointAnnotation {
     override var title: String? { get { return "\((car?.brand?.capitalized ?? "") + " " +  (car?.name?.capitalized ?? ""))"} set { }}
     
     init(_ model: CarForRoad) {
-        idCarForRoad = String(describing: model.idCarForRoad)
+        idCarForRoad = model.idCarForRoad ?? 0
         available = model.available ?? false
         forService = model.forService ?? false
         longitude = Double(model.longitude)

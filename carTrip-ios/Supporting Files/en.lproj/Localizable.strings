@@ -29,3 +29,8 @@
 
 // RENT
 "Rent your car"="Rent your car";
+"Do you want other people join to your car?"="Do you want other people join to your car?";
+"How many days do you need the car?"="How many days do you need the car? (Max. 30)";
+"Dismiss" = "Dismiss";
+"Price per day" = "Price per day";
+"Total price" = "Total price";

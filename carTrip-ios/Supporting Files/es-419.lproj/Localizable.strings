@@ -29,3 +29,8 @@
 
 // RENT
 "Rent your car"="Alquilá tu auto";
+"Do you want other people join to your car?"="Quieres que otras personas se sumen a tu viaje?";
+"How many days do you need the car?"="Cuantos días vas a viajar? (Máx. 30)";
+"Dismiss" = "Aceptar";
+"Price per day" = "Precio por día";
+"Total price" = "Precio total";

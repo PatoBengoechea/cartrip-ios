@@ -10,6 +10,12 @@ import Foundation
 
 protocol CarManagerDelegate: BaseManagerDelegate {
     func onGetCarForRoad(data: [CarForRoad])
+    func onGetCarForRoad(car: CarForRoad)
+}
+
+extension CarManagerDelegate {
+    func onGetCarForRoad(data: [CarForRoad]) { }
+    func onGetCarForRoad(car: CarForRoad) { }
 }
 
 class CarManager: BaseManager {
@@ -30,5 +36,16 @@ class CarManager: BaseManager {
             delegate.onError(message)
             delegate.onFinishedService()
         })
+    }
+    
+    func getCarForRoad(id: Int, delegate: CarManagerDelegate) {
+        delegate.onInitService()
+        ServiceManager.sharedInstance.getCarForRoad(id: id, successCallback: { (car) in
+            delegate.onGetCarForRoad(car: car)
+            delegate.onFinishedService()
+        }) { (message) in
+            delegate.onError(message)
+            delegate.onFinishedService()
+        }
     }
 }

@@ -162,8 +162,22 @@ class CarTripTextField: UITextField {
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)
     }
+    
     func carTripRadius() {
         self.setCornerRadius(cornerRadius: 20)
+    }
+}
+
+extension UITextField {
+    
+    func underlined(color: UIColor) {
+        let border = CALayer()
+        let width = CGFloat(0.5)
+        border.borderColor = color.cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width - 10, height: self.frame.size.height)
+        border.borderWidth = width
+        self.layer.addSublayer(border)
+        self.layer.masksToBounds = true
     }
 }
 
@@ -174,4 +188,28 @@ extension Date {
        formatter.dateStyle = .short
        return formatter.string(from: self)
    }
+}
+
+// MARK: - Image View
+extension UIImageView {
+    func setImage(image: String) {
+        let url = URL(string: image)
+        self.kf.indicatorType = .activity
+        self.kf.setImage(
+            with: url,
+            placeholder: UIImage(named: "placeholderImage"),
+            options: [
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
+        {
+            result in
+            switch result {
+            case .success(let value):
+                print("Task done for: \(value.source.url?.absoluteString ?? "")")
+            case .failure(let error):
+                print("Job failed: \(error.localizedDescription)")
+            }
+        }
+    }
 }

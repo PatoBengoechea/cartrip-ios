@@ -28,6 +28,7 @@ class BaseResponse {
             if let value = response.data {
                 status = true
                 data = JSON(value)["data"]
+                dump(data)
                 message = ""
             } else {
                 status = false

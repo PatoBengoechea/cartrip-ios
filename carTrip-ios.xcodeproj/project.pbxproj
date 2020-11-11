@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A04474B25199ABC009E14D2 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A04474A25199ABC009E14D2 /* ImageTableViewCell.swift */; };
+		6A04474D25199AD1009E14D2 /* ShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A04474C25199AD1009E14D2 /* ShareTableViewCell.swift */; };
+		6A04474F25199AE1009E14D2 /* DaysTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A04474E25199AE1009E14D2 /* DaysTableViewCell.swift */; };
+		6A04475125199E0D009E14D2 /* RentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A04475025199E0D009E14D2 /* RentPresenter.swift */; };
 		6A32AC66241D98DF009BF0C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A32AC65241D98DF009BF0C8 /* AppDelegate.swift */; };
 		6A32AC68241D98DF009BF0C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A32AC67241D98DF009BF0C8 /* SceneDelegate.swift */; };
 		6A32AC6F241D98E1009BF0C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A32AC6E241D98E1009BF0C8 /* Assets.xcassets */; };
@@ -23,6 +27,7 @@
 		6A71B2F524254AA7006612F1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A71B2F424254AA7006612F1 /* Home.storyboard */; };
 		6A71B2F8242AB6D6006612F1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A71B2F7242AB6D6006612F1 /* User.swift */; };
 		6A71B2FA242AB85A006612F1 /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A71B2F9242AB85A006612F1 /* BaseManager.swift */; };
+		6A803046253B6D1500CB7235 /* PriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A803045253B6D1500CB7235 /* PriceTableViewCell.swift */; };
 		6A80F3E924201FCA00474555 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F3E824201FCA00474555 /* RootViewController.swift */; };
 		6A80F3EB2420200500474555 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A80F3EA2420200500474555 /* Root.storyboard */; };
 		6A80F3ED2420209A00474555 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80F3EC2420209A00474555 /* SplashViewController.swift */; };
@@ -64,12 +69,17 @@
 		6AD5536024351A0E00EE6517 /* TypeCarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5535F24351A0E00EE6517 /* TypeCarViewModel.swift */; };
 		6AEB322C2490512700984196 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB322B2490512700984196 /* RegisterViewController.swift */; };
 		6AEB322E249073F800984196 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB322D249073F800984196 /* Helper.swift */; };
+		6AFA3FDD253912040044C64D /* PrizeRent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA3FDC253912040044C64D /* PrizeRent.swift */; };
 		7F1E2E41307D5BCCF21D0630 /* Pods_carTrip_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4E7DDF74A8554737824D7E /* Pods_carTrip_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		335A8B4753CEC61B9CD8DCBF /* Pods-carTrip-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carTrip-ios.debug.xcconfig"; path = "Target Support Files/Pods-carTrip-ios/Pods-carTrip-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		6184394103629F66DBCB9C37 /* Pods-carTrip-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carTrip-ios.release.xcconfig"; path = "Target Support Files/Pods-carTrip-ios/Pods-carTrip-ios.release.xcconfig"; sourceTree = "<group>"; };
+		6A04474A25199ABC009E14D2 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		6A04474C25199AD1009E14D2 /* ShareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTableViewCell.swift; sourceTree = "<group>"; };
+		6A04474E25199AE1009E14D2 /* DaysTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysTableViewCell.swift; sourceTree = "<group>"; };
+		6A04475025199E0D009E14D2 /* RentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentPresenter.swift; sourceTree = "<group>"; };
 		6A32AC62241D98DF009BF0C8 /* carTrip-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "carTrip-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A32AC65241D98DF009BF0C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A32AC67241D98DF009BF0C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +98,7 @@
 		6A71B2F424254AA7006612F1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		6A71B2F7242AB6D6006612F1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6A71B2F9242AB85A006612F1 /* BaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
+		6A803045253B6D1500CB7235 /* PriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTableViewCell.swift; sourceTree = "<group>"; };
 		6A80F3E824201FCA00474555 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		6A80F3EA2420200500474555 /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
 		6A80F3EC2420209A00474555 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +143,7 @@
 		6AD5535F24351A0E00EE6517 /* TypeCarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCarViewModel.swift; sourceTree = "<group>"; };
 		6AEB322B2490512700984196 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6AEB322D249073F800984196 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		6AFA3FDC253912040044C64D /* PrizeRent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizeRent.swift; sourceTree = "<group>"; };
 		7C4E7DDF74A8554737824D7E /* Pods_carTrip_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carTrip_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,6 +165,18 @@
 				7C4E7DDF74A8554737824D7E /* Pods_carTrip_ios.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A04474925199AA1009E14D2 /* Rent */ = {
+			isa = PBXGroup;
+			children = (
+				6A701D952509938500BFD594 /* RentViewController.swift */,
+				6A04474A25199ABC009E14D2 /* ImageTableViewCell.swift */,
+				6A04474C25199AD1009E14D2 /* ShareTableViewCell.swift */,
+				6A04474E25199AE1009E14D2 /* DaysTableViewCell.swift */,
+				6A803045253B6D1500CB7235 /* PriceTableViewCell.swift */,
+			);
+			path = Rent;
 			sourceTree = "<group>";
 		};
 		6A32AC59241D98DE009BF0C8 = {
@@ -228,7 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				6A71B2F224254A9E006612F1 /* HomeViewController.swift */,
-				6A701D952509938500BFD594 /* RentViewController.swift */,
+				6A04474925199AA1009E14D2 /* Rent */,
 				6A71B2F424254AA7006612F1 /* Home.storyboard */,
 			);
 			path = Home;
@@ -241,6 +265,7 @@
 				6AD5534F2433F67D00EE6517 /* Car.swift */,
 				6AD553522433F6AE00EE6517 /* CarForRoad.swift */,
 				6AD553582435005D00EE6517 /* TypeCar.swift */,
+				6AFA3FDC253912040044C64D /* PrizeRent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -333,6 +358,7 @@
 				6A80F40824213EED00474555 /* SignInPresenter.swift */,
 				6AD553542434D8AC00EE6517 /* HomePresenter.swift */,
 				6A833B1D249ADF450000FF5B /* RegisterPresenter.swift */,
+				6A04475025199E0D009E14D2 /* RentPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -553,20 +579,24 @@
 				6AD5536024351A0E00EE6517 /* TypeCarViewModel.swift in Sources */,
 				6AD553572434D9BE00EE6517 /* CarManager.swift in Sources */,
 				6A833B23249AF35C0000FF5B /* PersonalDataRegisterViewController.swift in Sources */,
+				6A04474B25199ABC009E14D2 /* ImageTableViewCell.swift in Sources */,
 				6AD5535C2435177100EE6517 /* CarForRoadViewModel.swift in Sources */,
 				6AD553532433F6AE00EE6517 /* CarForRoad.swift in Sources */,
 				6A80F40724213E7400474555 /* BasePresenter.swift in Sources */,
 				6A3BC351243ACCBC00F075D5 /* Loader.swift in Sources */,
+				6A803046253B6D1500CB7235 /* PriceTableViewCell.swift in Sources */,
 				6A80F3E924201FCA00474555 /* RootViewController.swift in Sources */,
 				6A71B2F324254A9E006612F1 /* HomeViewController.swift in Sources */,
 				6AD553592435005D00EE6517 /* TypeCar.swift in Sources */,
 				6A39B24A2439212100803B14 /* ModalRentCar.swift in Sources */,
 				6A80F413242145B300474555 /* UserManager.swift in Sources */,
+				6A04474F25199AE1009E14D2 /* DaysTableViewCell.swift in Sources */,
 				6AEB322E249073F800984196 /* Helper.swift in Sources */,
 				6A833B1E249ADF450000FF5B /* RegisterPresenter.swift in Sources */,
 				6A80F40D24213FB500474555 /* BaseResponse.swift in Sources */,
 				6A80F40F2421425B00474555 /* ServiceManager.swift in Sources */,
 				6A701D962509938500BFD594 /* RentViewController.swift in Sources */,
+				6AFA3FDD253912040044C64D /* PrizeRent.swift in Sources */,
 				6A80F40B24213F2500474555 /* PathBuilder.swift in Sources */,
 				6A80F3F624202BD800474555 /* SignInViewController.swift in Sources */,
 				6A64E66424F1637900E7622B /* UserViewController.swift in Sources */,
@@ -575,6 +605,8 @@
 				6A32AC68241D98DF009BF0C8 /* SceneDelegate.swift in Sources */,
 				6AEB322C2490512700984196 /* RegisterViewController.swift in Sources */,
 				6A833B20249AEBAB0000FF5B /* UserInputModel.swift in Sources */,
+				6A04474D25199AD1009E14D2 /* ShareTableViewCell.swift in Sources */,
+				6A04475125199E0D009E14D2 /* RentPresenter.swift in Sources */,
 				6A80F3ED2420209A00474555 /* SplashViewController.swift in Sources */,
 				6AD5535E243517CA00EE6517 /* CarViewModel.swift in Sources */,
 				6A80F3F12420234300474555 /* R.generated.swift in Sources */,
@@ -731,7 +763,8 @@
 			baseConfigurationReference = 335A8B4753CEC61B9CD8DCBF /* Pods-carTrip-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "carTrip-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -739,6 +772,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "pbengoechea.carTrip-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -749,7 +783,8 @@
 			baseConfigurationReference = 6184394103629F66DBCB9C37 /* Pods-carTrip-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "carTrip-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -757,6 +792,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "pbengoechea.carTrip-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

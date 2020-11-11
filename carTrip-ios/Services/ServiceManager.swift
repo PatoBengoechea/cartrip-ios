@@ -70,4 +70,19 @@ class ServiceManager {
         }
     }
     
+    func getCarForRoad(id: Int, successCallback: @escaping (CarForRoad) -> Void, failureCallback: @escaping (String) -> Void) {
+        let url = PathBuilder.sharedInstance.getCarForRoad(id: id)
+        Session.default.request(url,
+                                method: .get,
+                                encoding: JSONEncoding.default).responseJSON { (serviceResponse) in
+                                    let response = BaseResponse().create(response: serviceResponse)
+                                    if response.status, let data = response.data {
+                                        let car = CarForRoad(withJSON: data["car"])
+                                        successCallback(car)
+                                    } else {
+                                        failureCallback(response.message)
+                                    }
+        }
+    }
+    
 }

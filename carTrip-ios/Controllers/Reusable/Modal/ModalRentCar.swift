@@ -105,7 +105,8 @@ class ModalRentCar: UIViewController {
         carLabel.font = .gothamRoundedMedium(20)
         
         titleLabel.textColor = .white
-        titleLabel.text = R.string.localizable.letSGoToTakeADrive().localizedCapitalized
+        titleLabel.text = R.string.localizable.letSGoToTakeADrive()
+        titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.font = .gothamRoundedMedium(24)
         
         titleView.backgroundColor = .blueCar
