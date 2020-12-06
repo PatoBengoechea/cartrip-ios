@@ -85,4 +85,34 @@ class ServiceManager {
         }
     }
     
+    func postRentCar(dateInit: Date, dateFinish: Date, idCarForRoad: Int, successCallback: @escaping () -> Void, failureCallback: @escaping (String) -> Void) {
+        let url = PathBuilder.sharedInstance.postRentCar(shared: false)
+        let body = BodyBuilder.postRentCar(dateInit: dateInit, dateFinish: dateFinish, idCarForRoad: idCarForRoad)
+        AF.request(url,
+                   method: .post,
+                   parameters: body,
+                   encoding: JSONEncoding.default).responseJSON { (serviceResponse) in
+                    let response = BaseResponse().create(response: serviceResponse)
+                    if response.status, let _ = response.data {
+                        successCallback()
+                    } else {
+                        failureCallback(response.message)
+                    }
+                   }
+    }
+    
+    func getTrips(id: Int, successCallback: @escaping ([Trip]) -> Void, failureCallback: @escaping (String) -> Void) {
+        let url = PathBuilder.sharedInstance.getTrips(id: id)
+        AF.request(url,
+                   method: .get,
+                   encoding: JSONEncoding.default).responseJSON { (serviceResponse) in
+                    let response = BaseResponse().create(response: serviceResponse)
+                    if response.status, let data = response.data {
+                        successCallback(Trip.parse(jsonArray: data["data"].arrayValue))
+                    } else {
+                        failureCallback(response.message)
+                    }
+                   }
+    }
+    
 }

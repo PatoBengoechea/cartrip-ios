@@ -10,6 +10,7 @@ import Foundation
 
 protocol RentPresenterDelegate: BasePresenterDelegate {
     func onGetCarForRoad()
+    func onRentCar()
 }
 
 enum RentDataSource {
@@ -35,6 +36,15 @@ class RentPrenter<T: RentPresenterDelegate>: BasePresenter<T> {
             datasource = [.image, .share, .days, .price]
         }
     }
+    
+    func createTrip(dateInit: Date, dateFinish: Date?) {
+        if let finish = dateFinish, let idCarForRoad = currentCar?.idCarForRoad {
+            TripManager.sharedInstance.crateTrip(delegate: self, dateInit: dateInit, dateFinish: finish, idCarForRoad: idCarForRoad)
+        } else {
+            delegate?.onError(message: "Please try again")
+        }
+        
+    }
 }
 
 // MARK: - Car Manager Delegate
@@ -56,4 +66,13 @@ extension RentPrenter: CarManagerDelegate {
         currentCar = CarForRoadViewModel(car)
         delegate?.onGetCarForRoad()
     }
+}
+
+// MARK: - Trip Manager Delegate
+extension RentPrenter: TripManagerDelegate {
+    func onRentCar() {
+        delegate?.onRentCar()
+    }
+    
+    
 }

@@ -92,10 +92,21 @@ struct R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   /// This `R.segue` struct is generated, and contains static references to 4 view controllers.
   struct segue {
-    /// This struct is generated for `HomeViewController`, and contains static references to 1 segues.
+    /// This struct is generated for `HomeViewController`, and contains static references to 2 segues.
     struct homeViewController {
+      /// Segue identifier `goToProfile`.
+      static let goToProfile: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, UserViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToProfile")
       /// Segue identifier `goToRent`.
       static let goToRent: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, RentViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToRent")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `goToProfile`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func goToProfile(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HomeViewController, UserViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.homeViewController.goToProfile, segue: segue)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// Optionally returns a typed version of segue `goToRent`.
@@ -363,7 +374,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 7 images.
+  /// This `R.image` struct is generated, and contains static references to 8 images.
   struct image {
     /// Image `car-solid`.
     static let carSolid = Rswift.ImageResource(bundle: R.hostingBundle, name: "car-solid")
@@ -379,6 +390,8 @@ struct R: Rswift.Validatable {
     static let routeSolid = Rswift.ImageResource(bundle: R.hostingBundle, name: "route-solid")
     /// Image `user-solid`.
     static let userSolid = Rswift.ImageResource(bundle: R.hostingBundle, name: "user-solid")
+    /// Image `user`.
+    static let user = Rswift.ImageResource(bundle: R.hostingBundle, name: "user")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "car-solid", bundle: ..., traitCollection: ...)`
@@ -419,6 +432,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "route-solid", bundle: ..., traitCollection: ...)`
     static func routeSolid(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.routeSolid, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "user", bundle: ..., traitCollection: ...)`
+    static func user(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.user, compatibleWith: traitCollection)
     }
     #endif
 
@@ -466,7 +486,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `DaysTableViewCell`.
     static let daysTableViewCell: Rswift.ReuseIdentifier<DaysTableViewCell> = Rswift.ReuseIdentifier(identifier: "DaysTableViewCell")
@@ -476,6 +496,8 @@ struct R: Rswift.Validatable {
     static let priceTableViewCell: Rswift.ReuseIdentifier<PriceTableViewCell> = Rswift.ReuseIdentifier(identifier: "PriceTableViewCell")
     /// Reuse identifier `ShareTableViewCell`.
     static let shareTableViewCell: Rswift.ReuseIdentifier<ShareTableViewCell> = Rswift.ReuseIdentifier(identifier: "ShareTableViewCell")
+    /// Reuse identifier `TripTableViewCell`.
+    static let tripTableViewCell: Rswift.ReuseIdentifier<TripTableViewCell> = Rswift.ReuseIdentifier(identifier: "TripTableViewCell")
 
     fileprivate init() {}
   }
@@ -487,7 +509,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 21 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 22 localization keys.
     struct localizable {
       /// en translation: Already have account?
       ///
@@ -501,6 +523,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let cancel = Rswift.StringResource(key: "Cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Car rent
+      ///
+      /// Locales: en, es-419
+      static let carRent = Rswift.StringResource(key: "Car rent", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: DNI
       ///
       /// Locales: en, es-419
@@ -617,6 +643,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Cancel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Car rent
+      ///
+      /// Locales: en, es-419
+      static func carRent(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Car rent", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Car rent"
+        }
+
+        return NSLocalizedString("Car rent", bundle: bundle, comment: "")
       }
 
       /// en translation: DNI
@@ -1056,6 +1097,7 @@ struct _R: Rswift.Validatable {
       let name = "User"
 
       static func validate() throws {
+        if UIKit.UIImage(named: "user", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user' is used in storyboard 'User', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

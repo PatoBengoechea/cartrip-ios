@@ -59,6 +59,10 @@
 		6AA1878C243951AD004A568B /* GothamRounded-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AA18780243951AD004A568B /* GothamRounded-Book.otf */; };
 		6AA1878D243951AD004A568B /* GothamRounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AA18781243951AD004A568B /* GothamRounded-Light.otf */; };
 		6AA2810E24253C5100544280 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA2810D24253C5100544280 /* BaseViewController.swift */; };
+		6AA6FBBD257D1BE400E189D9 /* TripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6FBBC257D1BE400E189D9 /* TripManager.swift */; };
+		6AA6FBCB257D325500E189D9 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6FBCA257D325500E189D9 /* Trip.swift */; };
+		6AA6FBCE257D38BF00E189D9 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6FBCD257D38BF00E189D9 /* TripTableViewCell.swift */; };
+		6AA6FBD1257D7DAC00E189D9 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6FBD0257D7DAC00E189D9 /* DateHelper.swift */; };
 		6AD553502433F67D00EE6517 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5534F2433F67D00EE6517 /* Car.swift */; };
 		6AD553532433F6AE00EE6517 /* CarForRoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD553522433F6AE00EE6517 /* CarForRoad.swift */; };
 		6AD553552434D8AC00EE6517 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD553542434D8AC00EE6517 /* HomePresenter.swift */; };
@@ -133,6 +137,10 @@
 		6AA18781243951AD004A568B /* GothamRounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamRounded-Light.otf"; sourceTree = "<group>"; };
 		6AA1878F2439534F004A568B /* GothamRounded-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamRounded-MediumItalic.otf"; sourceTree = "<group>"; };
 		6AA2810D24253C5100544280 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		6AA6FBBC257D1BE400E189D9 /* TripManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManager.swift; sourceTree = "<group>"; };
+		6AA6FBCA257D325500E189D9 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		6AA6FBCD257D38BF00E189D9 /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
+		6AA6FBD0257D7DAC00E189D9 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		6AD5534F2433F67D00EE6517 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		6AD553522433F6AE00EE6517 /* CarForRoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarForRoad.swift; sourceTree = "<group>"; };
 		6AD553542434D8AC00EE6517 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -244,6 +252,7 @@
 			children = (
 				6A64E66324F1637900E7622B /* UserViewController.swift */,
 				6A64E66524F1638400E7622B /* User.storyboard */,
+				6AA6FBCD257D38BF00E189D9 /* TripTableViewCell.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -266,6 +275,7 @@
 				6AD553522433F6AE00EE6517 /* CarForRoad.swift */,
 				6AD553582435005D00EE6517 /* TypeCar.swift */,
 				6AFA3FDC253912040044C64D /* PrizeRent.swift */,
+				6AA6FBCA257D325500E189D9 /* Trip.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,6 +299,7 @@
 				6A80F412242145B300474555 /* UserManager.swift */,
 				6A71B2F9242AB85A006612F1 /* BaseManager.swift */,
 				6AD553562434D9BE00EE6517 /* CarManager.swift */,
+				6AA6FBBC257D1BE400E189D9 /* TripManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -345,6 +356,7 @@
 				6A80F400242030A700474555 /* Extensions.swift */,
 				6A80F402242041ED00474555 /* Constants.swift */,
 				6AEB322D249073F800984196 /* Helper.swift */,
+				6AA6FBD0257D7DAC00E189D9 /* DateHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -573,6 +585,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AA6FBCB257D325500E189D9 /* Trip.swift in Sources */,
 				6A32AC66241D98DF009BF0C8 /* AppDelegate.swift in Sources */,
 				6A71B2FA242AB85A006612F1 /* BaseManager.swift in Sources */,
 				6AD553502433F67D00EE6517 /* Car.swift in Sources */,
@@ -584,6 +597,7 @@
 				6AD553532433F6AE00EE6517 /* CarForRoad.swift in Sources */,
 				6A80F40724213E7400474555 /* BasePresenter.swift in Sources */,
 				6A3BC351243ACCBC00F075D5 /* Loader.swift in Sources */,
+				6AA6FBBD257D1BE400E189D9 /* TripManager.swift in Sources */,
 				6A803046253B6D1500CB7235 /* PriceTableViewCell.swift in Sources */,
 				6A80F3E924201FCA00474555 /* RootViewController.swift in Sources */,
 				6A71B2F324254A9E006612F1 /* HomeViewController.swift in Sources */,
@@ -592,6 +606,7 @@
 				6A80F413242145B300474555 /* UserManager.swift in Sources */,
 				6A04474F25199AE1009E14D2 /* DaysTableViewCell.swift in Sources */,
 				6AEB322E249073F800984196 /* Helper.swift in Sources */,
+				6AA6FBD1257D7DAC00E189D9 /* DateHelper.swift in Sources */,
 				6A833B1E249ADF450000FF5B /* RegisterPresenter.swift in Sources */,
 				6A80F40D24213FB500474555 /* BaseResponse.swift in Sources */,
 				6A80F40F2421425B00474555 /* ServiceManager.swift in Sources */,
@@ -610,6 +625,7 @@
 				6A80F3ED2420209A00474555 /* SplashViewController.swift in Sources */,
 				6AD5535E243517CA00EE6517 /* CarViewModel.swift in Sources */,
 				6A80F3F12420234300474555 /* R.generated.swift in Sources */,
+				6AA6FBCE257D38BF00E189D9 /* TripTableViewCell.swift in Sources */,
 				6A71B2F8242AB6D6006612F1 /* User.swift in Sources */,
 				6AA2810E24253C5100544280 /* BaseViewController.swift in Sources */,
 				6A80F401242030A700474555 /* Extensions.swift in Sources */,

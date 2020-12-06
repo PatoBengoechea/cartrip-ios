@@ -35,4 +35,16 @@ class PathBuilder  {
     func getCarForRoad(id: Int) -> String {
         return "\(url)/carForRoad/\(id)"
     }
+    
+    func postRentCar(shared: Bool) -> String {
+        if shared {
+            return "\(url)/rentcarshared"
+        } else {
+            return "\(url)/rentcar"
+        }
+    }
+    
+    func getTrips(id: Int) -> String {
+        return "\(url)/trips/\(id)"
+    }
 }

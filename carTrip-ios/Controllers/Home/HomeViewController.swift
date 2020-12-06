@@ -57,9 +57,23 @@ class HomeViewController: UIViewController {
             self.positionView.backgroundColor = .black
         }) { (_) in
             self.centerMap()
+            self.service()
             UIView.animate(withDuration: 0.1) {
                 self.positionButton.tintColor = .black
                 self.positionView.backgroundColor = .white
+            }
+        }
+    }
+    
+    @IBAction private func userButtonTapped() {
+        UIView.animate(withDuration: 0.1, animations: {
+            self.profileView.tintColor = .white
+            self.profileView.backgroundColor = .systemRed
+        }) { (_) in
+            self.performSegue(withIdentifier: R.segue.homeViewController.goToProfile.identifier, sender: nil)
+            UIView.animate(withDuration: 0.1) {
+                self.profileView.tintColor = .systemRed
+                self.profileView.backgroundColor = .white
             }
         }
     }

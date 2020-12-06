@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.0.5)
+  - CDAlertView (0.10.0)
   - Kingfisher (5.13.2):
     - Kingfisher/Core (= 5.13.2)
   - Kingfisher/Core (5.13.2)
@@ -12,6 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - CDAlertView
   - Kingfisher
   - lottie-ios
   - NVActivityIndicatorView/AppExtension
@@ -21,6 +23,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CDAlertView
     - Kingfisher
     - lottie-ios
     - NVActivityIndicatorView
@@ -30,6 +33,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  CDAlertView: ee6a87c90c4283c8d316d55633db1a6981f1cc51
   Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
   lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
@@ -37,6 +41,6 @@ SPEC CHECKSUMS:
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: b3cbf58d5214a7a2465ce278da733325ccdc0866
+PODFILE CHECKSUM: 8366b20a75a7b69393fcd1487e27e21e5d674e2b
 
 COCOAPODS: 1.9.3

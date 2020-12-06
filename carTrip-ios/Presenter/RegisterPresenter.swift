@@ -59,6 +59,8 @@ class RegisterPresenter<T: RegisterPresenterDelegate>: BasePresenter<T> {
 extension RegisterPresenter: UserManagerDelegate {
     func onLogin(user: User) {
         UserDefaults.standard.set(user.idUser, forKey: "idUser")
+        UserDefaults.standard.set(user.nameUser, forKey: "name")
+        UserDefaults.standard.set(user.lastNameUser, forKey: "lastName")
         delegate?.onLogin()
     }
     

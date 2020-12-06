@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CDAlertView
 
 protocol RentDelegate: NSObjectProtocol {
     var shareCar: Bool { get set }
@@ -64,7 +65,15 @@ class RentViewController: UIViewController, RentDelegate {
     }
     
     private func onNextButtonPressed() {
-        fatalError("Implement functionality")
+        let today = Date()
+        var dateComponents = DateComponents()
+        dateComponents.day = howManyDays
+        if shareCar {
+            let alert = CDAlertView(title: "Awesome Title", message: "Well explained message!", type: .error)
+            alert.show()
+        } else {
+            presenter.createTrip(dateInit: today, dateFinish: Calendar.current.date(byAdding: dateComponents, to: today))
+        }
     }
     
     private func reloadPrice() {
@@ -102,6 +111,11 @@ class RentViewController: UIViewController, RentDelegate {
 
 // MARK: - Presenter Delegate
 extension RentViewController: RentPresenterDelegate {
+    func onRentCar() {
+        let alert = CDAlertView(title: R.string.localizable.carRent(), message: "", type: .success)
+        alert.show()
+    }
+    
     func onGetCarForRoad() {
         reloadPrice()
     }
