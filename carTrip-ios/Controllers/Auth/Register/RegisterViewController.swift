@@ -69,12 +69,15 @@ class RegisterViewController: RegisterBaseViewController {
         
         emailTextField.placeholder = R.string.localizable.email()
         emailTextField.font = .gothamRoundedMedium(14)
+        emailTextField.backgroundColor = .white
         
         passwordTextField.placeholder = R.string.localizable.password()
         passwordTextField.isSecureTextEntry = true
+        passwordTextField.backgroundColor = .white
         
         rePasswordTextField.placeholder = R.string.localizable.password()
         rePasswordTextField.isSecureTextEntry = true
+        rePasswordTextField.backgroundColor = .white
         
         haveAccountView.backgroundColor = .blueCar
         haveAccountLabel.set(font: .gothamRoundedLight(12), color: .white)

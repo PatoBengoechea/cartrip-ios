@@ -103,8 +103,10 @@ class SignInViewController: RegisterBaseViewController {
         
         emailTextField.font = .gothamRoundedMedium(14)
         emailTextField.textColor = .darkGray
+        emailTextField.backgroundColor = .white
         passwordTextField.font = .gothamRoundedMedium(14)
         passwordTextField.textColor = .darkGray
+        passwordTextField.backgroundColor = .white
         
         loginButton.backgroundColor = .white
         loginButton.setTitle(R.string.localizable.signIn().capitalized, for: .normal)

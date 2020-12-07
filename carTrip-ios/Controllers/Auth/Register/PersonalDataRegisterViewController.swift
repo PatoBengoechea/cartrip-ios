@@ -58,15 +58,19 @@ class PersonalDataRegisterViewController: RegisterBaseViewController {
         
         nameTextField.placeholder = R.string.localizable.name()
         nameTextField.font = .gothamRoundedMedium(14)
+        nameTextField.backgroundColor = .white
         
         lastNameTextField.placeholder = R.string.localizable.lastName()
         lastNameTextField.font = .gothamRoundedMedium(14)
+        lastNameTextField.backgroundColor = .white
         
         dniTextField.placeholder = R.string.localizable.dnI()
         dniTextField.font = .gothamRoundedMedium(14)
+        dniTextField.backgroundColor = .white
         
         birthDateTextField.placeholder = R.string.localizable.birthdate()
         birthDateTextField.font = .gothamRoundedMedium(14)
+        birthDateTextField.backgroundColor = .white
         
         haveAccountView.backgroundColor = .blueCar
         haveAccountLabel.set(font: .gothamRoundedLight(12), color: .white)
