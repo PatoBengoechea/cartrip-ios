@@ -113,6 +113,11 @@ class RentViewController: UIViewController, RentDelegate {
 extension RentViewController: RentPresenterDelegate {
     func onRentCar() {
         let alert = CDAlertView(title: R.string.localizable.carRent(), message: "", type: .success)
+        let action = CDAlertViewAction(title: "OK") { (action) -> Bool in
+            self.navigationController?.popViewController(animated: true)
+            return true
+        }
+        alert.add(action: action)
         alert.show()
     }
     

@@ -115,4 +115,23 @@ class ServiceManager {
                    }
     }
     
+    
+    func getActualTrip(id: String, successCallback: @escaping (Trip?) -> Void, failureCallback: @escaping (String) -> Void) {
+        let url = PathBuilder.sharedInstance.getActualTrip(id: id)
+        AF.request(url,
+                   method: .get,
+                   encoding: JSONEncoding.default).responseJSON { (serviceResponse) in
+                    let response = BaseResponse().create(response: serviceResponse)
+                    if response.status, let data = response.data {
+                        if let noTrip = data["noTrip"].bool {
+                            successCallback(nil)
+                        } else {
+                            successCallback(Trip(from: data["trip"]))
+                        }
+                    } else {
+                        failureCallback(response.message)
+                    }
+                   }
+    }
+    
 }

@@ -10,6 +10,7 @@ import Foundation
 
 protocol HomePresenterDelegate: BasePresenterDelegate {
     func onGetCarForRoad()
+    func onGetActualTrip(trip: Trip?)
     
 }
 
@@ -20,6 +21,10 @@ class HomePresenter<T: HomePresenterDelegate>: BasePresenter<T> {
     
     func getCarForRoad() {
         CarManager.instance.getCarForRoad(delegate: self)
+    }
+    
+    func checkActualTrip() {
+        TripManager.sharedInstance.getActualTrip(delegate: self)
     }
     
 }
@@ -48,4 +53,10 @@ extension HomePresenter: CarManagerDelegate {
     }
     
     
+}
+
+extension HomePresenter: TripManagerDelegate {
+    func onGetActualTrip(trip: Trip?) {
+        delegate?.onGetActualTrip(trip: trip)
+    }
 }

@@ -22,6 +22,7 @@
 		6A3BC353243ACFA800F075D5 /* 14717-sedan-car-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A3BC352243ACFA800F075D5 /* 14717-sedan-car-animation.json */; };
 		6A64D7D7257E6F4E0042EBFA /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A64D7D6257E6F4E0042EBFA /* LicenseViewController.swift */; };
 		6A64D7DA257E76050042EBFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A64D7D9257E76050042EBFA /* GoogleService-Info.plist */; };
+		6A64D809257ECE560042EBFA /* ActualRentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A64D808257ECE560042EBFA /* ActualRentViewController.swift */; };
 		6A64E66424F1637900E7622B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A64E66324F1637900E7622B /* UserViewController.swift */; };
 		6A64E66624F1638400E7622B /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A64E66524F1638400E7622B /* User.storyboard */; };
 		6A701D962509938500BFD594 /* RentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A701D952509938500BFD594 /* RentViewController.swift */; };
@@ -99,6 +100,7 @@
 		6A3BC352243ACFA800F075D5 /* 14717-sedan-car-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "14717-sedan-car-animation.json"; sourceTree = "<group>"; };
 		6A64D7D6257E6F4E0042EBFA /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		6A64D7D9257E76050042EBFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6A64D808257ECE560042EBFA /* ActualRentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualRentViewController.swift; sourceTree = "<group>"; };
 		6A64E66324F1637900E7622B /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		6A64E66524F1638400E7622B /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		6A701D952509938500BFD594 /* RentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				6A71B2F224254A9E006612F1 /* HomeViewController.swift */,
 				6A04474925199AA1009E14D2 /* Rent */,
 				6A71B2F424254AA7006612F1 /* Home.storyboard */,
+				6A64D808257ECE560042EBFA /* ActualRentViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				6A80F40D24213FB500474555 /* BaseResponse.swift in Sources */,
 				6A80F40F2421425B00474555 /* ServiceManager.swift in Sources */,
 				6A701D962509938500BFD594 /* RentViewController.swift in Sources */,
+				6A64D809257ECE560042EBFA /* ActualRentViewController.swift in Sources */,
 				6AFA3FDD253912040044C64D /* PrizeRent.swift in Sources */,
 				6A80F40B24213F2500474555 /* PathBuilder.swift in Sources */,
 				6A80F3F624202BD800474555 /* SignInViewController.swift in Sources */,

@@ -47,4 +47,8 @@ class PathBuilder  {
     func getTrips(id: Int) -> String {
         return "\(url)/trips/\(id)"
     }
+    
+    func getActualTrip(id: String) -> String {
+        return "\(url)/trip/\(id)"
+    }
 }

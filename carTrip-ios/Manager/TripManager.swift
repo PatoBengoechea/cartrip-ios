@@ -11,11 +11,13 @@ import UIKit
 protocol TripManagerDelegate: BaseManagerDelegate {
     func onRentCar()
     func onGetTrips(trips: [Trip])
+    func onGetActualTrip(trip: Trip?)
 }
 
 extension TripManagerDelegate {
     func onRentCar() { }
     func onGetTrips(trips: [Trip]) { }
+    func onGetActualTrip(trip: Trip?) {  }
 }
 
 class TripManager: BaseManager {
@@ -47,4 +49,20 @@ class TripManager: BaseManager {
         }
     }
     
+    func getActualTrip(delegate: TripManagerDelegate) {
+        if let id = UserDefaults.standard.string(forKey: "idUser") {
+            delegate.onInitService()
+            ServiceManager.sharedInstance.getActualTrip(id: id) { (trip) in
+                delegate.onGetActualTrip(trip: trip)
+                delegate.onFinishedService()
+            } failureCallback: { (message) in
+                delegate.onError(message)
+                delegate.onFinishedService()
+            }
+
+        } else {
+            delegate.onError("User not found")
+        }
+        
+    }
 }

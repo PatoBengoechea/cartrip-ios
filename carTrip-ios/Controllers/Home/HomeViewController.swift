@@ -126,12 +126,15 @@ class HomeViewController: UIViewController {
         if let rentVC = segue.destination as? RentViewController, let car = sender as? CarForRoadViewModel {
             rentVC.currentCar = car
         }
+        if let rentVC = segue.destination as? ActualRentViewController, let trip = sender as? Trip {
+            rentVC.actualTrip = trip
+        }
     }
     
     // MARK: - Private Functions
     private func service() {
         mapView.removeAnnotations(presenter.dataCarForRoad)
-        presenter.getCarForRoad()
+        presenter.checkActualTrip()
     }
     
     private func configureMap() {
@@ -246,6 +249,14 @@ class HomeViewController: UIViewController {
 
 // MARK: - Home Presenter Delegate
 extension HomeViewController: HomePresenterDelegate {
+    func onGetActualTrip(trip: Trip?) {
+        if let trip = trip {
+            performSegue(withIdentifier: R.segue.homeViewController.goToActualTrip.identifier, sender: trip)
+        } else {
+            presenter.getCarForRoad()
+        }
+    }
+    
     func onGetCarForRoad() {
         mapView.addAnnotations(presenter.dataCarForRoad)
     }

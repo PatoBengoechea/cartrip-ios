@@ -92,12 +92,23 @@ struct R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   /// This `R.segue` struct is generated, and contains static references to 5 view controllers.
   struct segue {
-    /// This struct is generated for `HomeViewController`, and contains static references to 2 segues.
+    /// This struct is generated for `HomeViewController`, and contains static references to 3 segues.
     struct homeViewController {
+      /// Segue identifier `goToActualTrip`.
+      static let goToActualTrip: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, ActualRentViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToActualTrip")
       /// Segue identifier `goToProfile`.
       static let goToProfile: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, UserViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToProfile")
       /// Segue identifier `goToRent`.
       static let goToRent: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, RentViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToRent")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `goToActualTrip`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func goToActualTrip(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HomeViewController, ActualRentViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.homeViewController.goToActualTrip, segue: segue)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// Optionally returns a typed version of segue `goToProfile`.
@@ -534,8 +545,12 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 31 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 32 localization keys.
     struct localizable {
+      /// en translation: Actual trip
+      ///
+      /// Locales: en, es-419
+      static let actualTrip = Rswift.StringResource(key: "Actual trip", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Add
       ///
       /// Locales: en, es-419
@@ -660,6 +675,21 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let youMustBeGratherThan18YearsOldToBeRegistered = Rswift.StringResource(key: "You must be grather than 18 years old to be registered", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+
+      /// en translation: Actual trip
+      ///
+      /// Locales: en, es-419
+      static func actualTrip(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Actual trip", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Actual trip"
+        }
+
+        return NSLocalizedString("Actual trip", bundle: bundle, comment: "")
+      }
 
       /// en translation: Add
       ///
