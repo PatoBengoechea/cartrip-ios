@@ -67,12 +67,12 @@ class HomeViewController: UIViewController {
     
     @IBAction private func userButtonTapped() {
         UIView.animate(withDuration: 0.1, animations: {
-            self.profileView.tintColor = .white
+            self.profileButton.tintColor = .white
             self.profileView.backgroundColor = .systemRed
         }) { (_) in
             self.performSegue(withIdentifier: R.segue.homeViewController.goToProfile.identifier, sender: nil)
             UIView.animate(withDuration: 0.1) {
-                self.profileView.tintColor = .systemRed
+                self.profileButton.tintColor = .systemRed
                 self.profileView.backgroundColor = .white
             }
         }
@@ -82,7 +82,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.attachView(self)
-        service()
         configureMap()
         configureView()
 
@@ -102,6 +101,8 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        service()
         
         navigationController?.setNavigationBarHidden(true, animated: false)
         
@@ -129,6 +130,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Private Functions
     private func service() {
+        mapView.removeAnnotations(presenter.dataCarForRoad)
         presenter.getCarForRoad()
     }
     

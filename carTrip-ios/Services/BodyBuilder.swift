@@ -34,6 +34,7 @@ class BodyBuilder  {
         dict["dateInit"] = dateInit.dateToString()
         dict["dateEnd"] = dateFinish.dateToString()
         dict["idCarForRoad"] = idCarForRoad
+        dict["owner"] = UserDefaults.standard.string(forKey: "idUser") ?? 0
         return dict
     }
 }
