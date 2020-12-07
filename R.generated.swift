@@ -534,7 +534,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 29 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 31 localization keys.
     struct localizable {
       /// en translation: Add
       ///
@@ -652,6 +652,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let welcome = Rswift.StringResource(key: "Welcome", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: You couldn't be registered
+      ///
+      /// Locales: en, es-419
+      static let youCouldnTBeRegistered = Rswift.StringResource(key: "You couldn't be registered", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: You must be grather than 18 years old to be registered
+      ///
+      /// Locales: en, es-419
+      static let youMustBeGratherThan18YearsOldToBeRegistered = Rswift.StringResource(key: "You must be grather than 18 years old to be registered", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
 
       /// en translation: Add
       ///
@@ -1086,6 +1094,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Welcome", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You couldn't be registered
+      ///
+      /// Locales: en, es-419
+      static func youCouldnTBeRegistered(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("You couldn't be registered", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "You couldn't be registered"
+        }
+
+        return NSLocalizedString("You couldn't be registered", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You must be grather than 18 years old to be registered
+      ///
+      /// Locales: en, es-419
+      static func youMustBeGratherThan18YearsOldToBeRegistered(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("You must be grather than 18 years old to be registered", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "You must be grather than 18 years old to be registered"
+        }
+
+        return NSLocalizedString("You must be grather than 18 years old to be registered", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}

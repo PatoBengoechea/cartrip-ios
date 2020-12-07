@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CDAlertView
 
 class PersonalDataRegisterViewController: RegisterBaseViewController {
     
@@ -104,7 +105,9 @@ class PersonalDataRegisterViewController: RegisterBaseViewController {
         if presenter?.isUser18YearOld() ?? false {
             performSegue(withIdentifier: R.segue.personalDataRegisterViewController.goToAddLicense, sender: nil)
         } else {
-            presenter?.registerUser()
+            let alert = CDAlertView(title: R.string.localizable.youCouldnTBeRegistered(), message: R.string.localizable.youMustBeGratherThan18YearsOldToBeRegistered(), type: .error)
+            alert.autoHideTime = 3
+            alert.show()
         }
     }
     

@@ -18,10 +18,14 @@ class LicenseViewController: RegisterBaseViewController {
     
     weak var rootDelegate: RootViewControllerDelegate?
     private var imageName = ""
+    private let picker = UIImagePickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        picker.allowsEditing = true
+        picker.delegate = self
+        
         customize()
     }
     
@@ -32,14 +36,11 @@ class LicenseViewController: RegisterBaseViewController {
     }
     
     @IBAction func addLicense() {
-        let picker = UIImagePickerController()
-        picker.allowsEditing = true
-        picker.delegate = self
         present(picker, animated: true)
     }
     
     @IBAction func addLaterLicense() {
-        
+        presenter?.registerUser()
     }
 
     

@@ -35,6 +35,8 @@
 "Wait until the licese is validated" = "Cuando la licencia sea validada, podras alquilar un vehículo";
 "Finish registration" = "Terminar de registrarse";
 "Registration success" = "Creacion de cuenta exitosa";
+"You couldn't be registered" = "No pudimos registrarte";
+"You must be grather than 18 years old to be registered" = "Solo mayores de 18 años se pueden registrar";
 
 // RENT
 "Rent your car"="Alquilá tu auto";

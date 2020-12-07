@@ -33,6 +33,8 @@
 "Wait until the licese is validated" = "Wait until the licese is validated";
 "Finish registration" = "Finish registration";
 "Registration success" = "Registration success";
+"You couldn't be registered" = "You couldn't be registered";
+"You must be grather than 18 years old to be registered" = "You must be grather than 18 years old to be registered";
 
 // RENT
 "Rent your car"="Rent your car";
