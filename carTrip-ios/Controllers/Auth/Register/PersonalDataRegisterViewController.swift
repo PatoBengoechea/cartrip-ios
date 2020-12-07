@@ -102,6 +102,9 @@ class PersonalDataRegisterViewController: RegisterBaseViewController {
     }
     
     private func checkFormFormForRegister() {
+        if nameTextField.text?.isEmpty ?? true || lastNameTextField.text?.isEmpty ?? true || dniTextField.text?.isEmpty ?? true || birthDateTextField.text?.isEmpty ?? true {
+            return
+        }
         if presenter?.isUser18YearOld() ?? false {
             performSegue(withIdentifier: R.segue.personalDataRegisterViewController.goToAddLicense, sender: nil)
         } else {
@@ -114,12 +117,18 @@ class PersonalDataRegisterViewController: RegisterBaseViewController {
     private func showDatePicker(){
         //Formate Date
         datePicker.datePickerMode = .date
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        } else {
+            // Fallback on earlier versions
+        }
         
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
         
         //done button & cancel button
+        datePicker.addTarget(self, action: #selector(datePickerChanged(picker:)), for: .valueChanged)
         let doneButton = UIBarButtonItem(title: R.string.localizable.done(), style: UIBarButtonItem.Style.done, target: self, action: #selector(donedatePicker))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: R.string.localizable.cancel(), style: UIBarButtonItem.Style.done, target: self, action: #selector(cancelDatePicker))
@@ -140,6 +149,12 @@ class PersonalDataRegisterViewController: RegisterBaseViewController {
         presenter?.setBirthDate(datePicker.date)
         checkFormFormForRegister()
         
+    }
+    
+    @objc func datePickerChanged(picker: UIDatePicker) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        birthDateTextField.text = formatter.string(from: picker.date)
     }
     
     @objc func cancelDatePicker() {
