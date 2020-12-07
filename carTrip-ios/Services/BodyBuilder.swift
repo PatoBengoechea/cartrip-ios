@@ -24,6 +24,7 @@ class BodyBuilder  {
         dict["password"] = user.password
         dict["dni"] = user.dni
         dict["birthdate"] = user.birthDate
+        dict["path"] = user.licensePath
         
         return dict
     }

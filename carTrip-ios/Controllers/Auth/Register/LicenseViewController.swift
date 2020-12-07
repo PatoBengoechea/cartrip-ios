@@ -71,7 +71,7 @@ class LicenseViewController: RegisterBaseViewController {
 }
 
 // MARK: - Register Delegate
-extension LicenseViewController: RegisterPresenterDelegate {    
+extension LicenseViewController: RegisterPresenterDelegate {
     func onRegister() {
         let alert = CDAlertView(title: R.string.localizable.finishRegistration(), message: "", type: .success)
         alert.autoHideTime = 0.5
@@ -91,7 +91,8 @@ extension LicenseViewController: UIImagePickerControllerDelegate, UINavigationCo
         let md = StorageMetadata()
         md.contentType = "image/png"
         
-        imageName = "\(presenter?.getEmail() ?? "") \(UUID().uuidString).jpg"
+        let path = "\(presenter?.getEmail() ?? "")\(UUID().uuidString)".hash
+        imageName = "\(path).jpg"
         let ref = Storage.storage().reference().child(imageName)
         
         ref.putData(d, metadata: md) { (metadata, error) in
