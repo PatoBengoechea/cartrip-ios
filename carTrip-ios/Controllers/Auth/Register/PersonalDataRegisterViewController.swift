@@ -42,10 +42,10 @@ class PersonalDataRegisterViewController: RegisterBaseViewController {
         
         bottomView.roundCorners(radius: 25, corners: [.topRight, .topLeft])
         
-        nameTextField.roundCorners(radius: 20, corners: .allCorners)
-        lastNameTextField.roundCorners(radius: 20, corners: .allCorners)
-        dniTextField.roundCorners(radius: 20, corners: .allCorners)
-        birthDateTextField.roundCorners(radius: 20, corners: .allCorners)
+        nameTextField.carTripRadius()
+        lastNameTextField.carTripRadius()
+        dniTextField.carTripRadius()
+        birthDateTextField.carTripRadius()
         
     }
     
