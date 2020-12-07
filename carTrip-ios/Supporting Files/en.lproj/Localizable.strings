@@ -16,6 +16,7 @@
 
 "Let's go to take a drive"="Let's go to take a drive";
 "Rent"="Rent";
+"Text to license" = "In order to rent a car you need to upload your driver license. After that we are going to validate your license and then you will be able to use our cars";
 
 // MARK: - Register
 "Next"="Next";
@@ -26,6 +27,12 @@
 "Birthdate"="Birthdate";
 "Done"="Done";
 "Cancel"="Cancel";
+"Add" = "Add";
+"Add later" = "Add later";
+"The license was added" = "The license was added";
+"Wait until the licese is validated" = "Wait until the licese is validated";
+"Finish registration" = "Finish registration";
+"Registration success" = "Registration success";
 
 // RENT
 "Rent your car"="Rent your car";

@@ -49,6 +49,12 @@ class PersonalDataRegisterViewController: RegisterBaseViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? LicenseViewController {
+            dest.rootDelegate = rootDelegate
+        }
+    }
+    
     // MARK: - Private Functions
     private func customize() {
         topView.backgroundColor = .white
@@ -95,7 +101,11 @@ class PersonalDataRegisterViewController: RegisterBaseViewController {
     }
     
     private func checkFormFormForRegister() {
-        presenter?.registerUser()
+        if presenter?.isUser18YearOld() ?? false {
+            performSegue(withIdentifier: R.segue.personalDataRegisterViewController.goToAddLicense, sender: nil)
+        } else {
+            presenter?.registerUser()
+        }
     }
     
     private func showDatePicker(){

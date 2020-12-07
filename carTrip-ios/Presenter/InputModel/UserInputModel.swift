@@ -14,6 +14,7 @@ struct UserInputModel {
     var name: String?
     var lastName: String?
     var dni: String?
+    var licensePath: String?
     private var _birthdate: Date?
     var birthDate: String?  { return _birthdate?.dateToString() }
     

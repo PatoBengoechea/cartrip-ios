@@ -8,6 +8,7 @@
 
 import UIKit
 import NVActivityIndicatorView
+import CDAlertView
 
 class AuthNavigationController: UINavigationController, RegisterPresenterDelegate {
     
@@ -15,10 +16,29 @@ class AuthNavigationController: UINavigationController, RegisterPresenterDelegat
         (viewControllers.last as? SignInViewController)?.onLogin()
     }
     
-    func onRegister() {
-        (viewControllers.last as? PersonalDataRegisterViewController)?.onRegister()
+    func onError(message: String) {
+        let alert = CDAlertView(title: "Error", message: message, type: .error)
+        alert.autoHideTime = 0.5
+        alert.show()
     }
     
+    func onRegister() {
+        if let controller = viewControllers.last as? PersonalDataRegisterViewController {
+            controller.onRegister()
+        }
+        
+        if let controller = viewControllers.last as? LicenseViewController {
+            controller.onRegister()
+        }
+    }
+    
+    func startLoading() {
+        Loader.showLoader()
+    }
+    
+    func finishedLoading() {
+        Loader.dismiss()
+    }
     
     var authPresenter = RegisterPresenter<AuthNavigationController>()
     

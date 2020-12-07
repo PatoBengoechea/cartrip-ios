@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 4 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 5 view controllers.
   struct segue {
     /// This struct is generated for `HomeViewController`, and contains static references to 2 segues.
     struct homeViewController {
@@ -114,6 +114,23 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func goToRent(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HomeViewController, RentViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.homeViewController.goToRent, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    /// This struct is generated for `PersonalDataRegisterViewController`, and contains static references to 1 segues.
+    struct personalDataRegisterViewController {
+      /// Segue identifier `goToAddLicense`.
+      static let goToAddLicense: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, PersonalDataRegisterViewController, LicenseViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToAddLicense")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `goToAddLicense`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func goToAddLicense(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, PersonalDataRegisterViewController, LicenseViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.personalDataRegisterViewController.goToAddLicense, segue: segue)
       }
       #endif
 
@@ -239,10 +256,12 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.file` struct is generated, and contains static references to 12 files.
+  /// This `R.file` struct is generated, and contains static references to 13 files.
   struct file {
     /// Resource file `14717-sedan-car-animation.json`.
     static let sedanCarAnimationJson = Rswift.FileResource(bundle: R.hostingBundle, name: "14717-sedan-car-animation", pathExtension: "json")
+    /// Resource file `GoogleService-Info.plist`.
+    static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
     /// Resource file `GothamRounded-Bold.otf`.
     static let gothamRoundedBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "GothamRounded-Bold", pathExtension: "otf")
     /// Resource file `GothamRounded-BoldItalic.otf`.
@@ -269,6 +288,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "14717-sedan-car-animation", withExtension: "json")`
     static func sedanCarAnimationJson(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.sedanCarAnimationJson
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
+    static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.googleServiceInfoPlist
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -509,8 +534,16 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 22 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 29 localization keys.
     struct localizable {
+      /// en translation: Add
+      ///
+      /// Locales: en, es-419
+      static let add = Rswift.StringResource(key: "Add", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Add later
+      ///
+      /// Locales: en, es-419
+      static let addLater = Rswift.StringResource(key: "Add later", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Already have account?
       ///
       /// Locales: en, es-419
@@ -547,10 +580,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let email = Rswift.StringResource(key: "Email", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Finish registration
+      ///
+      /// Locales: en, es-419
+      static let finishRegistration = Rswift.StringResource(key: "Finish registration", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: How many days do you need the car? (Max. 30)
       ///
       /// Locales: en, es-419
       static let howManyDaysDoYouNeedTheCar = Rswift.StringResource(key: "How many days do you need the car?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: In order to rent a car you need to upload your driver license. After that we are going to validate your license and then you will be able to use our cars
+      ///
+      /// Locales: en, es-419
+      static let textToLicense = Rswift.StringResource(key: "Text to license", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Last name
       ///
       /// Locales: en, es-419
@@ -575,6 +616,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let pricePerDay = Rswift.StringResource(key: "Price per day", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Registration success
+      ///
+      /// Locales: en, es-419
+      static let registrationSuccess = Rswift.StringResource(key: "Registration success", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Rent
       ///
       /// Locales: en, es-419
@@ -591,14 +636,52 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let signUp = Rswift.StringResource(key: "Sign up", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: The license was added
+      ///
+      /// Locales: en, es-419
+      static let theLicenseWasAdded = Rswift.StringResource(key: "The license was added", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Total price
       ///
       /// Locales: en, es-419
       static let totalPrice = Rswift.StringResource(key: "Total price", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Wait until the licese is validated
+      ///
+      /// Locales: en, es-419
+      static let waitUntilTheLiceseIsValidated = Rswift.StringResource(key: "Wait until the licese is validated", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Welcome
       ///
       /// Locales: en, es-419
       static let welcome = Rswift.StringResource(key: "Welcome", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+
+      /// en translation: Add
+      ///
+      /// Locales: en, es-419
+      static func add(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Add", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Add"
+        }
+
+        return NSLocalizedString("Add", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add later
+      ///
+      /// Locales: en, es-419
+      static func addLater(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Add later", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Add later"
+        }
+
+        return NSLocalizedString("Add later", bundle: bundle, comment: "")
+      }
 
       /// en translation: Already have account?
       ///
@@ -735,6 +818,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Email", bundle: bundle, comment: "")
       }
 
+      /// en translation: Finish registration
+      ///
+      /// Locales: en, es-419
+      static func finishRegistration(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Finish registration", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Finish registration"
+        }
+
+        return NSLocalizedString("Finish registration", bundle: bundle, comment: "")
+      }
+
       /// en translation: How many days do you need the car? (Max. 30)
       ///
       /// Locales: en, es-419
@@ -748,6 +846,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("How many days do you need the car?", bundle: bundle, comment: "")
+      }
+
+      /// en translation: In order to rent a car you need to upload your driver license. After that we are going to validate your license and then you will be able to use our cars
+      ///
+      /// Locales: en, es-419
+      static func textToLicense(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Text to license", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Text to license"
+        }
+
+        return NSLocalizedString("Text to license", bundle: bundle, comment: "")
       }
 
       /// en translation: Last name
@@ -840,6 +953,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Price per day", bundle: bundle, comment: "")
       }
 
+      /// en translation: Registration success
+      ///
+      /// Locales: en, es-419
+      static func registrationSuccess(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Registration success", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Registration success"
+        }
+
+        return NSLocalizedString("Registration success", bundle: bundle, comment: "")
+      }
+
       /// en translation: Rent
       ///
       /// Locales: en, es-419
@@ -900,6 +1028,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Sign up", bundle: bundle, comment: "")
       }
 
+      /// en translation: The license was added
+      ///
+      /// Locales: en, es-419
+      static func theLicenseWasAdded(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("The license was added", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "The license was added"
+        }
+
+        return NSLocalizedString("The license was added", bundle: bundle, comment: "")
+      }
+
       /// en translation: Total price
       ///
       /// Locales: en, es-419
@@ -913,6 +1056,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Total price", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Wait until the licese is validated
+      ///
+      /// Locales: en, es-419
+      static func waitUntilTheLiceseIsValidated(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Wait until the licese is validated", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Wait until the licese is validated"
+        }
+
+        return NSLocalizedString("Wait until the licese is validated", bundle: bundle, comment: "")
       }
 
       /// en translation: Welcome

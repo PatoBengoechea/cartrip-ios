@@ -14,5 +14,7 @@ target 'carTrip-ios' do
   pod 'Kingfisher'
   pod 'lottie-ios'
   pod "CDAlertView"
+  pod 'Firebase'
+  pod 'Firebase/Storage'
 
 end

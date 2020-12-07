@@ -83,6 +83,14 @@ class DateHelper: NSObject {
     private static func secondsToHoursMinutesSeconds (seconds: Int) -> (Int, Int, Int) {
         return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
+    
+    static func calcAge(birthday: Date) -> Int {
+        let calendar: NSCalendar! = NSCalendar(calendarIdentifier: .gregorian)
+        let now = Date()
+        let calcAge = calendar.components(.year, from: birthday, to: now, options: [])
+        let age = calcAge.year
+        return age!
+    }
 }
 
 struct DateParsed {

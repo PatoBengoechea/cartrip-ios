@@ -17,15 +17,24 @@
 "Let's go to take a drive"="vamos a dar un paseo";
 "Rent"="alquilar";
 
+
+"Text to license" = "Para poder alquilar un auto, tienes que cargar una foto de tu licencia de conducir. Después de eso, validaremos tus datos para que puedas usar nuestros autos";
+
 // MARK: - Register
 "Next"="Siguiente";
-"Already have account?"="¿Ya tienes una cuennta?";
+"Already have account?"="¿Ya tienes una cuenta?";
 "Name"="Nombre";
 "Last name"="Apellido";
 "DNI"="DNI";
 "Birthdate"="Fecha de nacimiento";
 "Done"="Aceptar";
 "Cancel"="Cancelar";
+"Add" = "Agregar";
+"Add later" = "Agregar despues";
+"The license was added" = "La licencia de conducir fue agregada";
+"Wait until the licese is validated" = "Cuando la licencia sea validada, podras alquilar un vehículo";
+"Finish registration" = "Terminar de registrarse";
+"Registration success" = "Creacion de cuenta exitosa";
 
 // RENT
 "Rent your car"="Alquilá tu auto";

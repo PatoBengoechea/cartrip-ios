@@ -21,9 +21,14 @@ extension BasePresenterDelegate {
 class RegisterPresenter<T: RegisterPresenterDelegate>: BasePresenter<T> {
     
     private var inputModel = UserInputModel()
+    private var birthDate = Date()
     
     func setEmail(_ email: String?) {
         inputModel.email = email
+    }
+    
+    func getEmail() -> String {
+        return inputModel.email ?? ""
     }
     
     func setPassword(_ password: String?) {
@@ -43,7 +48,16 @@ class RegisterPresenter<T: RegisterPresenterDelegate>: BasePresenter<T> {
     }
     
     func setBirthDate(_ birthDate: Date) {
+        self.birthDate = birthDate
         inputModel.setBirthDate(date: birthDate)
+    }
+    
+    func isUser18YearOld() -> Bool {
+        return DateHelper.calcAge(birthday: self.birthDate) >= 18 
+    }
+    
+    func setImageLicensePath(_ path: String) {
+        inputModel.licensePath = path
     }
     
     func registerUser() {
