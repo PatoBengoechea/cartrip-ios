@@ -85,9 +85,13 @@ class ServiceManager {
         }
     }
     
-    func postRentCar(dateInit: Date, dateFinish: Date, idCarForRoad: Int, successCallback: @escaping () -> Void, failureCallback: @escaping (String) -> Void) {
+    func postRentCar(dateInit: Date, dateFinish: Date, idCarForRoad: Int, latitudeOrigin: Double, longitudeOrigin: Double, successCallback: @escaping () -> Void, failureCallback: @escaping (String) -> Void) {
         let url = PathBuilder.sharedInstance.postRentCar(shared: false)
-        let body = BodyBuilder.postRentCar(dateInit: dateInit, dateFinish: dateFinish, idCarForRoad: idCarForRoad)
+        let body = BodyBuilder.postRentCar(dateInit: dateInit,
+                                           dateFinish: dateFinish,
+                                           idCarForRoad: idCarForRoad,
+                                           latitudeOrigin: latitudeOrigin,
+                                           longitudeOrigin: longitudeOrigin)
         AF.request(url,
                    method: .post,
                    parameters: body,
@@ -123,11 +127,26 @@ class ServiceManager {
                    encoding: JSONEncoding.default).responseJSON { (serviceResponse) in
                     let response = BaseResponse().create(response: serviceResponse)
                     if response.status, let data = response.data {
-                        if let noTrip = data["noTrip"].bool {
+                        if let _ = data["noTrip"].bool {
                             successCallback(nil)
                         } else {
                             successCallback(Trip(from: data["trip"]))
                         }
+                    } else {
+                        failureCallback(response.message)
+                    }
+                   }
+    }
+    
+    func getPlaces(name: String, successCallback: @escaping ([Place]) -> Void, failureCallback: @escaping (String) -> Void) {
+        let url = PathBuilder.sharedInstance.getPlaces(name: name)
+        AF.request(url,
+                   method: .get,
+                   encoding: JSONEncoding.default).responseJSON { (serviceResponse) in
+                    let response = BaseResponse().create(response: serviceResponse)
+                    if response.status, let data = response.data {
+                        let places = Place.parse(json: data["places"].arrayValue)
+                        successCallback(places)
                     } else {
                         failureCallback(response.message)
                     }

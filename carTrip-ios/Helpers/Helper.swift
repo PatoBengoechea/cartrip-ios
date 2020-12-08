@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 class Helper {
     static func isValidEmail(email: String) -> Bool {
@@ -14,5 +15,17 @@ class Helper {
 
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
+    }
+    
+    static func addresFrom(latitude: Double, longitude: Double, handler: @escaping (String) -> (Void)) {
+        let geoCoder = CLGeocoder()
+        let lat = CLLocationDegrees(latitude)
+        let long = CLLocationDegrees(longitude)
+        let clLocation = CLLocation(latitude: lat, longitude: long)
+        geoCoder.reverseGeocodeLocation(clLocation) { (placermarks, error) in
+            guard let placeMark = placermarks?.first else { return }
+            let addres = "\(placeMark.name ?? ""), \(placeMark.locality ?? "")"
+            handler(addres)
+        }
     }
 }

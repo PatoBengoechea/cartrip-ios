@@ -46,7 +46,12 @@
 "Price per day" = "Precio por día";
 "Total price" = "Precio total";
 "Car rent" = "Auto alquilado";
+"From" = "Desde";
+"Enter a city and we will provide you the places to return the car" = "Ingerese una ciudad y le daremos puntos de devolución del auto";
 
 
 // Actual Rent
 "Actual trip" = "Viaje actual";
+
+// PROFILE
+"Profile" = "Perfil";

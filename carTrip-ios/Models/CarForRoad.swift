@@ -27,6 +27,14 @@ class CarForRoad {
     }
 
     
+    init() {
+        idCarForRoad = 0
+        available = false
+        forService = false
+        longitude = "0.0"
+        latitude = "0.0"
+    }
+    
     static func parse(data: [JSON]) -> [CarForRoad] {
         return data.compactMap { CarForRoad(withJSON: $0)}
         

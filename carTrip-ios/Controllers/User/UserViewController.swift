@@ -41,6 +41,8 @@ class UserViewController: UIViewController {
         navigationController?.navigationBar.backgroundColor = .blueCar
         navigationController?.navigationBar.tintColor = .blueCar
         navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.blueCar]
+        navigationItem.title = R.string.localizable.profile()
         
         nameLabel.set(font: .gothamRoundedMedium(16), color: .blueCar)
         nameLabel.textAlignment = .right

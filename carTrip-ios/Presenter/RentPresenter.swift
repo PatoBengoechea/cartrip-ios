@@ -11,10 +11,11 @@ import Foundation
 protocol RentPresenterDelegate: BasePresenterDelegate {
     func onGetCarForRoad()
     func onRentCar()
+    func onGetPlaces(places: [Place])
 }
 
 enum RentDataSource {
-    case image, share, days, price
+    case image, share, days, price, informationShare, from, to
 }
 
 class RentPrenter<T: RentPresenterDelegate>: BasePresenter<T> {
@@ -29,9 +30,13 @@ class RentPrenter<T: RentPresenterDelegate>: BasePresenter<T> {
         CarManager.instance.getCarForRoad(id: id, delegate: self)
     }
     
+    func getPlaces(name: String) {
+        TripManager.sharedInstance.getPlaces(name: name, delegate: self)
+    }
+    
     func setDataSource(share: Bool) {
         if share {
-            datasource = [.image, .share]
+            datasource = [.image, .share, .informationShare, .from, .to]
         } else {
             datasource = [.image, .share, .days, .price]
         }
@@ -39,7 +44,7 @@ class RentPrenter<T: RentPresenterDelegate>: BasePresenter<T> {
     
     func createTrip(dateInit: Date, dateFinish: Date?) {
         if let finish = dateFinish, let idCarForRoad = currentCar?.idCarForRoad {
-            TripManager.sharedInstance.crateTrip(delegate: self, dateInit: dateInit, dateFinish: finish, idCarForRoad: idCarForRoad)
+            TripManager.sharedInstance.crateTrip(delegate: self, dateInit: dateInit, dateFinish: finish, idCarForRoad: idCarForRoad, latitudeOrigin: currentCar?.latitude ?? 0.0, longitudeOrigin: currentCar?.longitude ?? 0.0)
         } else {
             delegate?.onError(message: "Please try again")
         }
@@ -65,6 +70,10 @@ extension RentPrenter: CarManagerDelegate {
     func onGetCarForRoad(car: CarForRoad) {
         currentCar = CarForRoadViewModel(car)
         delegate?.onGetCarForRoad()
+    }
+    
+    func onGetPlaces(places: [Place]) {
+        delegate?.onGetPlaces(places: places)
     }
 }
 

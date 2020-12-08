@@ -44,7 +44,13 @@
 "Price per day" = "Price per day";
 "Total price" = "Total price";
 "Car rent" = "Car rent";
+"From" = "From";
+"Enter a city and we will provide you the places to return the car" = "Enter a city and we will provide you the places to return the car";
 
 
 // Actual Rent
 "Actual trip" = "Actual trip";
+
+
+// PROFILE
+"Profile" = "Profile";

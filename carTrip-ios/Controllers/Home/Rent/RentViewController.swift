@@ -34,6 +34,7 @@ class RentViewController: UIViewController, RentDelegate {
     // MARK: - Properties
     var currentCar: CarForRoadViewModel!
     private let presenter = RentPrenter<RentViewController>()
+    private var toCity: String = ""
     
     // MARK: - @IBAction
     @IBAction func nextButtonPressed() {
@@ -51,8 +52,17 @@ class RentViewController: UIViewController, RentDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.navigationBar.backgroundColor = .blueCar
+        navigationController?.navigationBar.tintColor = .blueCar
         navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.blueCar]
         navigationItem.title = R.string.localizable.rentYourCar()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let placeVC = segue.destination as? PlaceViewController, let places = sender as? [Place] {
+            placeVC.places = places
+        }
     }
     
     // MARK: - Private Functions
@@ -111,6 +121,14 @@ class RentViewController: UIViewController, RentDelegate {
 
 // MARK: - Presenter Delegate
 extension RentViewController: RentPresenterDelegate {
+    func onGetPlaces(places: [Place]) {
+        if places.isEmpty {
+            // LOOK FOR OTHER PLACES
+        } else {
+            performSegue(withIdentifier: R.segue.rentViewController.goToPlaces.identifier, sender: places)
+        }
+    }
+    
     func onRentCar() {
         let alert = CDAlertView(title: R.string.localizable.carRent(), message: "", type: .success)
         let action = CDAlertViewAction(title: "OK") { (action) -> Bool in
@@ -166,6 +184,21 @@ extension RentViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.setUp(type: presenter.currentCar?.car?.type, days: howManyDays, delegate: self)
                 return cell
             }
+        case .informationShare:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.informationSharedTableViewCell, for: indexPath) {
+                cell.setUpForInfo()
+                return cell
+            }
+        case .from:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.informationSharedTableViewCell, for: indexPath) {
+                cell.setUpForLocation(self.currentCar)
+                return cell
+            }
+        case .to:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.locationTableViewCell, for: indexPath) {
+                cell.setUp(delegate: self)
+                return cell
+            }
         default:
             break
         }
@@ -176,11 +209,24 @@ extension RentViewController: UITableViewDataSource, UITableViewDelegate {
         switch presenter.datasource[indexPath.row] {
         case .image:
             return ImageTableViewCell.height
-        case .days, .share, .price:
+        case .days, .share, .price, .informationShare, .from, .to:
             return UITableView.automaticDimension
         default:
             return 0
         }
+    }
+    
+    
+}
+
+// MARK: - City Delegate
+extension RentViewController: CityEnteredDelegate {
+    func onChangeCity(city: String) {
+        toCity = city
+    }
+    
+    func onContinue() {
+        presenter.getPlaces(name: toCity)
     }
     
     

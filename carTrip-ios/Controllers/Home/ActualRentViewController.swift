@@ -13,6 +13,7 @@ class ActualRentViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var carImageView: UIImageView!
     @IBOutlet weak var carLabel: UILabel!
+    @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var finishTrip: UIButton!
     
     var actualTrip: Trip?
@@ -37,6 +38,9 @@ class ActualRentViewController: UIViewController {
         carLabel.set(font: .gothamRoundedMedium(18), color: .blueCar)
         carLabel.textAlignment = .center
         
+        fromLabel.set(font: .gothamRoundedMedium(18), color: .blueCar)
+        fromLabel.text = ""
+        
     }
 
     private func setUp() {
@@ -44,7 +48,15 @@ class ActualRentViewController: UIViewController {
         
         carLabel.text = "\(actualTrip?.carForRoad.car?.brand ?? "") \(actualTrip?.carForRoad.car?.name ?? "")"
         
+        let carVM = CarForRoadViewModel(actualTrip?.carForRoad ?? CarForRoad())
+        
+        
+        Helper.addresFrom(latitude: carVM.latitude ?? 0.0, longitude: carVM.longitude ?? 0.0) { (addres) -> (Void) in
+            self.fromLabel.text = "\(R.string.localizable.from()): \(addres)"
+        }
+            
         carImageView.setImage(image: actualTrip?.carForRoad.car?.img_path ?? "")
+    
     }
 
 }

@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 5 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 6 view controllers.
   struct segue {
     /// This struct is generated for `HomeViewController`, and contains static references to 3 segues.
     struct homeViewController {
@@ -159,6 +159,23 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func goToPersonalData(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, RegisterViewController, PersonalDataRegisterViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.registerViewController.goToPersonalData, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    /// This struct is generated for `RentViewController`, and contains static references to 1 segues.
+    struct rentViewController {
+      /// Segue identifier `goToPlaces`.
+      static let goToPlaces: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, RentViewController, PlaceViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToPlaces")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `goToPlaces`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func goToPlaces(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, RentViewController, PlaceViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.rentViewController.goToPlaces, segue: segue)
       }
       #endif
 
@@ -522,12 +539,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 7 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `DaysTableViewCell`.
     static let daysTableViewCell: Rswift.ReuseIdentifier<DaysTableViewCell> = Rswift.ReuseIdentifier(identifier: "DaysTableViewCell")
     /// Reuse identifier `ImageTableViewCell`.
     static let imageTableViewCell: Rswift.ReuseIdentifier<ImageTableViewCell> = Rswift.ReuseIdentifier(identifier: "ImageTableViewCell")
+    /// Reuse identifier `InformationSharedTableViewCell`.
+    static let informationSharedTableViewCell: Rswift.ReuseIdentifier<InformationSharedTableViewCell> = Rswift.ReuseIdentifier(identifier: "InformationSharedTableViewCell")
+    /// Reuse identifier `LocationTableViewCell`.
+    static let locationTableViewCell: Rswift.ReuseIdentifier<LocationTableViewCell> = Rswift.ReuseIdentifier(identifier: "LocationTableViewCell")
     /// Reuse identifier `PriceTableViewCell`.
     static let priceTableViewCell: Rswift.ReuseIdentifier<PriceTableViewCell> = Rswift.ReuseIdentifier(identifier: "PriceTableViewCell")
     /// Reuse identifier `ShareTableViewCell`.
@@ -545,7 +566,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 32 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 35 localization keys.
     struct localizable {
       /// en translation: Actual trip
       ///
@@ -595,10 +616,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let email = Rswift.StringResource(key: "Email", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Enter a city and we will provide you the places to return the car
+      ///
+      /// Locales: en, es-419
+      static let enterACityAndWeWillProvideYouThePlacesToReturnTheCar = Rswift.StringResource(key: "Enter a city and we will provide you the places to return the car", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Finish registration
       ///
       /// Locales: en, es-419
       static let finishRegistration = Rswift.StringResource(key: "Finish registration", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: From
+      ///
+      /// Locales: en, es-419
+      static let from = Rswift.StringResource(key: "From", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: How many days do you need the car? (Max. 30)
       ///
       /// Locales: en, es-419
@@ -631,6 +660,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let pricePerDay = Rswift.StringResource(key: "Price per day", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Profile
+      ///
+      /// Locales: en, es-419
+      static let profile = Rswift.StringResource(key: "Profile", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Registration success
       ///
       /// Locales: en, es-419
@@ -856,6 +889,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Email", bundle: bundle, comment: "")
       }
 
+      /// en translation: Enter a city and we will provide you the places to return the car
+      ///
+      /// Locales: en, es-419
+      static func enterACityAndWeWillProvideYouThePlacesToReturnTheCar(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Enter a city and we will provide you the places to return the car", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Enter a city and we will provide you the places to return the car"
+        }
+
+        return NSLocalizedString("Enter a city and we will provide you the places to return the car", bundle: bundle, comment: "")
+      }
+
       /// en translation: Finish registration
       ///
       /// Locales: en, es-419
@@ -869,6 +917,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Finish registration", bundle: bundle, comment: "")
+      }
+
+      /// en translation: From
+      ///
+      /// Locales: en, es-419
+      static func from(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("From", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "From"
+        }
+
+        return NSLocalizedString("From", bundle: bundle, comment: "")
       }
 
       /// en translation: How many days do you need the car? (Max. 30)
@@ -989,6 +1052,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Price per day", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Profile
+      ///
+      /// Locales: en, es-419
+      static func profile(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Profile", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Profile"
+        }
+
+        return NSLocalizedString("Profile", bundle: bundle, comment: "")
       }
 
       /// en translation: Registration success

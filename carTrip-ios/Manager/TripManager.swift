@@ -12,12 +12,14 @@ protocol TripManagerDelegate: BaseManagerDelegate {
     func onRentCar()
     func onGetTrips(trips: [Trip])
     func onGetActualTrip(trip: Trip?)
+    func onGetPlaces(places: [Place])
 }
 
 extension TripManagerDelegate {
     func onRentCar() { }
     func onGetTrips(trips: [Trip]) { }
     func onGetActualTrip(trip: Trip?) {  }
+    func onGetPlaces(places: [Place]) { }
 }
 
 class TripManager: BaseManager {
@@ -25,11 +27,13 @@ class TripManager: BaseManager {
     static var sharedInstance = TripManager()
     
     
-    func crateTrip(delegate: TripManagerDelegate, dateInit: Date, dateFinish: Date, idCarForRoad: Int) {
+    func crateTrip(delegate: TripManagerDelegate, dateInit: Date, dateFinish: Date, idCarForRoad: Int, latitudeOrigin: Double, longitudeOrigin: Double) {
         delegate.onInitService()
         ServiceManager.sharedInstance.postRentCar(dateInit: dateInit,
                                                   dateFinish: dateFinish,
-                                                  idCarForRoad: idCarForRoad) {
+                                                  idCarForRoad: idCarForRoad,
+                                                  latitudeOrigin: latitudeOrigin,
+                                                  longitudeOrigin: longitudeOrigin) {
             delegate.onRentCar()
             delegate.onFinishedService()
         } failureCallback: { (message) in
@@ -63,6 +67,16 @@ class TripManager: BaseManager {
         } else {
             delegate.onError("User not found")
         }
-        
+    }
+    
+    func getPlaces(name: String, delegate: TripManagerDelegate) {
+        delegate.onInitService()
+        ServiceManager.sharedInstance.getPlaces(name: name) { places in
+            delegate.onGetPlaces(places: places)
+            delegate.onFinishedService()
+        } failureCallback: { message in
+            delegate.onFinishedService()
+            delegate.onError(message)
+        }
     }
 }
