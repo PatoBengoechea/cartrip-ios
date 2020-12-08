@@ -46,6 +46,8 @@
 "Car rent" = "Car rent";
 "From" = "From";
 "Enter a city and we will provide you the places to return the car" = "Enter a city and we will provide you the places to return the car";
+"There are no return points in that city" = "There are no return points in that city";
+"Please look for another city" = "Please look for another city";
 
 
 // Actual Rent

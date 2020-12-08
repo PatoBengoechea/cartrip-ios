@@ -123,7 +123,9 @@ class RentViewController: UIViewController, RentDelegate {
 extension RentViewController: RentPresenterDelegate {
     func onGetPlaces(places: [Place]) {
         if places.isEmpty {
-            // LOOK FOR OTHER PLACES
+            let alert = CDAlertView(title: R.string.localizable.thereAreNoReturnPointsInThatCity(), message: R.string.localizable.pleaseLookForAnotherCity(), type: .error)
+            alert.autoHideTime = 4
+            alert.show()
         } else {
             performSegue(withIdentifier: R.segue.rentViewController.goToPlaces.identifier, sender: places)
         }

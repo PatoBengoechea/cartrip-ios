@@ -566,7 +566,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 35 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 37 localization keys.
     struct localizable {
       /// en translation: Actual trip
       ///
@@ -656,6 +656,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let password = Rswift.StringResource(key: "Password", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Please look for another city
+      ///
+      /// Locales: en, es-419
+      static let pleaseLookForAnotherCity = Rswift.StringResource(key: "Please look for another city", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Price per day
       ///
       /// Locales: en, es-419
@@ -688,6 +692,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let theLicenseWasAdded = Rswift.StringResource(key: "The license was added", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: There are no return points in that city
+      ///
+      /// Locales: en, es-419
+      static let thereAreNoReturnPointsInThatCity = Rswift.StringResource(key: "There are no return points in that city", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Total price
       ///
       /// Locales: en, es-419
@@ -1039,6 +1047,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Password", bundle: bundle, comment: "")
       }
 
+      /// en translation: Please look for another city
+      ///
+      /// Locales: en, es-419
+      static func pleaseLookForAnotherCity(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Please look for another city", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Please look for another city"
+        }
+
+        return NSLocalizedString("Please look for another city", bundle: bundle, comment: "")
+      }
+
       /// en translation: Price per day
       ///
       /// Locales: en, es-419
@@ -1157,6 +1180,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("The license was added", bundle: bundle, comment: "")
+      }
+
+      /// en translation: There are no return points in that city
+      ///
+      /// Locales: en, es-419
+      static func thereAreNoReturnPointsInThatCity(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("There are no return points in that city", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "There are no return points in that city"
+        }
+
+        return NSLocalizedString("There are no return points in that city", bundle: bundle, comment: "")
       }
 
       /// en translation: Total price

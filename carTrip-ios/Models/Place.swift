@@ -20,6 +20,8 @@ class Place: MKPointAnnotation {
     var cityName: String = ""
     var location: CLLocationCoordinate2D { return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)}
     
+    override var coordinate: CLLocationCoordinate2D { get { return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)} set { } }
+    
     init(json: JSON) {
         id = json["idPlace"].string ?? ""
         _latitude = json["latitude"].string ?? ""

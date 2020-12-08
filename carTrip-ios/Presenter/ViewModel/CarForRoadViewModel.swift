@@ -19,9 +19,6 @@ class CarForRoadViewModel: MKPointAnnotation {
     var car: CarViewModel?
     var locationAddres: String = ""
     
-    func setLocationAddres(handler: @escaping (String) -> ()) {
-        handler(locationAddres)
-    }
     
     override var coordinate: CLLocationCoordinate2D { get { return CLLocationCoordinate2D(latitude: latitude ?? 0, longitude: longitude ?? 0)} set { } }
     override var title: String? { get { return "\((car?.brand?.capitalized ?? "") + " " +  (car?.name?.capitalized ?? ""))"} set { }}

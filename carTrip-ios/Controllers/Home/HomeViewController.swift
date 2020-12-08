@@ -277,13 +277,13 @@ extension HomeViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let car = view.annotation as? CarForRoadViewModel {
-            let geoCoder = CLGeocoder()
-            let location = CLLocation(latitude: car.latitude ?? 0.0, longitude: car.longitude ?? 0.0)
-            geoCoder.reverseGeocodeLocation(location) { (placermarks, error) in
-                guard let placeMark = placermarks?.first else { return }
-                print(placeMark.location)
-                dump(placeMark)
-            }
+//            let geoCoder = CLGeocoder()
+//            let location = CLLocation(latitude: car.latitude ?? 0.0, longitude: car.longitude ?? 0.0)
+//            geoCoder.reverseGeocodeLocation(location) { (placermarks, error) in
+//                guard let placeMark = placermarks?.first else { return }
+//                print(placeMark.location)
+//                dump(placeMark)
+//            }
             selectedCar = car
             let dialog = ModalRentCar(car: car , completion: goToRent)
             dialog.present()    

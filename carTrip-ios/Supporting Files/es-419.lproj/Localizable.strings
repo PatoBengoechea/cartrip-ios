@@ -48,6 +48,8 @@
 "Car rent" = "Auto alquilado";
 "From" = "Desde";
 "Enter a city and we will provide you the places to return the car" = "Ingerese una ciudad y le daremos puntos de devolución del auto";
+"There are no return points in that city" = "No hay lugares para devolver el auto en esa ciudad";
+"Please look for another city" = "Por favor ingresa otra ciudad";
 
 
 // Actual Rent
