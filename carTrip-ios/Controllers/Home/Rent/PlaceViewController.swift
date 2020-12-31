@@ -13,6 +13,8 @@ class PlaceViewController: UIViewController {
     
     //MARK: - @IBOutlet
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet weak var navigationView: UIView!
+    @IBOutlet weak var closeButton: UIButton!
     
     var places = [Place]()
 
@@ -25,15 +27,27 @@ class PlaceViewController: UIViewController {
         mapView.delegate = self
         mapView.addAnnotations(places)
         centerMap()
-        
+        customize()
     }
     
+    // MARK: - @IBAction
+    @IBAction func closeButtonTapped() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - Private Functions
     private func centerMap() {
         guard let place = places.first else { return }
         let coordinate = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
-        let disntanceSpan: CLLocationDistance = 3000
+        let disntanceSpan: CLLocationDistance = 10000
         let mapCoordinate = MKCoordinateRegion(center: coordinate, latitudinalMeters: disntanceSpan, longitudinalMeters: disntanceSpan)
         mapView.setRegion(mapCoordinate, animated: true)
+    }
+    
+    private func customize() {
+        navigationView.alpha = 0.9
+        closeButton.setTitle(R.string.localizable.close(), for: .normal)
+        closeButton.setTitleColor(.blueCar, for: .normal)
     }
 }
 

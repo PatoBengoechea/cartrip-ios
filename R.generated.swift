@@ -92,10 +92,12 @@ struct R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   /// This `R.segue` struct is generated, and contains static references to 6 view controllers.
   struct segue {
-    /// This struct is generated for `HomeViewController`, and contains static references to 3 segues.
+    /// This struct is generated for `HomeViewController`, and contains static references to 4 segues.
     struct homeViewController {
       /// Segue identifier `goToActualTrip`.
       static let goToActualTrip: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, ActualRentViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToActualTrip")
+      /// Segue identifier `goToListCars`.
+      static let goToListCars: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, ListCarsViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToListCars")
       /// Segue identifier `goToProfile`.
       static let goToProfile: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, UserViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToProfile")
       /// Segue identifier `goToRent`.
@@ -107,6 +109,15 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func goToActualTrip(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HomeViewController, ActualRentViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.homeViewController.goToActualTrip, segue: segue)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `goToListCars`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func goToListCars(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HomeViewController, ListCarsViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.homeViewController.goToListCars, segue: segue)
       }
       #endif
 
@@ -232,7 +243,7 @@ struct R: Rswift.Validatable {
   #endif
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
   struct storyboard {
     /// Storyboard `Auth`.
     static let auth = _R.storyboard.auth()
@@ -240,6 +251,10 @@ struct R: Rswift.Validatable {
     static let home = _R.storyboard.home()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `ListCars`.
+    static let listCars = _R.storyboard.listCars()
+    /// Storyboard `Rent`.
+    static let rent = _R.storyboard.rent()
     /// Storyboard `Root`.
     static let root = _R.storyboard.root()
     /// Storyboard `User`.
@@ -263,6 +278,20 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "ListCars", bundle: ...)`
+    static func listCars(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.listCars)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Rent", bundle: ...)`
+    static func rent(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.rent)
     }
     #endif
 
@@ -566,7 +595,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 37 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 38 localization keys.
     struct localizable {
       /// en translation: Actual trip
       ///
@@ -596,6 +625,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let carRent = Rswift.StringResource(key: "Car rent", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Close
+      ///
+      /// Locales: en, es-419
+      static let close = Rswift.StringResource(key: "Close", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: DNI
       ///
       /// Locales: en, es-419
@@ -820,6 +853,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Car rent", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Close
+      ///
+      /// Locales: en, es-419
+      static func close(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Close", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Close"
+        }
+
+        return NSLocalizedString("Close", bundle: bundle, comment: "")
       }
 
       /// en translation: DNI
@@ -1352,6 +1400,12 @@ struct _R: Rswift.Validatable {
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try listCars.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try rent.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try root.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -1406,6 +1460,38 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "freeLogo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'freeLogo' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct listCars: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = ListCarsViewController
+
+      let bundle = R.hostingBundle
+      let name = "ListCars"
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct rent: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = RentViewController
+
+      let bundle = R.hostingBundle
+      let name = "Rent"
+
+      static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

@@ -78,6 +78,10 @@ class HomeViewController: UIViewController {
         }
     }
     
+    @IBAction private func carButtonTapped() {
+        self.performSegue(withIdentifier: R.segue.homeViewController.goToListCars.identifier, sender: nil)
+    }
+    
     // MARK: - Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -91,6 +91,8 @@ class SignInViewController: RegisterBaseViewController {
         super.viewDidAppear(animated)
         formView.roundCorners(radius: 25, corners: [.topRight, .topLeft])
 
+        emailTextField.text = "pato.bengoechea@gmail.com"
+        passwordTextField.text = "admin"
         emailTextField.carTripRadius()
         passwordTextField.carTripRadius()
         loginButton.setCornerRadius(cornerRadius: 10)
