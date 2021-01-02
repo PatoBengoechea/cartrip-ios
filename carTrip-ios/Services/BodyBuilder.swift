@@ -29,14 +29,14 @@ class BodyBuilder  {
         return dict
     }
     
-    static func postRentCar(dateInit: Date, dateFinish: Date, idCarForRoad: Int, latitudeOrigin: Double, longitudeOrigin: Double) -> [String: Any] {
+    static func postRentCar(input: TripInputModel) -> [String: Any] {
         var dict = [String: Any]()
-        dict["dateInit"] = dateInit.dateToString()
-        dict["dateEnd"] = dateFinish.dateToString()
-        dict["idCarForRoad"] = idCarForRoad
-        dict["owner"] = UserDefaults.standard.string(forKey: "idUser") ?? 0
-        dict["latitudeOrigin"] = latitudeOrigin
-        dict["longitudeOrigin"] = longitudeOrigin
+        dict["dateInit"] = input.dateInit
+        dict["dateEnd"] = input.dateFinish
+        dict["idCarForRoad"] = input.idCarForRoad
+        dict["owner"] = input.owner
+        dict["latitudeOrigin"] = input.latitudeOrigin
+        dict["longitudeOrigin"] = input.longitudeOrigin
         return dict
     }
 }

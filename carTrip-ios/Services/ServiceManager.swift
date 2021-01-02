@@ -85,13 +85,9 @@ class ServiceManager {
         }
     }
     
-    func postRentCar(dateInit: Date, dateFinish: Date, idCarForRoad: Int, latitudeOrigin: Double, longitudeOrigin: Double, successCallback: @escaping () -> Void, failureCallback: @escaping (String) -> Void) {
+    func postRentCar(input: TripInputModel, successCallback: @escaping () -> Void, failureCallback: @escaping (String) -> Void) {
         let url = PathBuilder.sharedInstance.postRentCar(shared: false)
-        let body = BodyBuilder.postRentCar(dateInit: dateInit,
-                                           dateFinish: dateFinish,
-                                           idCarForRoad: idCarForRoad,
-                                           latitudeOrigin: latitudeOrigin,
-                                           longitudeOrigin: longitudeOrigin)
+        let body = BodyBuilder.postRentCar(input: input)
         AF.request(url,
                    method: .post,
                    parameters: body,

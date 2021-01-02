@@ -27,13 +27,9 @@ class TripManager: BaseManager {
     static var sharedInstance = TripManager()
     
     
-    func crateTrip(delegate: TripManagerDelegate, dateInit: Date, dateFinish: Date, idCarForRoad: Int, latitudeOrigin: Double, longitudeOrigin: Double) {
+    func crateTrip(delegate: TripManagerDelegate, input: TripInputModel) {
         delegate.onInitService()
-        ServiceManager.sharedInstance.postRentCar(dateInit: dateInit,
-                                                  dateFinish: dateFinish,
-                                                  idCarForRoad: idCarForRoad,
-                                                  latitudeOrigin: latitudeOrigin,
-                                                  longitudeOrigin: longitudeOrigin) {
+        ServiceManager.sharedInstance.postRentCar(input: input) {
             delegate.onRentCar()
             delegate.onFinishedService()
         } failureCallback: { (message) in

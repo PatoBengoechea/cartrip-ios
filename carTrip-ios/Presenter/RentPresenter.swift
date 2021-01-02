@@ -42,12 +42,16 @@ class RentPrenter<T: RentPresenterDelegate>: BasePresenter<T> {
         }
     }
     
-    func createTrip(dateInit: Date, dateFinish: Date?) {
-        if let finish = dateFinish, let idCarForRoad = currentCar?.idCarForRoad {
-            TripManager.sharedInstance.crateTrip(delegate: self, dateInit: dateInit, dateFinish: finish, idCarForRoad: idCarForRoad, latitudeOrigin: currentCar?.latitude ?? 0.0, longitudeOrigin: currentCar?.longitude ?? 0.0)
-        } else {
-            delegate?.onError(message: "Please try again")
-        }
+    func createTrip(dateInit: Date, dateFinish: Date?, idDestiny: String?) {
+        let inputModel = TripInputModel(dateInit: dateInit.dateToString(),
+                                        dateFinish: dateFinish?.dateToString() ?? dateInit.dateToString(),
+                                        idCarForRoad: currentCar?.idCarForRoad ?? 0,
+                                        owner: UserDefaults.standard.string(forKey: "idUser") ?? "0",
+                                        latitudeOrigin: currentCar?.latitude ?? 0.0,
+                                        longitudeOrigin: currentCar?.longitude ?? 0.0,
+                                        idDestiny: idDestiny)
+        
+        TripManager.sharedInstance.crateTrip(delegate: self, input: inputModel)
         
     }
 }

@@ -35,6 +35,9 @@ class RentViewController: UIViewController, RentDelegate {
     var currentCar: CarForRoadViewModel!
     private let presenter = RentPrenter<RentViewController>()
     private var toCity: String = ""
+    private var destinyPlace: Place? { didSet {
+        setDestiny(destinyPlace)
+    }}
     
     // MARK: - @IBAction
     @IBAction func nextButtonPressed() {
@@ -62,6 +65,9 @@ class RentViewController: UIViewController, RentDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let placeVC = segue.destination as? PlaceViewController, let places = sender as? [Place] {
             placeVC.places = places
+            placeVC.choosePlace = { [weak self] place in
+                self?.destinyPlace = place
+            }
         }
     }
     
@@ -79,10 +85,9 @@ class RentViewController: UIViewController, RentDelegate {
         var dateComponents = DateComponents()
         dateComponents.day = howManyDays
         if shareCar {
-            let alert = CDAlertView(title: "Awesome Title", message: "Well explained message!", type: .error)
-            alert.show()
+            presenter.createTrip(dateInit: today, dateFinish: nil, idDestiny: destinyPlace?.id)
         } else {
-            presenter.createTrip(dateInit: today, dateFinish: Calendar.current.date(byAdding: dateComponents, to: today))
+            presenter.createTrip(dateInit: today, dateFinish: Calendar.current.date(byAdding: dateComponents, to: today), idDestiny: nil)
         }
     }
     
@@ -116,6 +121,10 @@ class RentViewController: UIViewController, RentDelegate {
 //            let indexPaths = [IndexPath(row: count, section: 0), IndexPath(row: (count + 1), section: 0)]
 //            tableView.insertRows(at: indexPaths, with: .fade)
 //        }
+    }
+    
+    private func setDestiny(_ place: Place?) {
+        tableView.reloadData()
     }
 }
 
@@ -198,7 +207,11 @@ extension RentViewController: UITableViewDataSource, UITableViewDelegate {
             }
         case .to:
             if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.locationTableViewCell, for: indexPath) {
-                cell.setUp(delegate: self)
+                if let place = destinyPlace {
+                    cell.setUp(place: place)
+                } else {
+                    cell.setUp(delegate: self)
+                }
                 return cell
             }
         default:

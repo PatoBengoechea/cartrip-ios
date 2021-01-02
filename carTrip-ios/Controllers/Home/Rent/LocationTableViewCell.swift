@@ -38,6 +38,11 @@ class LocationTableViewCell: UITableViewCell {
         self.delegate = delegate
     }
     
+    func setUp(place: Place) {
+        cityTextField.text = place.locationAddres
+        cityTextField.isEnabled = false
+    }
+    
     private func customize() {
         locationLabel.set(font: .gothamRoundedMedium(12), color: .blueCar)
         locationLabel.numberOfLines = 0

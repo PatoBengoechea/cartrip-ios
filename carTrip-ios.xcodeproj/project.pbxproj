@@ -83,6 +83,8 @@
 		6AEC1BCB259E0B19002C6A96 /* ListCarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC1BCA259E0B19002C6A96 /* ListCarsViewController.swift */; };
 		6AEC1BCF259E0B30002C6A96 /* ListCars.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AEC1BCE259E0B30002C6A96 /* ListCars.storyboard */; };
 		6AEC1BD3259E0C98002C6A96 /* Rent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AEC1BD2259E0C98002C6A96 /* Rent.storyboard */; };
+		6AEC1BD7259E136C002C6A96 /* CDAlertViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC1BD6259E136C002C6A96 /* CDAlertViewHelper.swift */; };
+		6AEC1BDA259E1FD2002C6A96 /* TripInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC1BD9259E1FD2002C6A96 /* TripInputModel.swift */; };
 		6AFA3FDD253912040044C64D /* PrizeRent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA3FDC253912040044C64D /* PrizeRent.swift */; };
 		7F1E2E41307D5BCCF21D0630 /* Pods_carTrip_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4E7DDF74A8554737824D7E /* Pods_carTrip_ios.framework */; };
 /* End PBXBuildFile section */
@@ -171,6 +173,8 @@
 		6AEC1BCA259E0B19002C6A96 /* ListCarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarsViewController.swift; sourceTree = "<group>"; };
 		6AEC1BCE259E0B30002C6A96 /* ListCars.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListCars.storyboard; sourceTree = "<group>"; };
 		6AEC1BD2259E0C98002C6A96 /* Rent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Rent.storyboard; sourceTree = "<group>"; };
+		6AEC1BD6259E136C002C6A96 /* CDAlertViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDAlertViewHelper.swift; sourceTree = "<group>"; };
+		6AEC1BD9259E1FD2002C6A96 /* TripInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripInputModel.swift; sourceTree = "<group>"; };
 		6AFA3FDC253912040044C64D /* PrizeRent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizeRent.swift; sourceTree = "<group>"; };
 		7C4E7DDF74A8554737824D7E /* Pods_carTrip_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carTrip_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -385,6 +389,7 @@
 				6A80F402242041ED00474555 /* Constants.swift */,
 				6AEB322D249073F800984196 /* Helper.swift */,
 				6AA6FBD0257D7DAC00E189D9 /* DateHelper.swift */,
+				6AEC1BD6259E136C002C6A96 /* CDAlertViewHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				6A833B1F249AEBAB0000FF5B /* UserInputModel.swift */,
+				6AEC1BD9259E1FD2002C6A96 /* TripInputModel.swift */,
 			);
 			path = InputModel;
 			sourceTree = "<group>";
@@ -657,6 +663,7 @@
 				6A833B1E249ADF450000FF5B /* RegisterPresenter.swift in Sources */,
 				6A80F40D24213FB500474555 /* BaseResponse.swift in Sources */,
 				6A80F40F2421425B00474555 /* ServiceManager.swift in Sources */,
+				6AEC1BDA259E1FD2002C6A96 /* TripInputModel.swift in Sources */,
 				6A701D962509938500BFD594 /* RentViewController.swift in Sources */,
 				6A64D809257ECE560042EBFA /* ActualRentViewController.swift in Sources */,
 				6AFA3FDD253912040044C64D /* PrizeRent.swift in Sources */,
@@ -672,6 +679,7 @@
 				6A04475125199E0D009E14D2 /* RentPresenter.swift in Sources */,
 				6A80F3ED2420209A00474555 /* SplashViewController.swift in Sources */,
 				6AD5535E243517CA00EE6517 /* CarViewModel.swift in Sources */,
+				6AEC1BD7259E136C002C6A96 /* CDAlertViewHelper.swift in Sources */,
 				6A80F3F12420234300474555 /* R.generated.swift in Sources */,
 				6AA6FBCE257D38BF00E189D9 /* TripTableViewCell.swift in Sources */,
 				6A71B2F8242AB6D6006612F1 /* User.swift in Sources */,

@@ -19,6 +19,7 @@ class Place: MKPointAnnotation {
     var latitude: Double = 0.0
     var cityName: String = ""
     var location: CLLocationCoordinate2D { return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)}
+    var locationAddres: String = ""
     
     override var coordinate: CLLocationCoordinate2D { get { return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)} set { } }
     
@@ -29,6 +30,14 @@ class Place: MKPointAnnotation {
         cityName = json["cityName"].string ?? ""
         latitude = Double(_latitude) ?? 0.0
         longitude = Double(_longitude) ?? 0.0
+        let clLocation = CLLocation(latitude: latitude ?? 0.0, longitude: longitude ?? 0.0)
+        
+        let geoCoder = CLGeocoder()
+        super.init()
+        geoCoder.reverseGeocodeLocation(clLocation) { (placermarks, error) in
+            guard let placeMark = placermarks?.first else { return }
+            self.locationAddres = "\(placeMark.name ?? ""), \(placeMark.locality ?? "")"
+        }
         
     }
     

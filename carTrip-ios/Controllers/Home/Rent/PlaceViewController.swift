@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CDAlertView
 
 class PlaceViewController: UIViewController {
     
@@ -17,6 +18,8 @@ class PlaceViewController: UIViewController {
     @IBOutlet weak var closeButton: UIButton!
     
     var places = [Place]()
+    
+    var choosePlace: ((Place) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,5 +56,18 @@ class PlaceViewController: UIViewController {
 
 // MARK: - Map kit delegate
 extension PlaceViewController: MKMapViewDelegate {
-    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let point = view.annotation as? Place {
+            let alert = CDAlertView(title: R.string.localizable.carRent(), message: point.cityName, type: .notification)
+            let action = CDAlertViewAction(title: "Elegir") { (action) -> Bool in
+                self.choosePlace?(point)
+                self.dismiss(animated: true, completion: nil)
+                return true
+            }
+            let action2 = CDAlertViewAction(title: "Cancelar")
+            alert.add(action: action)
+            alert.add(action: action2)
+            alert.show()
+        }
+    }
 }
