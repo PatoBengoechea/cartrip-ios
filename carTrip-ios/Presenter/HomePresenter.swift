@@ -35,6 +35,9 @@ extension HomePresenter: CarManagerDelegate {
         dataCarForRoad = data.map {
             return CarForRoadViewModel($0)
         }
+        dataCarForRoad.sort { (car1, car2) in
+            car1.distance < car2.distance
+        }
         delegate?.onGetCarForRoad()
     }
     

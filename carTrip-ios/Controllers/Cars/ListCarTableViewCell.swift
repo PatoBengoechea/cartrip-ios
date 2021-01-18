@@ -45,6 +45,7 @@ class ListCarTableViewCell: UITableViewCell {
         carImageView.setImage(image: carModel.car?.img_path ?? "")
         modelLabel.text = carModel.car?.fullName
         addresLabel.text = carModel.locationAddres
+        distanceLabel.text = carModel.getDistanceFromCurrentLocation()
     }
     
     // MARK: - Private Functions

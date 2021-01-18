@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 6 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 7 view controllers.
   struct segue {
     /// This struct is generated for `HomeViewController`, and contains static references to 4 segues.
     struct homeViewController {
@@ -136,6 +136,23 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func goToRent(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HomeViewController, RentViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.homeViewController.goToRent, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    /// This struct is generated for `ListCarsViewController`, and contains static references to 1 segues.
+    struct listCarsViewController {
+      /// Segue identifier `goToRentCar`.
+      static let goToRentCar: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ListCarsViewController, RentViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToRentCar")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `goToRentCar`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func goToRentCar(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ListCarsViewController, RentViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.listCarsViewController.goToRentCar, segue: segue)
       }
       #endif
 

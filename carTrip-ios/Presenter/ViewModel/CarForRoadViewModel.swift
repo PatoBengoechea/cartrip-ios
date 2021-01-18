@@ -18,6 +18,10 @@ class CarForRoadViewModel: MKPointAnnotation {
     var location: CLLocationCoordinate2D { return CLLocationCoordinate2D(latitude: latitude ?? 0, longitude: longitude ?? 0)}
     var car: CarViewModel?
     var locationAddres: String = ""
+    var distance: Int {
+        let currentLocation = CLLocation(latitude: -32.9544955, longitude: -60.6441632)
+        return Int(currentLocation.distance(from: CLLocation(latitude: location.latitude, longitude: location.longitude)).rounded())
+    }
     
     
     override var coordinate: CLLocationCoordinate2D { get { return CLLocationCoordinate2D(latitude: latitude ?? 0, longitude: longitude ?? 0)} set { } }
@@ -37,5 +41,10 @@ class CarForRoadViewModel: MKPointAnnotation {
             guard let placeMark = placermarks?.first else { return }
             self.locationAddres = "\(placeMark.name ?? ""), \(placeMark.locality ?? "")"
         }
+    }
+    
+    func getDistanceFromCurrentLocation() -> String {
+        return "\(distance/100) km"
+        
     }
 }

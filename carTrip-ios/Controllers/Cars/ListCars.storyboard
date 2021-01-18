@@ -102,11 +102,22 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="IzL-xj-uQQ" id="lji-fm-3za"/>
+                        <segue destination="Ner-fy-3cs" kind="show" identifier="goToRentCar" id="yZ1-1F-0U4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gcf-ib-yCd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-300" y="45.535714285714285"/>
+        </scene>
+        <!--Rent-->
+        <scene sceneID="KbP-qH-MS0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Rent" id="Ner-fy-3cs" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="usD-nf-iPS"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hwt-Sx-xfJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="630" y="46"/>
         </scene>
     </scenes>
     <resources>
