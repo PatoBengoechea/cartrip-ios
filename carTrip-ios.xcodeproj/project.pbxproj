@@ -291,8 +291,6 @@
 				6A71B2F424254AA7006612F1 /* Home.storyboard */,
 				6A71B2F224254A9E006612F1 /* HomeViewController.swift */,
 				6A64D808257ECE560042EBFA /* ActualRentViewController.swift */,
-				6A04474925199AA1009E14D2 /* Rent */,
-				6AEC1BC9259E0B01002C6A96 /* Cars */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -318,7 +316,9 @@
 				6AA2810D24253C5100544280 /* BaseViewController.swift */,
 				6A80F3F22420281600474555 /* Auth */,
 				6A71B2F124254A72006612F1 /* Home */,
+				6AEC1BC9259E0B01002C6A96 /* Cars */,
 				6A64E66224F1636300E7622B /* User */,
+				6A04474925199AA1009E14D2 /* Rent */,
 				6A80F3E7241DA01800474555 /* Root Controller */,
 			);
 			path = Controllers;
