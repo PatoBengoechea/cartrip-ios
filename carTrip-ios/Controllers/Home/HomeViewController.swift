@@ -133,6 +133,9 @@ class HomeViewController: UIViewController {
         if let rentVC = segue.destination as? ActualRentViewController, let trip = sender as? Trip {
             rentVC.actualTrip = trip
         }
+        if let listCarVC = segue.destination as? ListCarsViewController {
+            listCarVC.carDataSource = presenter.dataCarForRoad
+        }
     }
     
     // MARK: - Private Functions

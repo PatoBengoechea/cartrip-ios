@@ -102,6 +102,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
                                         <state key="normal" image="car-solid"/>
+                                        <connections>
+                                            <action selector="carButtonTapped" destination="xYB-5c-Ti8" eventType="touchUpInside" id="yzN-XN-kiB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
