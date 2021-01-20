@@ -22,19 +22,19 @@ class ServiceManager {
         let url = PathBuilder.sharedInstance.getLogin()
         let body = BodyBuilder.postLogUser(email: email, password: password)
         AF.request(url,
-                          method: .post,
-                          parameters: body,
-                          encoding: JSONEncoding.default,
-                          headers: nil).responseJSON { (dataResponse) in
-                            let response = BaseResponse().create(response: dataResponse)
-                            if response.status, let data = response.data {
-                                let user = User(data: data)
-                                succesCallback(user)
-                            } else {
-                                print(response.message)
-                                failureCallback(response.message)
-                            }
-        }
+                   method: .post,
+                   parameters: body,
+                   encoding: JSONEncoding.default,
+                   headers: nil).responseJSON { (dataResponse) in
+                    let response = BaseResponse().create(response: dataResponse)
+                    if response.status, let data = response.data {
+                        let user = User(data: data)
+                        succesCallback(user)
+                    } else {
+                        print(response.message)
+                        failureCallback(response.message)
+                    }
+                   }
     }
     
     func getCarForRoad(succesCallback: @escaping ([CarForRoad])-> Void, failureCallback: @escaping (String)-> Void) {
@@ -52,7 +52,7 @@ class ServiceManager {
                     } else {
                         failureCallback(response.message)
                     }
-        }
+                   }
     }
     
     func registerUser(user: UserInputModel, successCallback: @escaping ()-> Void, failureCallback: @escaping (String) -> Void) {
@@ -67,7 +67,7 @@ class ServiceManager {
                                     } else {
                                         failureCallback(response.message)
                                     }
-        }
+                                }
     }
     
     func getCarForRoad(id: Int, successCallback: @escaping (CarForRoad) -> Void, failureCallback: @escaping (String) -> Void) {
@@ -82,7 +82,7 @@ class ServiceManager {
                                     } else {
                                         failureCallback(response.message)
                                     }
-        }
+                                }
     }
     
     func postRentCar(input: TripInputModel, successCallback: @escaping () -> Void, failureCallback: @escaping (String) -> Void) {
@@ -143,6 +143,26 @@ class ServiceManager {
                     if response.status, let data = response.data {
                         let places = Place.parse(json: data["places"].arrayValue)
                         successCallback(places)
+                    } else {
+                        failureCallback(response.message)
+                    }
+                   }
+    }
+    
+    func getLicense(successCallback: @escaping (License?) -> Void, failureCallback: @escaping (String) -> Void) {
+        let id = UserDefaults.standard.string(forKey: "idUser") ?? "0"
+        let url = PathBuilder.sharedInstance.getLicense(id: id)
+        AF.request(url,
+                   method: .get,
+                   encoding: JSONEncoding.default).responseJSON { (serviceResponse) in
+                    let response = BaseResponse().create(response: serviceResponse)
+                    if response.status, let data = response.data {
+                        if let _ = data.bool {
+                            successCallback(nil)
+                        } else {
+                            let license = License(json: data)
+                            successCallback(license)
+                        }
                     } else {
                         failureCallback(response.message)
                     }

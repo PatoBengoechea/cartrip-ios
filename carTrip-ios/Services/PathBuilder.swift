@@ -55,4 +55,8 @@ class PathBuilder  {
     func getPlaces(name: String) -> String {
         return "\(url)/place/\(name.lowercased())"
     }
+    
+    func getLicense(id: String) -> String {
+        return "\(url)/user/license/\(id)"
+    }
 }

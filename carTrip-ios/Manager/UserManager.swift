@@ -11,6 +11,13 @@ import Foundation
 protocol UserManagerDelegate: BaseManagerDelegate {
     func onLogin(user: User)
     func onRegister()
+    func onGetLicense(license: License?)
+}
+
+extension UserManagerDelegate {
+    func onLogin(user: User) { }
+    func onRegister() { }
+    func onGetLicense(license: License?) { }
 }
 
 class UserManager: BaseManager {
@@ -44,6 +51,18 @@ class UserManager: BaseManager {
             delegate.onFinishedService()
             delegate.onError(message)
         })
+    }
+    
+    func getLicense(delegate: UserManagerDelegate) {
+        delegate.onInitService()
+        ServiceManager.sharedInstance.getLicense { (licese) in
+            delegate.onFinishedService()
+            delegate.onGetLicense(license: licese)
+        } failureCallback: { (message) in
+            delegate.onFinishedService()
+            delegate.onError(message)
+        }
+
     }
     
     

@@ -10,15 +10,20 @@ import UIKit
 
 class UserViewController: UIViewController {
     
+    // MARK: - @IBOutlet
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Properties
     var trips: [Trip] = [] {
         didSet { tableView.reloadData()}
     }
-
+    
+    var license: License?
+    
+    // MARK: - Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -30,6 +35,7 @@ class UserViewController: UIViewController {
         super.viewWillAppear(animated)
         
         TripManager.sharedInstance.getTrips(delegate: self, id: 11)
+        UserManager.sharedInstance.getLicense(delegate: self)
         let name = UserDefaults.standard.string(forKey: "name")
         nameLabel.text = name ?? ""
         let lastName = UserDefaults.standard.string(forKey: "lastName")
@@ -53,7 +59,7 @@ class UserViewController: UIViewController {
 }
 
 // MARK: - Trip Manager Delegate
-extension UserViewController: TripManagerDelegate {
+extension UserViewController: TripManagerDelegate, UserManagerDelegate {
     func onInitService() {
         
     }
@@ -63,11 +69,15 @@ extension UserViewController: TripManagerDelegate {
     }
     
     func onError(_ message: String) {
-        
+        print(message)
     }
     
     func onGetTrips(trips: [Trip]) {
         self.trips = trips
+    }
+    
+    func onGetLicense(license: License?) {
+        self.license = license
     }
 }
 
