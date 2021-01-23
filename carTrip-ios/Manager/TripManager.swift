@@ -78,8 +78,7 @@ class TripManager: BaseManager {
     
     func getTrips(from: String, to: String, delegate: TripManagerDelegate) {
         delegate.onInitService()
-        ServiceManager.sharedInstance.getTrips(from: from,
-                                               to: to) { (trips) in
+        ServiceManager.sharedInstance.getTrips(from: from) { (trips) in
             delegate.onFinishedService()
             delegate.onGetTrips(trips: trips)
         } failureCallback: { (message) in

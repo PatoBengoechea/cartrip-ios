@@ -60,7 +60,7 @@ class PathBuilder  {
         return "\(url)/user/license/\(id)"
     }
     
-    func getTripsFromTo() -> String {
-        return "\(url)/trip/fromto"
+    func getTripsFromTo(from city: String) -> String {
+        return "\(url)/trip/from/\(city)"
     }
 }

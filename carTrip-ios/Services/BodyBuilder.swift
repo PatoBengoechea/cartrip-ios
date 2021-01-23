@@ -39,12 +39,4 @@ class BodyBuilder  {
         dict["longitudeOrigin"] = input.longitudeOrigin
         return dict
     }
-    
-    static func postTrip(from: String, to: String) -> [String: Any] {
-        var dict = [String: Any]()
-        dict["origin"] = from
-        dict["destiny"] = to
-        
-        return dict
-    }
 }

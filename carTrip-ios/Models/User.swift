@@ -28,5 +28,9 @@ class User: NSObject {
         email = data["email"].string
         lastNameUser = data["lastname"].string
     }
+    
+    static func parse(fromJSONArray array: [JSON]) -> [User] {
+        return array.compactMap { User(data: $0)}
+    }
 }
 

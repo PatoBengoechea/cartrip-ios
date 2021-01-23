@@ -100,9 +100,7 @@ class HomeViewController: UIViewController {
             self.routeButton.tintColor = .primaryGreen
             self.routeView.backgroundColor = .white
         }) { (_) in
-            self.locationManager.getCurrentCity { (city) in
-                self.performSegue(withIdentifier: R.segue.homeViewController.goToSearchTrip.identifier, sender: city)
-            }
+            self.performSegue(withIdentifier: R.segue.homeViewController.goToSearchTrip.identifier, sender: nil)
             UIView.animate(withDuration: 0.1) {
                 self.routeButton.tintColor = .white
                 self.routeView.backgroundColor = .primaryGreen
@@ -152,6 +150,10 @@ class HomeViewController: UIViewController {
         carTrailing.constant = -30
         carBottom.constant = -30
         
+        locationManager.getCurrentCity { (city) in
+            UserDefaults.standard.setValue(city, forKey: "actual_city")
+        }
+        
         view.layoutIfNeeded()
     }
     
@@ -164,9 +166,6 @@ class HomeViewController: UIViewController {
         }
         if let listCarVC = segue.destination as? ListCarsViewController {
             listCarVC.carDataSource = presenter.dataCarForRoad
-        }
-        if let tripsVC = segue.destination as? SearchCityViewController, let city = sender as? String {
-            tripsVC.originCity = city
         }
     }
     

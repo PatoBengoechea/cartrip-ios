@@ -18,6 +18,7 @@ class Trip: NSObject {
     var owner: Int
     var fromCity: String
     var toCity: String
+    var passengers: [User]
     
     init(from json: JSON) {
         idTrip = json["idTrip"].int ?? 0
@@ -27,6 +28,7 @@ class Trip: NSObject {
         owner = json["owner"].int ?? 0
         fromCity = json["origin"]["cityName"].string ?? ""
         toCity = json["destiny"]["cityName"].string ?? ""
+        passengers = User.parse(fromJSONArray: json["users"].array ?? [])
     }
     
     static func parse(jsonArray: [JSON]) -> [Trip] {

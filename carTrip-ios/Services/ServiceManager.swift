@@ -169,12 +169,10 @@ class ServiceManager {
                    }
     }
     
-    func getTrips(from: String, to: String, successCallback: @escaping ([Trip]) -> Void, failureCallback: @escaping (String) -> Void) {
-        let body = BodyBuilder.postTrip(from: from, to: to)
-        let url = PathBuilder.sharedInstance.getTripsFromTo()
+    func getTrips(from: String, successCallback: @escaping ([Trip]) -> Void, failureCallback: @escaping (String) -> Void) {
+        let url = PathBuilder.sharedInstance.getTripsFromTo(from: from)
         AF.request(url,
-                   method: .post,
-                   parameters: body).responseJSON { (serviceResponse) in
+                   method: .get).responseJSON { (serviceResponse) in
                     let response = BaseResponse().create(response: serviceResponse)
                     if response.status, let data = response.data {
                         let trips = Trip.parse(jsonArray: data["trips"].array ?? [])

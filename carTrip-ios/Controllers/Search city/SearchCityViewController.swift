@@ -21,7 +21,6 @@ class SearchCityViewController: UIViewController {
         }
     }
     private var trips: [Trip] = []
-    var originCity: String = ""
     
 
     override func viewDidLoad() {
@@ -39,8 +38,8 @@ class SearchCityViewController: UIViewController {
         
         navigationController?.setNavigationBarHidden(false, animated: false)
         
-        ServiceManager.sharedInstance.getTrips(from: originCity,
-                                               to: "Cordoba") { (trips) in
+        let city = UserDefaults.standard.string(forKey: "actual_city")
+        ServiceManager.sharedInstance.getTrips(from: city!) { (trips) in
             
             self.tripsDataSource = trips
             self.trips = trips

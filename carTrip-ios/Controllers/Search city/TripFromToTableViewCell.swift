@@ -16,6 +16,7 @@ class TripFromToTableViewCell: UITableViewCell {
     @IBOutlet weak var carLabel: UILabel!
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var toLabel: UILabel!
+    @IBOutlet weak var passengerLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,6 +44,13 @@ class TripFromToTableViewCell: UITableViewCell {
         fromLabel.text = "\(R.string.localizable.from()): \(trip.fromCity)"
         
         toLabel.text = "\(R.string.localizable.to()): \(trip.toCity)"
+        
+        let seats = trip.carForRoad.car?.type?.capacity
+        let passengers = trip.passengers.count + 1
+        
+        let availableSeats = (seats! - passengers)
+        
+        passengerLabel.text = "\(R.string.localizable.seatsAvailable())\(availableSeats)"
     }
 
     private func customize() {
@@ -56,5 +64,8 @@ class TripFromToTableViewCell: UITableViewCell {
         
         carLabel.font = .gothamRoundedMedium(13)
         carLabel.textColor = .blueCar
+        
+        passengerLabel.font = .gothamRoundedMedium(13)
+        passengerLabel.textColor = .blueCar
     }
 }
