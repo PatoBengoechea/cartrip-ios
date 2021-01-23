@@ -16,6 +16,8 @@ class Trip: NSObject {
     var dateEnd: String
     var carForRoad: CarForRoad
     var owner: Int
+    var fromCity: String
+    var toCity: String
     
     init(from json: JSON) {
         idTrip = json["idTrip"].int ?? 0
@@ -23,6 +25,8 @@ class Trip: NSObject {
         dateEnd = json["dateEnd"].string ?? ""
         carForRoad = CarForRoad(withJSON: json["carForRoad"])
         owner = json["owner"].int ?? 0
+        fromCity = json["origin"]["cityName"].string ?? ""
+        toCity = json["destiny"]["cityName"].string ?? ""
     }
     
     static func parse(jsonArray: [JSON]) -> [Trip] {

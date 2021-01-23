@@ -11,9 +11,15 @@ import UIKit
 class SearchCityViewController: UIViewController {
     
     // MARK: - @IBOutlet
-    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
+    private var tripsDataSource: [Trip] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     private var trips: [Trip] = []
     var originCity: String = ""
     
@@ -21,15 +27,22 @@ class SearchCityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        searchTextField.delegate = self
+        searchBar.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
+        searchBar.placeholder = R.string.localizable.filterByDestinyCity()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        
         ServiceManager.sharedInstance.getTrips(from: originCity,
                                                to: "Cordoba") { (trips) in
             
+            self.tripsDataSource = trips
             self.trips = trips
             
         } failureCallback: { (message) in
@@ -41,10 +54,36 @@ class SearchCityViewController: UIViewController {
 
 
 // MARK: - TextfieldDelegate
-extension SearchCityViewController: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        return true
+extension SearchCityViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let text = searchBar.text!.lowercased()
+        if text.isEmpty {
+            tripsDataSource = trips
+        } else {
+            tripsDataSource = trips.filter {
+                $0.toCity.lowercased().contains(text)
+            }
+        }
     }
+}
+
+// MARK: - UI Table View delegate
+extension SearchCityViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tripsDataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.tripFromToTableViewCell, for: indexPath) {
+            cell.setUp(trip: tripsDataSource[indexPath.row])
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
 }

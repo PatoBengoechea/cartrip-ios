@@ -45,6 +45,7 @@
 "Total price" = "Total price";
 "Car rent" = "Car rent";
 "From" = "From";
+"To" = "To";
 "Enter a city and we will provide you the places to return the car" = "Enter a city and we will provide you the places to return the car";
 "There are no return points in that city" = "There are no return points in that city";
 "Please look for another city" = "Please look for another city";
@@ -56,3 +57,6 @@
 
 // PROFILE
 "Profile" = "Profile";
+
+// TRIPS
+"Filter by destiny city"="Filter by destiny city";

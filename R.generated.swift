@@ -605,7 +605,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 8 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 9 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `DaysTableViewCell`.
     static let daysTableViewCell: Rswift.ReuseIdentifier<DaysTableViewCell> = Rswift.ReuseIdentifier(identifier: "DaysTableViewCell")
@@ -621,6 +621,8 @@ struct R: Rswift.Validatable {
     static let priceTableViewCell: Rswift.ReuseIdentifier<PriceTableViewCell> = Rswift.ReuseIdentifier(identifier: "PriceTableViewCell")
     /// Reuse identifier `ShareTableViewCell`.
     static let shareTableViewCell: Rswift.ReuseIdentifier<ShareTableViewCell> = Rswift.ReuseIdentifier(identifier: "ShareTableViewCell")
+    /// Reuse identifier `TripFromToTableViewCell`.
+    static let tripFromToTableViewCell: Rswift.ReuseIdentifier<TripFromToTableViewCell> = Rswift.ReuseIdentifier(identifier: "TripFromToTableViewCell")
     /// Reuse identifier `TripTableViewCell`.
     static let tripTableViewCell: Rswift.ReuseIdentifier<TripTableViewCell> = Rswift.ReuseIdentifier(identifier: "TripTableViewCell")
 
@@ -634,7 +636,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 38 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 40 localization keys.
     struct localizable {
       /// en translation: Actual trip
       ///
@@ -692,6 +694,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let enterACityAndWeWillProvideYouThePlacesToReturnTheCar = Rswift.StringResource(key: "Enter a city and we will provide you the places to return the car", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Filter by destiny city
+      ///
+      /// Locales: en, es-419
+      static let filterByDestinyCity = Rswift.StringResource(key: "Filter by destiny city", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Finish registration
       ///
       /// Locales: en, es-419
@@ -768,6 +774,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let thereAreNoReturnPointsInThatCity = Rswift.StringResource(key: "There are no return points in that city", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: To
+      ///
+      /// Locales: en, es-419
+      static let to = Rswift.StringResource(key: "To", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Total price
       ///
       /// Locales: en, es-419
@@ -997,6 +1007,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Enter a city and we will provide you the places to return the car", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Filter by destiny city
+      ///
+      /// Locales: en, es-419
+      static func filterByDestinyCity(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Filter by destiny city", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Filter by destiny city"
+        }
+
+        return NSLocalizedString("Filter by destiny city", bundle: bundle, comment: "")
       }
 
       /// en translation: Finish registration
@@ -1282,6 +1307,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("There are no return points in that city", bundle: bundle, comment: "")
+      }
+
+      /// en translation: To
+      ///
+      /// Locales: en, es-419
+      static func to(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("To", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "To"
+        }
+
+        return NSLocalizedString("To", bundle: bundle, comment: "")
       }
 
       /// en translation: Total price
