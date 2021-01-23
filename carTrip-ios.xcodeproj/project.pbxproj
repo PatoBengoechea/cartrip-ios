@@ -72,6 +72,8 @@
 		6AA6FBD1257D7DAC00E189D9 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6FBD0257D7DAC00E189D9 /* DateHelper.swift */; };
 		6AC386CE25B642E8002F9D71 /* ListCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC386CD25B642E8002F9D71 /* ListCarTableViewCell.swift */; };
 		6AC386D125B8E805002F9D71 /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC386D025B8E805002F9D71 /* License.swift */; };
+		6AC386D525BC6149002F9D71 /* SearchCity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC386D425BC6149002F9D71 /* SearchCity.storyboard */; };
+		6AC386D825BC616E002F9D71 /* SearchCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC386D725BC616E002F9D71 /* SearchCityViewController.swift */; };
 		6AD553502433F67D00EE6517 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5534F2433F67D00EE6517 /* Car.swift */; };
 		6AD553532433F6AE00EE6517 /* CarForRoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD553522433F6AE00EE6517 /* CarForRoad.swift */; };
 		6AD553552434D8AC00EE6517 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD553542434D8AC00EE6517 /* HomePresenter.swift */; };
@@ -164,6 +166,8 @@
 		6AA6FBD0257D7DAC00E189D9 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		6AC386CD25B642E8002F9D71 /* ListCarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarTableViewCell.swift; sourceTree = "<group>"; };
 		6AC386D025B8E805002F9D71 /* License.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
+		6AC386D425BC6149002F9D71 /* SearchCity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchCity.storyboard; sourceTree = "<group>"; };
+		6AC386D725BC616E002F9D71 /* SearchCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityViewController.swift; sourceTree = "<group>"; };
 		6AD5534F2433F67D00EE6517 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		6AD553522433F6AE00EE6517 /* CarForRoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarForRoad.swift; sourceTree = "<group>"; };
 		6AD553542434D8AC00EE6517 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -322,6 +326,7 @@
 				6A80F3F22420281600474555 /* Auth */,
 				6A71B2F124254A72006612F1 /* Home */,
 				6AEC1BC9259E0B01002C6A96 /* Cars */,
+				6AC386D325BC60A0002F9D71 /* Search city */,
 				6A64E66224F1636300E7622B /* User */,
 				6A04474925199AA1009E14D2 /* Rent */,
 				6A80F3E7241DA01800474555 /* Root Controller */,
@@ -451,6 +456,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		6AC386D325BC60A0002F9D71 /* Search city */ = {
+			isa = PBXGroup;
+			children = (
+				6AC386D425BC6149002F9D71 /* SearchCity.storyboard */,
+				6AC386D725BC616E002F9D71 /* SearchCityViewController.swift */,
+			);
+			path = "Search city";
+			sourceTree = "<group>";
+		};
 		6AD5535A2435176200EE6517 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,6 +564,7 @@
 				6AA18783243951AD004A568B /* GothamRounded-BookItalic.otf in Resources */,
 				6A64E66624F1638400E7622B /* User.storyboard in Resources */,
 				6A3BC34E243ACC6800F075D5 /* Loader.xib in Resources */,
+				6AC386D525BC6149002F9D71 /* SearchCity.storyboard in Resources */,
 				6AA1878C243951AD004A568B /* GothamRounded-Book.otf in Resources */,
 				6AA18784243951AD004A568B /* GothamRounded-BoldItalic.otf in Resources */,
 				6AA18788243951AD004A568B /* GothamRoundedBook_21018.ttf in Resources */,
@@ -661,6 +676,7 @@
 				6A80F3E924201FCA00474555 /* RootViewController.swift in Sources */,
 				6A71B2F324254A9E006612F1 /* HomeViewController.swift in Sources */,
 				6AD553592435005D00EE6517 /* TypeCar.swift in Sources */,
+				6AC386D825BC616E002F9D71 /* SearchCityViewController.swift in Sources */,
 				6AC386D125B8E805002F9D71 /* License.swift in Sources */,
 				6A39B24A2439212100803B14 /* ModalRentCar.swift in Sources */,
 				6A80F413242145B300474555 /* UserManager.swift in Sources */,

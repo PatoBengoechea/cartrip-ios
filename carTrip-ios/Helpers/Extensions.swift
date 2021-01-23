@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-
+import CoreLocation
+import MapKit
 
 public extension UINavigationController {
     
@@ -203,4 +204,20 @@ extension UIImageView {
                 .cacheOriginalImage
             ])
     }
+}
+
+// MARK: - Location Manager
+extension CLLocationManager {
+    
+    func getCurrentCity(callback: @escaping (String) -> Void) {
+        let coordinate = CLLocationCoordinate2D(latitude: -32.9544955, longitude: -60.6441632)
+        let geoCoder = CLGeocoder()
+        let clLocation = CLLocation(latitude: -32.9544955, longitude: -60.6441632)
+        geoCoder.reverseGeocodeLocation(clLocation) { (placermarks, error) in
+            guard let placeMark = placermarks?.first else { return }
+            callback(placeMark.locality ?? "")
+        }
+        
+    }
+    
 }

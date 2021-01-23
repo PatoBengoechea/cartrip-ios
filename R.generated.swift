@@ -92,7 +92,7 @@ struct R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   /// This `R.segue` struct is generated, and contains static references to 7 view controllers.
   struct segue {
-    /// This struct is generated for `HomeViewController`, and contains static references to 4 segues.
+    /// This struct is generated for `HomeViewController`, and contains static references to 5 segues.
     struct homeViewController {
       /// Segue identifier `goToActualTrip`.
       static let goToActualTrip: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, ActualRentViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToActualTrip")
@@ -102,6 +102,8 @@ struct R: Rswift.Validatable {
       static let goToProfile: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, UserViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToProfile")
       /// Segue identifier `goToRent`.
       static let goToRent: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, RentViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToRent")
+      /// Segue identifier `goToSearchTrip`.
+      static let goToSearchTrip: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, SearchCityViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToSearchTrip")
 
       #if os(iOS) || os(tvOS)
       /// Optionally returns a typed version of segue `goToActualTrip`.
@@ -136,6 +138,15 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func goToRent(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HomeViewController, RentViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.homeViewController.goToRent, segue: segue)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `goToSearchTrip`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func goToSearchTrip(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HomeViewController, SearchCityViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.homeViewController.goToSearchTrip, segue: segue)
       }
       #endif
 
@@ -260,7 +271,7 @@ struct R: Rswift.Validatable {
   #endif
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 8 storyboards.
   struct storyboard {
     /// Storyboard `Auth`.
     static let auth = _R.storyboard.auth()
@@ -274,6 +285,8 @@ struct R: Rswift.Validatable {
     static let rent = _R.storyboard.rent()
     /// Storyboard `Root`.
     static let root = _R.storyboard.root()
+    /// Storyboard `SearchCity`.
+    static let searchCity = _R.storyboard.searchCity()
     /// Storyboard `User`.
     static let user = _R.storyboard.user()
 
@@ -316,6 +329,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Root", bundle: ...)`
     static func root(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.root)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SearchCity", bundle: ...)`
+    static func searchCity(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.searchCity)
     }
     #endif
 
@@ -1428,6 +1448,9 @@ struct _R: Rswift.Validatable {
       try root.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try searchCity.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try user.validate()
       #endif
     }
@@ -1528,6 +1551,22 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "freeLogo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'freeLogo' is used in storyboard 'Root', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct searchCity: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = SearchCityViewController
+
+      let bundle = R.hostingBundle
+      let name = "SearchCity"
+
+      static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

@@ -81,7 +81,34 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction private func carButtonTapped() {
-        self.performSegue(withIdentifier: R.segue.homeViewController.goToListCars.identifier, sender: nil)
+        UIView.animate(withDuration: 0.1, animations: {
+            self.carButton.tintColor = .systemYellow
+            self.carView.backgroundColor = .white
+        }) { (_) in
+            self.performSegue(withIdentifier: R.segue.homeViewController.goToListCars.identifier, sender: nil)
+            UIView.animate(withDuration: 0.1) {
+                self.carButton.tintColor = .white
+                self.carView.backgroundColor = .systemYellow
+            }
+        }
+        menuVisible = false
+        
+    }
+    
+    @IBAction private func onGetTripsButtonTapped() {
+        UIView.animate(withDuration: 0.1, animations: {
+            self.routeButton.tintColor = .primaryGreen
+            self.routeView.backgroundColor = .white
+        }) { (_) in
+            self.locationManager.getCurrentCity { (city) in
+                self.performSegue(withIdentifier: R.segue.homeViewController.goToSearchTrip.identifier, sender: city)
+            }
+            UIView.animate(withDuration: 0.1) {
+                self.routeButton.tintColor = .white
+                self.routeView.backgroundColor = .primaryGreen
+            }
+        }
+        menuVisible = false
     }
     
     // MARK: - Override Functions
@@ -137,6 +164,9 @@ class HomeViewController: UIViewController {
         }
         if let listCarVC = segue.destination as? ListCarsViewController {
             listCarVC.carDataSource = presenter.dataCarForRoad
+        }
+        if let tripsVC = segue.destination as? SearchCityViewController, let city = sender as? String {
+            tripsVC.originCity = city
         }
     }
     

@@ -59,4 +59,8 @@ class PathBuilder  {
     func getLicense(id: String) -> String {
         return "\(url)/user/license/\(id)"
     }
+    
+    func getTripsFromTo() -> String {
+        return "\(url)/trip/fromto"
+    }
 }

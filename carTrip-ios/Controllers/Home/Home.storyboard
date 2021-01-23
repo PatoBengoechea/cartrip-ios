@@ -84,6 +84,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
                                         <state key="normal" image="route-solid"/>
+                                        <connections>
+                                            <action selector="onGetTripsButtonTapped" destination="xYB-5c-Ti8" eventType="touchUpInside" id="uXZ-uE-9Ax"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -188,6 +191,7 @@
                         <segue destination="PoT-SB-tzb" kind="show" identifier="goToActualTrip" id="xVZ-0p-CF2"/>
                         <segue destination="dtt-fy-xKs" kind="show" identifier="goToListCars" id="504-eg-FAi"/>
                         <segue destination="nyl-aX-AFC" kind="show" identifier="goToRent" id="CCF-2E-9h8"/>
+                        <segue destination="QHz-Hh-wYb" kind="show" identifier="goToSearchTrip" id="Cux-6D-I4Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFB-15-BYV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -202,7 +206,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyx-tw-L6Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="842" y="-114"/>
+            <point key="canvasLocation" x="790" y="-147"/>
+        </scene>
+        <!--SearchCity-->
+        <scene sceneID="zfe-QZ-cqV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SearchCity" id="QHz-Hh-wYb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="R2P-RT-RkO"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RtQ-ie-pnn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="812" y="7"/>
         </scene>
         <!--ListCars-->
         <scene sceneID="6uZ-u0-ZvI">
@@ -212,7 +226,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1kd-3V-uEF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917" y="144"/>
+            <point key="canvasLocation" x="824" y="206"/>
         </scene>
         <!--User-->
         <scene sceneID="aTm-AO-Pj2">
