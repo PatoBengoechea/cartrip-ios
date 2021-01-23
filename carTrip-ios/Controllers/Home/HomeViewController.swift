@@ -63,19 +63,21 @@ class HomeViewController: UIViewController {
                 self.positionView.backgroundColor = .white
             }
         }
+        menuVisible = false
     }
     
     @IBAction private func userButtonTapped() {
         UIView.animate(withDuration: 0.1, animations: {
-            self.profileButton.tintColor = .white
-            self.profileView.backgroundColor = .systemRed
+            self.profileButton.tintColor = .systemRed
+            self.profileView.backgroundColor = .white
         }) { (_) in
             self.performSegue(withIdentifier: R.segue.homeViewController.goToProfile.identifier, sender: nil)
             UIView.animate(withDuration: 0.1) {
-                self.profileButton.tintColor = .systemRed
-                self.profileView.backgroundColor = .white
+                self.profileButton.tintColor = .white
+                self.profileView.backgroundColor = .systemRed
             }
         }
+        menuVisible = false
     }
     
     @IBAction private func carButtonTapped() {
