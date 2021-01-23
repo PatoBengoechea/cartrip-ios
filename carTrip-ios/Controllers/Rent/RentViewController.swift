@@ -39,6 +39,8 @@ class RentViewController: UIViewController, RentDelegate {
         setDestiny(destinyPlace)
     }}
     
+    var popVC: (() -> Void)?
+    
     // MARK: - @IBAction
     @IBAction func nextButtonPressed() {
         onNextButtonPressed()
@@ -144,6 +146,7 @@ extension RentViewController: RentPresenterDelegate {
         let alert = CDAlertView(title: R.string.localizable.carRent(), message: "", type: .success)
         let action = CDAlertViewAction(title: "OK") { (action) -> Bool in
             self.navigationController?.popViewController(animated: true)
+            self.popVC?()
             return true
         }
         alert.add(action: action)

@@ -40,6 +40,9 @@ class ListCarsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let rentVC = segue.destination as? RentViewController, let car = sender as? CarForRoadViewModel {
             rentVC.currentCar = car
+            rentVC.popVC = {
+                self.navigationController?.popViewController(animated: false)
+            }
         }
     }
 
