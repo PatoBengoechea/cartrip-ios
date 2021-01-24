@@ -17,6 +17,7 @@ class TripFromToTableViewCell: UITableViewCell {
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var toLabel: UILabel!
     @IBOutlet weak var passengerLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -51,6 +52,9 @@ class TripFromToTableViewCell: UITableViewCell {
         let availableSeats = (seats! - passengers)
         
         passengerLabel.text = "\(R.string.localizable.seatsAvailable())\(availableSeats)"
+        
+        let date = DateParsed(trip.dateInit, format: .dateWithFullTime)
+        dateLabel.text = date?.dateLong()
     }
 
     private func customize() {
@@ -67,5 +71,8 @@ class TripFromToTableViewCell: UITableViewCell {
         
         passengerLabel.font = .gothamRoundedMedium(13)
         passengerLabel.textColor = .blueCar
+        
+        dateLabel.font = .gothamRoundedMedium(13)
+        dateLabel.textColor = .blueCar
     }
 }
