@@ -14,6 +14,8 @@ class ActualRentViewController: UIViewController {
     @IBOutlet weak var carImageView: UIImageView!
     @IBOutlet weak var carLabel: UILabel!
     @IBOutlet weak var fromLabel: UILabel!
+    @IBOutlet weak var passengerTitle: UILabel!
+    @IBOutlet weak var passengetStackView: UIStackView!
     @IBOutlet weak var finishTrip: UIButton!
     
     var actualTrip: Trip?
@@ -41,6 +43,10 @@ class ActualRentViewController: UIViewController {
         fromLabel.set(font: .gothamRoundedMedium(18), color: .blueCar)
         fromLabel.text = ""
         
+        passengerTitle.set(font: .gothamRoundedBold(18), color: .blueCar)
+        passengetStackView.alignment = .center
+        passengetStackView.distribution = .equalCentering
+        
     }
 
     private func setUp() {
@@ -56,6 +62,15 @@ class ActualRentViewController: UIViewController {
         }
             
         carImageView.setImage(image: actualTrip?.carForRoad.car?.img_path ?? "")
+        
+        passengerTitle.text = R.string.localizable.passengers()
+        
+        actualTrip?.passengers.forEach {
+            let label = UILabel()
+            label.set(font: .gothamRoundedMedium(18), color: .blueCar)
+            label.text = $0.nameUser! + " " + $0.lastNameUser!
+            passengetStackView.addArrangedSubview(label)
+        }
     
     }
 
