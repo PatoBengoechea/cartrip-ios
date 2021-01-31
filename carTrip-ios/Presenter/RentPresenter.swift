@@ -21,6 +21,7 @@ enum RentDataSource {
 class RentPrenter<T: RentPresenterDelegate>: BasePresenter<T> {
     
     // MARK: - Properties
+    var carShared: Bool = false
     
     var datasource: [RentDataSource] = [.image, .share, .days, .price]
     var currentCar: CarForRoadViewModel?
@@ -35,6 +36,7 @@ class RentPrenter<T: RentPresenterDelegate>: BasePresenter<T> {
     }
     
     func setDataSource(share: Bool) {
+        carShared = share
         if share {
             datasource = [.image, .share, .informationShare, .from, .to]
         } else {
@@ -49,6 +51,8 @@ class RentPrenter<T: RentPresenterDelegate>: BasePresenter<T> {
                                         owner: UserDefaults.standard.string(forKey: "idUser") ?? "0",
                                         latitudeOrigin: currentCar?.latitude ?? 0.0,
                                         longitudeOrigin: currentCar?.longitude ?? 0.0,
+                                        idPlaceGivenBack: currentCar!.idPlaceGivenBack,
+                                        shared: carShared,
                                         idDestiny: idDestiny)
         
         TripManager.sharedInstance.crateTrip(delegate: self, input: inputModel)

@@ -15,9 +15,11 @@ class TripInputModel: NSObject {
     var owner: String
     var latitudeOrigin: Double
     var longitudeOrigin: Double
+    var idPlaceGivenBack: Int
+    var shared: Bool
     var idDestiny: String?
     
-    init(dateInit: String, dateFinish: String, idCarForRoad: Int, owner: String, latitudeOrigin: Double, longitudeOrigin: Double, idDestiny: String? = nil) {
+    init(dateInit: String, dateFinish: String, idCarForRoad: Int, owner: String, latitudeOrigin: Double, longitudeOrigin: Double, idPlaceGivenBack: Int, shared: Bool, idDestiny: String? = nil) {
         self.dateInit = dateInit
         self.dateFinish = dateFinish
         self.idCarForRoad = idCarForRoad
@@ -25,5 +27,7 @@ class TripInputModel: NSObject {
         self.latitudeOrigin = latitudeOrigin
         self.longitudeOrigin = longitudeOrigin
         self.idDestiny = idDestiny
+        self.idPlaceGivenBack = idPlaceGivenBack
+        self.shared = shared
     }
 }

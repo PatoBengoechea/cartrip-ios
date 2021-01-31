@@ -57,6 +57,7 @@
 "Actual trip" = "Viaje actual";
 "Close" = "Cerrar";
 "Passengers" = "Pasajeros";
+"The trip haven't got passengers yet" = "Todavía no se han sumado pasajeros a tu viaje";
 
 // PROFILE
 "Profile" = "Perfil";
@@ -64,3 +65,27 @@
 // TRIPS
 "Filter by destiny city"="Filtar por ciudad de destino";
 "Seats available: "="Asientos disponibles: ";
+
+
+// PAYMENT
+"Next"="Siguiente";
+"Ready"="Listo";
+
+"Add credit card" = "Agregar tarjeta de crédito";
+"Error in CC number" = "Verifica el número de tarjeta ingresado.";
+"Error in expiration Date" = "Verifica la fecha de vencimiento de la tarjeta.";
+"Error in CCV Code" = "Verifica el código de seguridad ingresado.";
+"Error in card holder name" = "Ingresa el nombre completo del titular de la tarjeta.";
+
+"Name and lastname" = "Nombre y Apellido";
+"Card number" = "Número de tarjeta";
+"MM/YY" = "MM/YY";
+"MM" = "MM";
+"YY" = "YY";
+"CCV" = "CCV";
+"Save" = "Guardar";
+"Ready" = "Listo";
+"Next" = "Siguiente";
+"Error saving the credit card" = "Error al guardar la tarjeta de crédito";
+"Please try again" = "Por favor intenta de nuevo";
+"do you delete the credit card data?" = "¿Desea borrar los datos para volver a empezar?";

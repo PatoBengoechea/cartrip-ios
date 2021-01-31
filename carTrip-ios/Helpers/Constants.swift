@@ -45,3 +45,55 @@ class DefaultManager {
     }
 
 }
+
+
+// MARK: - Gradient View
+class GradientView: UIView, CAAnimationDelegate {
+    
+    var newsColors: [Any] = []
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    func setupView(fromColor: UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0), toColor: UIColor, startPoint: CGPoint = CGPoint(x: 0, y: 0.5), endPoint: CGPoint = CGPoint(x: 1, y: 0.5)) {
+        autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+        guard let theLayer = self.layer as? CAGradientLayer else {
+            return
+        }
+
+        theLayer.colors = [fromColor.cgColor, toColor.cgColor]
+        theLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        theLayer.endPoint = CGPoint(x: 1, y: 0.5)
+        theLayer.frame = self.bounds
+    }
+    
+    func setNewColors(fromColor: UIColor, toColor: UIColor) {
+        let toColors: [AnyObject] = [ fromColor.cgColor, toColor.cgColor]
+
+        let animation : CABasicAnimation = CABasicAnimation(keyPath: "colors")
+
+        guard let layer = self.layer as? CAGradientLayer else { return }
+        
+        animation.fromValue = layer.colors
+        animation.toValue = toColors
+        newsColors = toColors
+        animation.duration = 0.5
+        animation.isRemovedOnCompletion = false
+        animation.fillMode = CAMediaTimingFillMode.forwards
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        animation.delegate = self
+        
+        
+        layer.add(animation, forKey:"animateGradient")
+    }
+
+    override class var layerClass: AnyClass {
+        return CAGradientLayer.self
+    }
+}

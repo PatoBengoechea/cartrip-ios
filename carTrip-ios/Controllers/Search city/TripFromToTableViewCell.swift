@@ -42,9 +42,9 @@ class TripFromToTableViewCell: UITableViewCell {
         
         carLabel.text = "\(trip.carForRoad.car?.brand ?? "") \(trip.carForRoad.car?.name ?? "")"
         
-        fromLabel.text = "\(R.string.localizable.from()): \(trip.fromCity)"
+        fromLabel.text = "\(R.string.localizable.from()): \(trip.originPlace.cityName)"
         
-        toLabel.text = "\(R.string.localizable.to()): \(trip.toCity)"
+        toLabel.text = "\(R.string.localizable.to()): \(trip.destinyPlace.cityName)"
         
         let seats = trip.carForRoad.car?.type?.capacity
         let passengers = trip.passengers.count + 1

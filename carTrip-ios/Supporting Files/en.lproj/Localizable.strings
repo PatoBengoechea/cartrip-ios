@@ -55,6 +55,7 @@
 "Actual trip" = "Actual trip";
 "Close" = "Close";
 "Passengers" = "Passengers";
+"The trip haven't got passengers yet"="The trip haven't got passengers yet";
 
 // PROFILE
 "Profile" = "Profile";
@@ -62,3 +63,27 @@
 // TRIPS
 "Filter by destiny city"="Filter by destiny city";
 "Seats available: "="Seats available: ";
+
+// PAYMENT
+"Next"="Siguiente";
+"Ready"="Listo";
+
+
+"Add credit card" = "Add credit card";
+"Error in CC number" = "Error in CC number";
+"Error in expiration Date" = "Error in expiration Date";
+"Error in CCV Code" = "Error in CCV Code";
+"Error in card holder name" = "Error in card holder name";
+
+"Name and lastname" = "Name and lastname";
+"Card number" = "Card number";
+"MM/YY" = "MM/YY";
+"MM" = "MM";
+"YY" = "YY";
+"CCV" = "CCV";
+"Save" = "Save";
+"Ready" = "Ready";
+"Next" = "Next";
+"Error saving the credit card" = "Error saving the credit card";
+"Please try again" = "Please try again";
+"do you delete the credit card data?" = "¿Desea borrar los datos para volver a empezar?";

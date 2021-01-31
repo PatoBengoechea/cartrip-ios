@@ -63,4 +63,12 @@ class PathBuilder  {
     func getTripsFromTo(from city: String) -> String {
         return "\(url)/trip/from/\(city)"
     }
+    
+    func postCreditCard() -> String {
+        return "\(url)/creditcard"
+    }
+    
+    func getAllCreditCards(id: String) -> String {
+        return "\(url)/creditcard/\(id)"
+    }
 }

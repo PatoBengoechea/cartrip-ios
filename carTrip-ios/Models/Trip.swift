@@ -16,8 +16,9 @@ class Trip: NSObject {
     var dateEnd: String
     var carForRoad: CarForRoad
     var owner: Int
-    var fromCity: String
-    var toCity: String
+    var originPlace: Place
+    var destinyPlace: Place
+    var shared: Bool
     var passengers: [User]
     
     init(from json: JSON) {
@@ -26,8 +27,9 @@ class Trip: NSObject {
         dateEnd = json["dateEnd"].string ?? ""
         carForRoad = CarForRoad(withJSON: json["carForRoad"])
         owner = json["owner"].int ?? 0
-        fromCity = json["origin"]["cityName"].string ?? ""
-        toCity = json["destiny"]["cityName"].string ?? ""
+        originPlace = Place(json: json["origin"])
+        destinyPlace = Place(json: json["destiny"])
+        shared = json["shared"].bool!
         passengers = User.parse(fromJSONArray: json["users"].array ?? [])
     }
     

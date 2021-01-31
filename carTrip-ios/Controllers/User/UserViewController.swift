@@ -14,6 +14,7 @@ class UserViewController: UIViewController {
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
+    @IBOutlet weak var creditCardsControlView: UIControl!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
@@ -22,6 +23,11 @@ class UserViewController: UIViewController {
     }
     
     var license: License?
+    
+    // MARK: - @IBAction
+    @IBAction func cardsButtonTapped() {
+        performSegue(withIdentifier: R.segue.userViewController.goToShowCreditCards.identifier, sender: nil)
+    }
     
     // MARK: - Override Functions
     override func viewDidLoad() {

@@ -183,4 +183,33 @@ class ServiceManager {
                    }
     }
     
+    func addNewCard(inputModel: CreditCardInputModel, successCallback: @escaping ()->Void, failureCallback: @escaping (String) -> Void) {
+        let url = PathBuilder.sharedInstance.postCreditCard()
+        let body = BodyBuilder.postCreditCard(input: inputModel)
+        AF.request(url,
+                   method: .post,
+                   parameters: body).responseJSON { (serviceResponse) in
+                    let response = BaseResponse().create(response: serviceResponse)
+                    if response.status, let _ = response.data {
+                        successCallback()
+                    } else {
+                        failureCallback(response.message)
+                    }
+                   }
+    }
+    
+    func getAllCreditCards(id: String, successCallback: @escaping (([CreditCard]) -> Void), failureCallback: @escaping ((String) -> Void)) {
+        let url = PathBuilder.sharedInstance.getAllCreditCards(id: id)
+        AF.request(url,
+                   method: .get).responseJSON { (serviceResponse) in
+                    let response = BaseResponse().create(response: serviceResponse)
+                    if response.status, let data = response.data {
+                        let creditCards = CreditCard.parse(jsonArray: data["creditCards"].array ?? [])
+                        successCallback(creditCards)
+                    } else {
+                        failureCallback(response.message)
+                    }
+                   }
+    }
+    
 }

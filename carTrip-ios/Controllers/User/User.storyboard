@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PAo-j0-7ek">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PAo-j0-7ek">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,12 +45,31 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cards" translatesAutoresizingMaskIntoConstraints="NO" id="vXf-u3-RX8">
+                                        <rect key="frame" x="339" y="140" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="0E9-eZ-YhT"/>
+                                            <constraint firstAttribute="width" secondItem="vXf-u3-RX8" secondAttribute="height" multiplier="1:1" id="BT3-KD-yQJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="twD-vO-wJg" customClass="UIControl">
+                                        <rect key="frame" x="339" y="140" width="45" height="45"/>
+                                        <connections>
+                                            <action selector="cardsButtonTapped" destination="PAo-j0-7ek" eventType="touchUpInside" id="a5I-00-9Ga"/>
+                                        </connections>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="twD-vO-wJg" firstAttribute="top" secondItem="vXf-u3-RX8" secondAttribute="top" id="1E2-iD-Lva"/>
+                                    <constraint firstAttribute="bottom" secondItem="vXf-u3-RX8" secondAttribute="bottom" constant="15" id="2D0-1T-PtL"/>
                                     <constraint firstAttribute="height" constant="200" id="Bs6-hF-dS5"/>
+                                    <constraint firstItem="twD-vO-wJg" firstAttribute="trailing" secondItem="vXf-u3-RX8" secondAttribute="trailing" id="DlZ-as-ijP"/>
                                     <constraint firstItem="6Ui-7k-IXe" firstAttribute="top" secondItem="Wm1-fI-gdw" secondAttribute="top" constant="15" id="GNx-te-OHe"/>
+                                    <constraint firstItem="twD-vO-wJg" firstAttribute="leading" secondItem="vXf-u3-RX8" secondAttribute="leading" id="JQU-cJ-hgK"/>
+                                    <constraint firstAttribute="trailing" secondItem="vXf-u3-RX8" secondAttribute="trailing" constant="30" id="TE8-0D-6Nr"/>
                                     <constraint firstItem="ajI-oJ-BTo" firstAttribute="top" secondItem="6Ui-7k-IXe" secondAttribute="bottom" constant="10" id="Weh-ut-QPj"/>
+                                    <constraint firstItem="twD-vO-wJg" firstAttribute="bottom" secondItem="vXf-u3-RX8" secondAttribute="bottom" id="d4x-Yo-K81"/>
                                     <constraint firstItem="6Ui-7k-IXe" firstAttribute="centerX" secondItem="Wm1-fI-gdw" secondAttribute="centerX" id="v7f-tJ-RRo"/>
                                     <constraint firstItem="ajI-oJ-BTo" firstAttribute="centerX" secondItem="Wm1-fI-gdw" secondAttribute="centerX" id="wuF-WH-dht"/>
                                 </constraints>
@@ -132,18 +151,31 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="creditCardsControlView" destination="twD-vO-wJg" id="pqH-M5-cIB"/>
                         <outlet property="lastNameLabel" destination="tMC-BP-pgX" id="v9c-Zj-qVV"/>
                         <outlet property="nameLabel" destination="aKJ-Ug-0eP" id="eCD-AS-Oc9"/>
                         <outlet property="tableView" destination="dra-Lg-42u" id="SQU-aI-Bvx"/>
                         <outlet property="userImageView" destination="6Ui-7k-IXe" id="N4Z-vt-Bid"/>
+                        <segue destination="b4Z-SM-Pe7" kind="show" identifier="goToShowCreditCards" id="ghv-yv-yoR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6wW-8c-x3M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-323.1884057971015" y="-35.491071428571423"/>
         </scene>
+        <!--Payment-->
+        <scene sceneID="d04-6U-h40">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Payment" id="b4Z-SM-Pe7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="xT3-9y-lkW"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q4L-31-6Wc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="630" y="-35"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="cards" width="21" height="21"/>
         <image name="user" width="21" height="21"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

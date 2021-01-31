@@ -37,6 +37,20 @@ class BodyBuilder  {
         dict["owner"] = input.owner
         dict["latitudeOrigin"] = input.latitudeOrigin
         dict["longitudeOrigin"] = input.longitudeOrigin
+        dict["idPlace"] = input.idPlaceGivenBack
+        dict["shared"] = input.shared
+        return dict
+    }
+    
+    static func postCreditCard(input: CreditCardInputModel) -> [String: Any] {
+        var dict = [String: Any]()
+        dict["creditCardNumber"] = input.number
+        dict["holderName"] = input.holderName
+        dict["monthExpiration"] = input.monthExpiration
+        dict["yearExpiration"] = input.yearExpiration
+        dict["ccv"] = input.ccv
+        dict["idUser"] = input.idUser
+        
         return dict
     }
 }

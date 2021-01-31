@@ -58,6 +58,14 @@ extension UIView {
         self.layer.cornerRadius = cornerRadius
         self.clipsToBounds = true
     }
+    
+    func addShadow(color: UIColor, radious: CGFloat = 10) {
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOffset = CGSize.zero
+        self.layer.shadowRadius = radious
+        self.layer.shadowOpacity = 0.5
+    }
 }
 
 
@@ -146,6 +154,96 @@ extension String {
     mutating func capitalizeFirstLetter() {
         self = self.capitalizingFirstLetter()
     }
+    
+    func substring(from: Int) -> String {
+        return self.substring(from: from, to: nil)
+    }
+    
+    func substring(to: Int) -> String {
+        return self.substring(from: nil, to: to)
+    }
+    
+    func substring(from: Int?, length: Int) -> String {
+        guard length > 0 else {
+            return ""
+        }
+        
+        let end: Int
+        if let start = from, start > 0 {
+            end = start + length - 1
+        } else {
+            end = length - 1
+        }
+        
+        return self.substring(from: from, to: end)
+    }
+    
+    func substring(length: Int, to: Int?) -> String {
+        guard let end = to, end > 0, length > 0 else {
+            return ""
+        }
+        
+        let start: Int
+        if let end = to, end - length > 0 {
+            start = end - length + 1
+        } else {
+            start = 0
+        }
+        
+        return self.substring(from: start, to: to)
+    }
+    
+    func substring(from: Int?, to: Int?) -> String {
+        if let start = from {
+            guard start < self.count else {
+                return ""
+            }
+        }
+        
+        if let end = to {
+            guard end > 0 else {
+                return ""
+            }
+        }
+        
+        if let start = from, let end = to {
+            if start == end {
+                return self[start ..< end + 1]
+            }
+            guard end - start > 0 else {
+                return ""
+            }
+        }
+        
+        let startIndex: String.Index
+        if let start = from, start >= 0 {
+            startIndex = self.index(self.startIndex, offsetBy: start)
+        } else {
+            startIndex = self.startIndex
+        }
+        
+        let endIndex: String.Index
+        if let end = to, end >= 0, end < self.count {
+            endIndex = self.index(self.startIndex, offsetBy: end + 1)
+        } else {
+            endIndex = self.endIndex
+        }
+        
+        return String(self[startIndex ..< endIndex])
+    }
+    
+    subscript(i: Int) -> String {
+        guard i >= 0 && i < count else { return "" }
+        return String(self[index(startIndex, offsetBy: i)])
+    }
+    subscript(range: Range<Int>) -> String {
+        let lowerIndex = index(startIndex, offsetBy: max(0,range.lowerBound), limitedBy: endIndex) ?? endIndex
+        return substring(with: lowerIndex..<(index(lowerIndex, offsetBy: range.upperBound - range.lowerBound, limitedBy: endIndex) ?? endIndex))
+    }
+    subscript(range: ClosedRange<Int>) -> String {
+        let lowerIndex = index(startIndex, offsetBy: max(0,range.lowerBound), limitedBy: endIndex) ?? endIndex
+        return substring(with: lowerIndex..<(index(lowerIndex, offsetBy: range.upperBound - range.lowerBound + 1, limitedBy: endIndex) ?? endIndex))
+    }
 }
 
 // MARK: UI TextField
@@ -172,13 +270,12 @@ class CarTripTextField: UITextField {
 extension UITextField {
     
     func underlined(color: UIColor) {
-        let border = CALayer()
-        let width = CGFloat(0.5)
-        border.borderColor = color.cgColor
-        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width - 10, height: self.frame.size.height)
-        border.borderWidth = width
-        self.layer.addSublayer(border)
-        self.layer.masksToBounds = true
+        let underline = UIView(frame: CGRect(x: 0, y: frame.height + 1, width: frame.width, height: 1))
+        underline.backgroundColor = color
+        underline.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleTopMargin]
+        addSubview(underline)
+        
+        layer.masksToBounds = false
     }
 }
 
@@ -220,4 +317,8 @@ extension CLLocationManager {
         
     }
     
+}
+
+extension R {
+    static let localizable = string.localizable.self
 }

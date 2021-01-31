@@ -15,6 +15,7 @@ class CarForRoad {
     var forService: Bool?
     var longitude: String
     var latitude: String
+    var idPlaceGivenBack: Int
     var car: Car?
     
     init(withJSON data: JSON) {
@@ -24,6 +25,7 @@ class CarForRoad {
         longitude = data["longitude"].string ?? ""
         latitude = data["latitude"].string ?? ""
         car = Car(data: data["car"])
+        idPlaceGivenBack = data["idPlaceGivenBack"].int!
     }
 
     
@@ -33,6 +35,7 @@ class CarForRoad {
         forService = false
         longitude = "0.0"
         latitude = "0.0"
+        idPlaceGivenBack = 0
     }
     
     static func parse(data: [JSON]) -> [CarForRoad] {

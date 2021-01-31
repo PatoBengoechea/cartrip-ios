@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ocraext.ttf">
+            <string>OCRAExtended</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreditCardView" customModule="carTrip_ios" customModuleProvider="target">
+            <connections>
+                <outlet property="ccBrand" destination="GMM-Ic-9XH" id="pTw-D7-mMi"/>
+                <outlet property="ccExpirationLabel" destination="KBB-ac-2Xw" id="v1y-GZ-BS1"/>
+                <outlet property="ccName" destination="80R-Tm-KmS" id="fc9-fF-Xm0"/>
+                <outlet property="ccNumber" destination="5T1-Ro-DPp" id="AYj-74-eEm"/>
+                <outlet property="contentView" destination="eKd-2o-WsY" id="wjJ-aQ-Lu4"/>
+                <outlet property="deleteCCButton" destination="QGl-eN-Wi8" id="MpQ-rP-U59"/>
+                <outlet property="gradientView" destination="tIh-9R-njl" id="OgT-6g-V6r"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="eKd-2o-WsY">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIh-9R-njl" customClass="GradientView" customModule="cinemex" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Master" translatesAutoresizingMaskIntoConstraints="NO" id="GMM-Ic-9XH">
+                    <rect key="frame" x="12" y="15" width="96" height="64"/>
+                    <color key="tintColor" systemColor="systemRedColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="GMM-Ic-9XH" secondAttribute="height" multiplier="3:2" id="61E-Vr-0hw"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234 1234 1234 1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5T1-Ro-DPp">
+                    <rect key="frame" x="15" y="434" width="384" height="28"/>
+                    <fontDescription key="fontDescription" name="OCRAExtended" family="OCR A Extended" pointSize="27"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label muy largo larguisamente largo pero demasiado largo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80R-Tm-KmS">
+                    <rect key="frame" x="15" y="851" width="304" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBB-ac-2Xw">
+                    <rect key="frame" x="339" y="851" width="60" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="lVV-fx-dmw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="OCRAExtended" family="OCR A Extended" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGl-eN-Wi8">
+                    <rect key="frame" x="359" y="27" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="9d2-MD-19B"/>
+                        <constraint firstAttribute="height" constant="40" id="Ajf-jR-v4q"/>
+                    </constraints>
+                    <state key="normal" image="icon-trash"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="QH1-S4-DNx"/>
+            <color key="backgroundColor" red="0.711418251" green="0.78205645469999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="KBB-ac-2Xw" firstAttribute="trailing" secondItem="5T1-Ro-DPp" secondAttribute="trailing" id="62F-fH-DNF"/>
+                <constraint firstItem="tIh-9R-njl" firstAttribute="top" secondItem="eKd-2o-WsY" secondAttribute="top" id="BMF-1d-uVM"/>
+                <constraint firstItem="80R-Tm-KmS" firstAttribute="centerY" secondItem="KBB-ac-2Xw" secondAttribute="centerY" id="CvW-88-7Ix"/>
+                <constraint firstItem="GMM-Ic-9XH" firstAttribute="leading" secondItem="5T1-Ro-DPp" secondAttribute="leading" constant="-3" id="E9I-Ca-wRo"/>
+                <constraint firstAttribute="trailing" secondItem="5T1-Ro-DPp" secondAttribute="trailing" constant="15" id="FU1-BO-pKl"/>
+                <constraint firstItem="tIh-9R-njl" firstAttribute="leading" secondItem="eKd-2o-WsY" secondAttribute="leading" id="GtU-e5-Dn4"/>
+                <constraint firstItem="QGl-eN-Wi8" firstAttribute="centerY" secondItem="GMM-Ic-9XH" secondAttribute="centerY" id="HY7-ZI-r4e"/>
+                <constraint firstAttribute="trailing" secondItem="tIh-9R-njl" secondAttribute="trailing" id="Iki-TW-Zsx"/>
+                <constraint firstItem="QGl-eN-Wi8" firstAttribute="trailing" secondItem="KBB-ac-2Xw" secondAttribute="trailing" id="MZ3-cm-VYC"/>
+                <constraint firstItem="GMM-Ic-9XH" firstAttribute="top" secondItem="eKd-2o-WsY" secondAttribute="top" constant="15" id="VCo-9u-2hS"/>
+                <constraint firstItem="5T1-Ro-DPp" firstAttribute="centerY" secondItem="eKd-2o-WsY" secondAttribute="centerY" id="dNE-10-laC"/>
+                <constraint firstItem="5T1-Ro-DPp" firstAttribute="leading" secondItem="eKd-2o-WsY" secondAttribute="leading" constant="15" id="dcg-hy-oTB"/>
+                <constraint firstAttribute="bottom" secondItem="tIh-9R-njl" secondAttribute="bottom" id="f0H-70-cmt"/>
+                <constraint firstAttribute="bottom" secondItem="KBB-ac-2Xw" secondAttribute="bottom" constant="25" id="jRm-RN-KYY"/>
+                <constraint firstItem="KBB-ac-2Xw" firstAttribute="leading" secondItem="80R-Tm-KmS" secondAttribute="trailing" constant="20" id="pju-nG-XIK"/>
+                <constraint firstItem="GMM-Ic-9XH" firstAttribute="width" secondItem="5T1-Ro-DPp" secondAttribute="width" multiplier="0.25" id="pju-rA-WIG"/>
+                <constraint firstItem="80R-Tm-KmS" firstAttribute="leading" secondItem="5T1-Ro-DPp" secondAttribute="leading" id="yr1-nO-oBj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="107" y="211"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Master" width="347.5" height="347.5"/>
+        <image name="icon-trash" width="21" height="25"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

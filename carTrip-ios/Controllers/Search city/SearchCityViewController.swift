@@ -60,7 +60,7 @@ extension SearchCityViewController: UISearchBarDelegate {
             tripsDataSource = trips
         } else {
             tripsDataSource = trips.filter {
-                $0.toCity.lowercased().contains(text)
+                $0.destinyPlace.cityName.lowercased().contains(text)
             }
         }
     }
