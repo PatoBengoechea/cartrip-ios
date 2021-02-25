@@ -29,7 +29,6 @@ class SearchCityViewController: UIViewController {
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .none
         searchBar.placeholder = R.string.localizable.filterByDestinyCity()
     }
     
