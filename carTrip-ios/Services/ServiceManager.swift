@@ -225,4 +225,20 @@ class ServiceManager {
                     }
                    }
     }
+    
+    func createLicense(path: String, successCallback: @escaping ((License) -> Void), failureCallback: @escaping ((String)-> Void)) {
+        let url = PathBuilder.sharedInstance.postLicense()
+        let body = BodyBuilder.postLicense(path: path)
+        AF.request(url,
+                   method: .post,
+                   parameters: body).responseJSON { (serviceResponse) in
+                    let response = BaseResponse().create(response: serviceResponse)
+                    if response.status, let data = response.data {
+                        let license = License(json: data["license"])
+                        successCallback(license)
+                    } else {
+                        failureCallback(response.message)
+                    }
+                   }
+    }
 }

@@ -75,4 +75,8 @@ class PathBuilder  {
     func getOneCreditCard(id: String) -> String {
         return "\(url)/creditcard/\(id)"
     }
+    
+    func postLicense() -> String {
+        return "\(url)/user/license"
+    }
 }

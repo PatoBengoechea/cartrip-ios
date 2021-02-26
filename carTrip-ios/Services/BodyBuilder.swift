@@ -55,4 +55,12 @@ class BodyBuilder  {
         
         return dict
     }
+    
+    static func postLicense(path: String) -> [String: Any] {
+        var dict = [String: Any]()
+        dict["idUser"] = UserDefaults.standard.string(forKey: "idUser") ?? 0
+        dict["path"] = path
+        
+        return dict
+    }
 }

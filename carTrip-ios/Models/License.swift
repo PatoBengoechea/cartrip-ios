@@ -10,11 +10,15 @@ import Foundation
 import SwiftyJSON
 
 class License: NSObject {
-    var expirationDate: String
+    var expirationDate: DateParsed?
+    var expirationDateUI: String
     var isExpired: Bool
     
     init(json: JSON) {
-        expirationDate = json["expireDate"].string!
-        isExpired = json["isDateExpired"].bool!
+        let date = json["expireDate"].string
+        expirationDate = DateParsed(date, format: .dateWithFullTime)
+        isExpired = json["isDateExpired"].bool ?? false
+        
+        expirationDateUI = expirationDate?.dateLong() ?? "Error al cargar fecha"
     }
 }

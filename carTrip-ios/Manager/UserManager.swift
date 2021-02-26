@@ -65,6 +65,18 @@ class UserManager: BaseManager {
 
     }
     
+    func createLicense(delegate: UserManagerDelegate, path: String) {
+        delegate.onInitService()
+        ServiceManager.sharedInstance.createLicense(path: path) { (license) in
+            delegate.onFinishedService()
+            delegate.onGetLicense(license: license)
+        } failureCallback: { (message) in
+            delegate.onFinishedService()
+            delegate.onError(message)
+        }
+
+    }
+    
     
     func isLogged() -> Bool {
         guard let _ = UserDefaults.standard.string(forKey: "idUser") else { return false}

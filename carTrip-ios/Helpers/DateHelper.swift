@@ -147,7 +147,7 @@ struct DateParsed {
             let components = calendar.dateComponents([.year, .month, .day, .weekday], from: dateTime)
             return components
         case .dateWithFullTime:
-            let components = calendar.dateComponents([.year, .month, .day, .weekday, .hour, .minute], from: dateTime)
+            let components = calendar.dateComponents([.year, .month, .day, .weekday, .hour, .minute, .second], from: dateTime)
             return components
         case .dateWithTime:
             let components = calendar.dateComponents([.year, .month, .day, .weekday, .hour, .minute], from: dateTime)
