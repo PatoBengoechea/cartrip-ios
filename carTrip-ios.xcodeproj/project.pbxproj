@@ -81,6 +81,7 @@
 		6AAEE26725C654AF000E5335 /* CreditCardInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAEE26625C654AF000E5335 /* CreditCardInputModel.swift */; };
 		6AAEE26A25C65C46000E5335 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAEE26925C65C46000E5335 /* CreditCard.swift */; };
 		6AAEE26E25C6636F000E5335 /* ProfileCCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAEE26D25C6636F000E5335 /* ProfileCCTableViewCell.swift */; };
+		6ABB061525E7BC3A007375D9 /* ProfileCCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ABB061425E7BC3A007375D9 /* ProfileCCTableViewCell.xib */; };
 		6AC386CE25B642E8002F9D71 /* ListCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC386CD25B642E8002F9D71 /* ListCarTableViewCell.swift */; };
 		6AC386D125B8E805002F9D71 /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC386D025B8E805002F9D71 /* License.swift */; };
 		6AC386D525BC6149002F9D71 /* SearchCity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC386D425BC6149002F9D71 /* SearchCity.storyboard */; };
@@ -186,6 +187,7 @@
 		6AAEE26625C654AF000E5335 /* CreditCardInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardInputModel.swift; sourceTree = "<group>"; };
 		6AAEE26925C65C46000E5335 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
 		6AAEE26D25C6636F000E5335 /* ProfileCCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCCTableViewCell.swift; sourceTree = "<group>"; };
+		6ABB061425E7BC3A007375D9 /* ProfileCCTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCCTableViewCell.xib; sourceTree = "<group>"; };
 		6AC386CD25B642E8002F9D71 /* ListCarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarTableViewCell.swift; sourceTree = "<group>"; };
 		6AC386D025B8E805002F9D71 /* License.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
 		6AC386D425BC6149002F9D71 /* SearchCity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchCity.storyboard; sourceTree = "<group>"; };
@@ -473,6 +475,7 @@
 				6AAEE25A25C645BE000E5335 /* CreditCardView.swift */,
 				6AAEE25D25C645D8000E5335 /* CreditCardView.xib */,
 				6AAEE26D25C6636F000E5335 /* ProfileCCTableViewCell.swift */,
+				6ABB061425E7BC3A007375D9 /* ProfileCCTableViewCell.xib */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				6AA1878B243951AD004A568B /* GothamRoundedBold_21016.ttf in Resources */,
 				6AEC1BCF259E0B30002C6A96 /* ListCars.storyboard in Resources */,
 				6A80F3FA24202CFB00474555 /* Localizable.strings in Resources */,
+				6ABB061525E7BC3A007375D9 /* ProfileCCTableViewCell.xib in Resources */,
 				6AA18783243951AD004A568B /* GothamRounded-BookItalic.otf in Resources */,
 				6A64E66624F1638400E7622B /* User.storyboard in Resources */,
 				6A3BC34E243ACC6800F075D5 /* Loader.xib in Resources */,

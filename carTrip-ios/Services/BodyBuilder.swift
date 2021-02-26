@@ -39,6 +39,8 @@ class BodyBuilder  {
         dict["longitudeOrigin"] = input.longitudeOrigin
         dict["idPlace"] = input.idPlaceGivenBack
         dict["shared"] = input.shared
+        dict["idCreditCard"] = input.idCreditCard
+        dict["amount"] = input.amount
         return dict
     }
     

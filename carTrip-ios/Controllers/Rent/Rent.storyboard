@@ -156,17 +156,17 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PriceTableViewCell" id="UnB-HV-sQv" customClass="PriceTableViewCell" customModule="carTrip_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="368" width="414" height="72"/>
+                                        <rect key="frame" x="0.0" y="368" width="414" height="72.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UnB-HV-sQv" id="jI8-I2-amd">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="72.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGL-iy-Wxj">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="72.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8c-9b-Ob1">
-                                                            <rect key="frame" x="324" y="10" width="80" height="21"/>
+                                                            <rect key="frame" x="324" y="10" width="80" height="21.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="80" id="Zwp-Gn-YOx"/>
                                                             </constraints>
@@ -175,19 +175,19 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6O-0R-A8J">
-                                                            <rect key="frame" x="277" y="10" width="42" height="21"/>
+                                                            <rect key="frame" x="277" y="10.5" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTN-76-7Xc">
-                                                            <rect key="frame" x="324" y="41" width="80" height="21"/>
+                                                            <rect key="frame" x="324" y="41.5" width="80" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jha-AS-hRk">
-                                                            <rect key="frame" x="277" y="41" width="42" height="21"/>
+                                                            <rect key="frame" x="277" y="41.5" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -224,17 +224,17 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InformationSharedTableViewCell" id="RIX-Kd-q6A" customClass="InformationSharedTableViewCell" customModule="carTrip_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="440" width="414" height="41"/>
+                                        <rect key="frame" x="0.0" y="440.5" width="414" height="41.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RIX-Kd-q6A" id="6MM-m1-R3t">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idA-uu-v55">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="41.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jr8-mc-9iZ">
-                                                            <rect key="frame" x="20" y="10" width="374" height="21"/>
+                                                            <rect key="frame" x="20" y="10" width="374" height="21.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -262,23 +262,23 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationTableViewCell" id="0xy-he-SJm" customClass="LocationTableViewCell" customModule="carTrip_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="481" width="414" height="41"/>
+                                        <rect key="frame" x="0.0" y="482" width="414" height="41.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0xy-he-SJm" id="J0V-xA-1Wx">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yb4-iG-agg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="41.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJv-GW-bJ7">
-                                                            <rect key="frame" x="20" y="10" width="248.5" height="21"/>
+                                                            <rect key="frame" x="20" y="10" width="248.5" height="21.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xsA-yf-WIS">
-                                                            <rect key="frame" x="278.5" y="3.5" width="115.5" height="34"/>
+                                                            <rect key="frame" x="278.5" y="4" width="115.5" height="34"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -356,11 +356,22 @@
                         <outlet property="nextView" destination="LWz-Ae-SlS" id="V9a-NU-XQS"/>
                         <outlet property="tableView" destination="LXI-q2-bZb" id="k3t-hp-uTR"/>
                         <segue destination="pp3-WM-Pxp" kind="presentation" identifier="goToPlaces" id="qYO-c7-x6U"/>
+                        <segue destination="jdc-3W-j9A" kind="show" identifier="goToCreditCards" id="S1N-8B-DzF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggL-B1-PSW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1094" y="-315"/>
+        </scene>
+        <!--Payment-->
+        <scene sceneID="KWZ-8d-WRu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Payment" id="jdc-3W-j9A" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fSa-Th-w37"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4xA-vv-AzM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1091" y="234"/>
         </scene>
         <!--Place View Controller-->
         <scene sceneID="lVZ-XE-Oiq">

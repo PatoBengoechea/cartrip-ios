@@ -51,6 +51,9 @@ class RentViewController: UIViewController, RentDelegate {
         super.viewDidLoad()
         presenter.attachView(self)
         presenter.getCarForRoad(id: currentCar.idCarForRoad)
+        let ccNib = UINib(nibName: R.nib.profileCCTableViewCell.name, bundle: nil)
+        tableView.register(ccNib, forCellReuseIdentifier: R.reuseIdentifier.profileCCTableViewCell.identifier)
+        presenter.getOneCreditCard()
         customize()
     }
     
@@ -64,12 +67,21 @@ class RentViewController: UIViewController, RentDelegate {
         navigationItem.title = R.string.localizable.rentYourCar()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showAssuranceModal()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let placeVC = segue.destination as? PlaceViewController, let places = sender as? [Place] {
             placeVC.places = places
             placeVC.choosePlace = { [weak self] place in
                 self?.destinyPlace = place
             }
+        }
+        if let ccVC = segue.destination as? CreditCardsViewController {
+            ccVC.selectable = true
+            ccVC.cardSelecterDelegate = self
         }
     }
     
@@ -96,6 +108,9 @@ class RentViewController: UIViewController, RentDelegate {
     private func reloadPrice() {
         if let index = presenter.datasource.firstIndex(where: { $0 == .price }) {
             tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .fade)
+            let days: Double = Double(howManyDays)
+            let prizeRent: Double = Double(presenter.currentCar?.car?.type?.prizeRent ?? 1000)
+            presenter.amount = days*prizeRent
         }
     }
     
@@ -128,10 +143,23 @@ class RentViewController: UIViewController, RentDelegate {
     private func setDestiny(_ place: Place?) {
         tableView.reloadData()
     }
+    
+    private func showAssuranceModal() {
+        let alert = CDAlertView(title: "Seguro", message: "Al alquilar un vehiculo pagara un seguro de $5.000 que le será devuelto en 30 días en caso de no haber cometido infacciones", type: .notification)
+        let action = CDAlertViewAction(title: "OK") { (action) -> Bool in
+            return true
+        }
+        alert.add(action: action)
+        alert.show()
+    }
 }
 
 // MARK: - Presenter Delegate
 extension RentViewController: RentPresenterDelegate {
+    func onGetCreditCard() {
+        tableView.reloadData()
+    }
+    
     func onGetPlaces(places: [Place]) {
         if places.isEmpty {
             let alert = CDAlertView(title: R.string.localizable.thereAreNoReturnPointsInThatCity(), message: R.string.localizable.pleaseLookForAnotherCity(), type: .error)
@@ -217,10 +245,26 @@ extension RentViewController: UITableViewDataSource, UITableViewDelegate {
                 }
                 return cell
             }
+        case .creditCard:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.profileCCTableViewCell, for: indexPath) {
+                cell.setUp(card: presenter.currentCreditCard ?? CreditCard())
+                return cell
+            }
         default:
             break
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch presenter.datasource[indexPath.row] {
+        case .creditCard:
+            performSegue(withIdentifier: R.segue.rentViewController.goToCreditCards.identifier, sender: nil)
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.setHighlighted(false, animated: true)
+        default:
+            break
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -229,6 +273,8 @@ extension RentViewController: UITableViewDataSource, UITableViewDelegate {
             return ImageTableViewCell.height
         case .days, .share, .price, .informationShare, .from, .to:
             return UITableView.automaticDimension
+        case .creditCard:
+            return ProfileCCTableViewCell.height
         default:
             return 0
         }
@@ -248,4 +294,12 @@ extension RentViewController: CityEnteredDelegate {
     }
     
     
+}
+
+// MARK : - Card selected delegate
+extension RentViewController: CreditCardSelectable {
+    func onSelectCreditCard(card: CreditCard) {
+        presenter.currentCreditCard = card
+        tableView.reloadData()
+    }
 }

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCCTableViewCell" id="38A-zB-WPc" customClass="ProfileCCTableViewCell" customModule="carTrip_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="38A-zB-WPc" id="JR1-po-1JM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LIb-4z-uNE">
+                        <rect key="frame" x="10" y="-3.5" width="53.5" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="f5Q-j3-Gyt"/>
+                            <constraint firstAttribute="width" secondItem="LIb-4z-uNE" secondAttribute="height" multiplier="2:1.5" id="s3k-1D-hw6"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5454 5454 5454 5454" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkH-nU-SSR">
+                        <rect key="frame" x="73.5" y="9" width="132" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSA-EW-wx0">
+                        <rect key="frame" x="384" y="4" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="33" id="3Sz-hw-qcX"/>
+                            <constraint firstAttribute="width" secondItem="aSA-EW-wx0" secondAttribute="height" id="UJn-l9-BPa"/>
+                        </constraints>
+                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" image="icon-trash"/>
+                        <connections>
+                            <action selector="onRemoveButton:" destination="38A-zB-WPc" eventType="touchUpInside" id="d9b-aE-cMQ"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="FkH-nU-SSR" firstAttribute="leading" secondItem="LIb-4z-uNE" secondAttribute="trailing" constant="10" id="07e-9e-NGd"/>
+                    <constraint firstItem="LIb-4z-uNE" firstAttribute="leading" secondItem="JR1-po-1JM" secondAttribute="leading" constant="10" id="2ft-4f-yPT"/>
+                    <constraint firstItem="FkH-nU-SSR" firstAttribute="centerY" secondItem="JR1-po-1JM" secondAttribute="centerY" id="Ex9-O6-VVE"/>
+                    <constraint firstAttribute="trailing" secondItem="aSA-EW-wx0" secondAttribute="trailing" constant="5" id="cMy-zL-wIP"/>
+                    <constraint firstItem="LIb-4z-uNE" firstAttribute="centerY" secondItem="JR1-po-1JM" secondAttribute="centerY" id="eC7-Mv-NZP"/>
+                    <constraint firstItem="aSA-EW-wx0" firstAttribute="height" secondItem="JR1-po-1JM" secondAttribute="height" multiplier="0.75" id="q9J-zK-TPq"/>
+                    <constraint firstItem="aSA-EW-wx0" firstAttribute="centerY" secondItem="JR1-po-1JM" secondAttribute="centerY" id="rdi-Ak-uWN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="ccImage" destination="LIb-4z-uNE" id="iiD-8i-8P9"/>
+                <outlet property="deleteButton" destination="aSA-EW-wx0" id="NeT-1w-lZk"/>
+                <outlet property="numberLabel" destination="FkH-nU-SSR" id="EqA-re-atX"/>
+            </connections>
+            <point key="canvasLocation" x="-67" y="-8"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon-trash" width="21" height="25"/>
+    </resources>
+</document>

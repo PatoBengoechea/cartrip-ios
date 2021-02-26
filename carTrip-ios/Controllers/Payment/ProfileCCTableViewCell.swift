@@ -11,6 +11,8 @@ import UIKit
 class ProfileCCTableViewCell: UITableViewCell {
     
     var creditCard: CreditCard?
+    
+    static var height: CGFloat = 60
 //    var remove: ((_ creditCard: CreditCardViewModel) -> Void)?
     
     @IBOutlet weak var numberLabel : UILabel!

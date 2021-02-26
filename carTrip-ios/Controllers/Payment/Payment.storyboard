@@ -20,59 +20,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gv4-lT-e28">
                                 <rect key="frame" x="0.0" y="44" width="414" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCCTableViewCell" id="3oc-1Y-Xfr" customClass="ProfileCCTableViewCell" customModule="cinemex" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3oc-1Y-Xfr" id="NbB-Wq-BMB">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Zp-Y7-8yE">
-                                                    <rect key="frame" x="10" y="2.5" width="53.5" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="gpH-Mw-01f"/>
-                                                        <constraint firstAttribute="width" secondItem="6Zp-Y7-8yE" secondAttribute="height" multiplier="2:1.5" id="vfn-sD-kUg"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5454 5454 5454 5454" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9m-WF-jgX">
-                                                    <rect key="frame" x="73.5" y="15" width="132" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gx-RV-uGv">
-                                                    <rect key="frame" x="376" y="5.5" width="33" height="33.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="33" id="WAF-sj-Xnv"/>
-                                                        <constraint firstAttribute="width" secondItem="5gx-RV-uGv" secondAttribute="height" id="div-pR-5ru"/>
-                                                    </constraints>
-                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <state key="normal" image="icon-trash"/>
-                                                    <connections>
-                                                        <action selector="onRemoveButton:" destination="3oc-1Y-Xfr" eventType="touchUpInside" id="vvt-u0-6LU"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstItem="d9m-WF-jgX" firstAttribute="centerY" secondItem="NbB-Wq-BMB" secondAttribute="centerY" id="B6L-QM-f0K"/>
-                                                <constraint firstItem="d9m-WF-jgX" firstAttribute="leading" secondItem="6Zp-Y7-8yE" secondAttribute="trailing" constant="10" id="Hy3-uc-PLJ"/>
-                                                <constraint firstAttribute="trailing" secondItem="5gx-RV-uGv" secondAttribute="trailing" constant="5" id="MOJ-na-CnV"/>
-                                                <constraint firstItem="6Zp-Y7-8yE" firstAttribute="leading" secondItem="NbB-Wq-BMB" secondAttribute="leading" constant="10" id="MlK-xH-62J"/>
-                                                <constraint firstItem="5gx-RV-uGv" firstAttribute="centerY" secondItem="NbB-Wq-BMB" secondAttribute="centerY" id="PsO-2g-ner"/>
-                                                <constraint firstItem="6Zp-Y7-8yE" firstAttribute="centerY" secondItem="NbB-Wq-BMB" secondAttribute="centerY" id="W3u-Rq-AHs"/>
-                                                <constraint firstItem="5gx-RV-uGv" firstAttribute="height" secondItem="NbB-Wq-BMB" secondAttribute="height" multiplier="0.75" id="dir-ZE-WoX"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <outlet property="ccImage" destination="6Zp-Y7-8yE" id="bjY-jz-4Pd"/>
-                                            <outlet property="deleteButton" destination="5gx-RV-uGv" id="Y8z-tO-e7h"/>
-                                            <outlet property="numberLabel" destination="d9m-WF-jgX" id="juX-3x-oLR"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sq7-ge-G3C">
                                 <rect key="frame" x="0.0" y="812" width="414" height="84"/>
@@ -123,12 +70,12 @@
         <!--Add Card View Controller-->
         <scene sceneID="5tn-Rc-EI9">
             <objects>
-                <viewController id="exH-tQ-AB8" customClass="AddCardViewController" customModule="cinemex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="exH-tQ-AB8" customClass="AddCardViewController" customModule="carTrip_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nvc-u6-66e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJL-nH-yeg" customClass="CreditCardView" customModule="cinemex" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJL-nH-yeg" customClass="CreditCardView" customModule="carTrip_ios" customModuleProvider="target">
                                 <rect key="frame" x="20" y="10" width="374" height="233"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
@@ -341,7 +288,6 @@
     </scenes>
     <resources>
         <image name="footer-background" width="540" height="92"/>
-        <image name="icon-trash" width="21" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

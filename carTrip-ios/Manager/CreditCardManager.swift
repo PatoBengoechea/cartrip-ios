@@ -11,6 +11,13 @@ import Foundation
 protocol CreditCardManagerDelegate: BaseManagerDelegate {
     func cardAdded()
     func onGetCreditCards(cards: [CreditCard])
+    func onGetCreditCard(card: CreditCard)
+}
+
+extension CreditCardManagerDelegate {
+    func cardAdded() { }
+    func onGetCreditCards(cards: [CreditCard]) { }
+    func onGetCreditCard(card: CreditCard) { }
 }
 
 class CreditCardManager: BaseManager {
@@ -33,6 +40,17 @@ class CreditCardManager: BaseManager {
         ServiceManager.sharedInstance.getAllCreditCards(id: id) { cards in
             delegate.onFinishedService()
             delegate.onGetCreditCards(cards: cards)
+        } failureCallback: { (message) in
+            delegate.onFinishedService()
+            delegate.onError(message)
+        }
+    }
+    
+    func getOneCreditCard(id: String, delegate: CreditCardManagerDelegate) {
+        delegate.onInitService()
+        ServiceManager.sharedInstance.getOneCreditCard(id: id) { card in
+            delegate.onFinishedService()
+            delegate.onGetCreditCard(card: card)
         } failureCallback: { (message) in
             delegate.onFinishedService()
             delegate.onError(message)

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CreditCardSelectable {
+    func onSelectCreditCard(card: CreditCard)
+}
+
 class CreditCardsViewController: UIViewController {
     
     // MARK: - @IBOutlet
@@ -20,6 +24,9 @@ class CreditCardsViewController: UIViewController {
         didSet { tableView.reloadData() }
     }
     
+    var cardSelecterDelegate: CreditCardSelectable?
+    var selectable = false
+    
     // MARK: - @IBAction
     @IBAction func onAddButtonTapped() {
         performSegue(withIdentifier: R.segue.creditCardsViewController.goToAddCard.identifier, sender: nil)
@@ -31,6 +38,8 @@ class CreditCardsViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        let ccNib = UINib(nibName: R.nib.profileCCTableViewCell.name, bundle: nil)
+        tableView.register(ccNib, forCellReuseIdentifier: R.reuseIdentifier.profileCCTableViewCell.identifier)
         customize()
 
     }
@@ -99,7 +108,14 @@ extension CreditCardsViewController: UITableViewDataSource, UITableViewDelegate 
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return ProfileCCTableViewCell.height
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let card = cards[indexPath.row]
+        cardSelecterDelegate?.onSelectCreditCard(card: card)
+        if selectable {
+            navigationController?.popViewController(animated: true)
+        }
+    }
 }

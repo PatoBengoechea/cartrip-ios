@@ -69,6 +69,10 @@ class PathBuilder  {
     }
     
     func getAllCreditCards(id: String) -> String {
+        return "\(url)/creditcards/\(id)"
+    }
+    
+    func getOneCreditCard(id: String) -> String {
         return "\(url)/creditcard/\(id)"
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class CreditCard: NSObject {
+    var idCreditCard: Int
     var idUser: Int
     var holderName: String
     var number: String
@@ -17,8 +18,19 @@ class CreditCard: NSObject {
     var yearExpiration: Int
     var ccv: String
     
+    override init() {
+        self.idCreditCard = 999999
+        self.idUser = 0
+        self.number = ""
+        self.holderName = ""
+        self.monthExpiration = 1
+        self.yearExpiration = 1
+        self.ccv = "xxx"
+    }
+    
     
     init(json: JSON) {
+        self.idCreditCard = json["idCreditCard"].int!
         self.idUser = json["idUser"].int!
         self.number = json["creditCardNumber"].string!
         self.holderName = json["holderName"].string!

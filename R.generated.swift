@@ -221,10 +221,21 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This struct is generated for `RentViewController`, and contains static references to 1 segues.
+    /// This struct is generated for `RentViewController`, and contains static references to 2 segues.
     struct rentViewController {
+      /// Segue identifier `goToCreditCards`.
+      static let goToCreditCards: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, RentViewController, CreditCardsViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToCreditCards")
       /// Segue identifier `goToPlaces`.
       static let goToPlaces: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, RentViewController, PlaceViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToPlaces")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `goToCreditCards`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func goToCreditCards(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, RentViewController, CreditCardsViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.rentViewController.goToCreditCards, segue: segue)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// Optionally returns a typed version of segue `goToPlaces`.
@@ -668,7 +679,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
     /// Nib `CreditCardView`.
     static let creditCardView = _R.nib._CreditCardView()
@@ -676,6 +687,8 @@ struct R: Rswift.Validatable {
     static let loader = _R.nib._Loader()
     /// Nib `ModalRentCar`.
     static let modalRentCar = _R.nib._ModalRentCar()
+    /// Nib `ProfileCCTableViewCell`.
+    static let profileCCTableViewCell = _R.nib._ProfileCCTableViewCell()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "CreditCardView", in: bundle)`
@@ -701,6 +714,14 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ProfileCCTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.profileCCTableViewCell) instead")
+    static func profileCCTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.profileCCTableViewCell)
+    }
+    #endif
+
     static func creditCardView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.creditCardView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -711,6 +732,10 @@ struct R: Rswift.Validatable {
 
     static func modalRentCar(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.modalRentCar.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func profileCCTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProfileCCTableViewCell? {
+      return R.nib.profileCCTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProfileCCTableViewCell
     }
 
     fileprivate init() {}
@@ -1907,6 +1932,7 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try _CreditCardView.validate()
       try _ModalRentCar.validate()
+      try _ProfileCCTableViewCell.validate()
     }
 
     struct _CreditCardView: Rswift.NibResourceType, Rswift.Validatable {
@@ -1948,6 +1974,26 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "ford-mondeo-2019-delantera", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ford-mondeo-2019-delantera' is used in nib 'ModalRentCar', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ProfileCCTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = ProfileCCTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "ProfileCCTableViewCell"
+      let name = "ProfileCCTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProfileCCTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProfileCCTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "icon-trash", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon-trash' is used in nib 'ProfileCCTableViewCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -2071,7 +2117,6 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "footer-background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'footer-background' is used in storyboard 'Payment', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "icon-trash", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon-trash' is used in storyboard 'Payment', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
