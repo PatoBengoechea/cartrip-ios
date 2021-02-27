@@ -29,6 +29,9 @@ class SearchCityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let nib = UINib(nibName: R.nib.tripFromToTableViewCell.name, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: R.reuseIdentifier.tripFromToTableViewCell.identifier)
+        
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self

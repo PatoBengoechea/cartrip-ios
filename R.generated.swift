@@ -713,7 +713,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
   struct nib {
     /// Nib `CreditCardView`.
     static let creditCardView = _R.nib._CreditCardView()
@@ -727,6 +727,8 @@ struct R: Rswift.Validatable {
     static let prizeKMTableViewCell = _R.nib._PrizeKMTableViewCell()
     /// Nib `ProfileCCTableViewCell`.
     static let profileCCTableViewCell = _R.nib._ProfileCCTableViewCell()
+    /// Nib `TripFromToTableViewCell`.
+    static let tripFromToTableViewCell = _R.nib._TripFromToTableViewCell()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "CreditCardView", in: bundle)`
@@ -776,6 +778,14 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TripFromToTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.tripFromToTableViewCell) instead")
+    static func tripFromToTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.tripFromToTableViewCell)
+    }
+    #endif
+
     static func creditCardView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.creditCardView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -798,6 +808,10 @@ struct R: Rswift.Validatable {
 
     static func profileCCTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProfileCCTableViewCell? {
       return R.nib.profileCCTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProfileCCTableViewCell
+    }
+
+    static func tripFromToTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TripFromToTableViewCell? {
+      return R.nib.tripFromToTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TripFromToTableViewCell
     }
 
     fileprivate init() {}
@@ -2088,6 +2102,20 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "chevron.right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'chevron.right' is used in nib 'ProfileCCTableViewCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TripFromToTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = TripFromToTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "TripFromToTableViewCell"
+      let name = "TripFromToTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TripFromToTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TripFromToTableViewCell
       }
 
       fileprivate init() {}

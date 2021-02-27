@@ -24,7 +24,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5454 5454 5454 5454" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkH-nU-SSR">
-                        <rect key="frame" x="73.5" y="15" width="132" height="15"/>
+                        <rect key="frame" x="73.5" y="15" width="260.5" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -42,6 +42,7 @@
                     <constraint firstItem="FkH-nU-SSR" firstAttribute="leading" secondItem="LIb-4z-uNE" secondAttribute="trailing" constant="10" id="07e-9e-NGd"/>
                     <constraint firstItem="LIb-4z-uNE" firstAttribute="leading" secondItem="JR1-po-1JM" secondAttribute="leading" constant="10" id="2ft-4f-yPT"/>
                     <constraint firstItem="FkH-nU-SSR" firstAttribute="centerY" secondItem="JR1-po-1JM" secondAttribute="centerY" id="Ex9-O6-VVE"/>
+                    <constraint firstItem="dwb-5Q-3gl" firstAttribute="leading" secondItem="FkH-nU-SSR" secondAttribute="trailing" constant="20" id="Obw-V1-yz0"/>
                     <constraint firstItem="LIb-4z-uNE" firstAttribute="centerY" secondItem="JR1-po-1JM" secondAttribute="centerY" id="eC7-Mv-NZP"/>
                     <constraint firstAttribute="trailing" secondItem="dwb-5Q-3gl" secondAttribute="trailing" constant="40" id="wZM-7v-Md5"/>
                     <constraint firstItem="dwb-5Q-3gl" firstAttribute="centerY" secondItem="JR1-po-1JM" secondAttribute="centerY" id="xnh-k9-fV3"/>

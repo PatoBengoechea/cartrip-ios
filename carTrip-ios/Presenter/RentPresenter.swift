@@ -115,7 +115,7 @@ extension RentPrenter: TripManagerDelegate {
 
 // MARK: - Credit Card Manager
 extension RentPrenter: CreditCardManagerDelegate {
-    func onGetCreditCard(card: CreditCard) {
+    func onGetCreditCard(card: CreditCard?) {
         self.currentCreditCard = card
         delegate?.onGetCreditCard()
     }

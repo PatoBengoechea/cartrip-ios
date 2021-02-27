@@ -84,8 +84,8 @@ class PassengerPaymentViewController: UIViewController {
         let kmnib = UINib(nibName: R.nib.prizeKMTableViewCell.name, bundle: nil)
         tableView.register(kmnib, forCellReuseIdentifier: R.reuseIdentifier.prizeKMTableViewCell.identifier)
         
-        let imageNib = UINib(nibName: R.nib.imageTableViewCell.name, bundle: nil)
-        tableView.register(imageNib, forCellReuseIdentifier: R.reuseIdentifier.imageTableViewCell.identifier)
+        let nib = UINib(nibName: R.nib.tripFromToTableViewCell.name, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: R.reuseIdentifier.tripFromToTableViewCell.identifier)
         
         let ccNib = UINib(nibName: R.nib.profileCCTableViewCell.name, bundle: nil)
         tableView.register(ccNib, forCellReuseIdentifier: R.reuseIdentifier.profileCCTableViewCell.identifier)
@@ -101,14 +101,15 @@ extension PassengerPaymentViewController: UITableViewDataSource, UITableViewDele
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch dataSource[indexPath.row] {
         case .image:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.imageTableViewCell, for: indexPath) {
-                cell.setUp(image: trip?.carForRoad.car?.img_path ?? "")
+            if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.tripFromToTableViewCell, for: indexPath) {
+                cell.setUp(trip: trip!)
+//                cell.setUp(image: trip?.carForRoad.car?.img_path ?? "")
                 return cell
             }
         
         case .creditCard:
             if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.profileCCTableViewCell, for: indexPath) {
-                cell.setUp(card: creditCard ?? CreditCard(), selecteable: true)
+                cell.setUp(card: creditCard, selecteable: true)
                 return cell
             }
             
@@ -160,7 +161,7 @@ extension PassengerPaymentViewController: CreditCardManagerDelegate {
         print(message)
     }
     
-    func onGetCreditCard(card: CreditCard) {
+    func onGetCreditCard(card: CreditCard?) {
         creditCard = card
     }
     

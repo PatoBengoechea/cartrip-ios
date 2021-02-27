@@ -20,6 +20,7 @@
 		6A3BC34E243ACC6800F075D5 /* Loader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A3BC34D243ACC6800F075D5 /* Loader.xib */; };
 		6A3BC351243ACCBC00F075D5 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3BC350243ACCBC00F075D5 /* Loader.swift */; };
 		6A3BC353243ACFA800F075D5 /* 14717-sedan-car-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A3BC352243ACFA800F075D5 /* 14717-sedan-car-animation.json */; };
+		6A6449D525EAD6B600DF2987 /* TripFromToTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A6449D425EAD6B600DF2987 /* TripFromToTableViewCell.xib */; };
 		6A64D7D7257E6F4E0042EBFA /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A64D7D6257E6F4E0042EBFA /* LicenseViewController.swift */; };
 		6A64D7DA257E76050042EBFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A64D7D9257E76050042EBFA /* GoogleService-Info.plist */; };
 		6A64D809257ECE560042EBFA /* ActualRentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A64D808257ECE560042EBFA /* ActualRentViewController.swift */; };
@@ -127,6 +128,7 @@
 		6A3BC34D243ACC6800F075D5 /* Loader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Loader.xib; sourceTree = "<group>"; };
 		6A3BC350243ACCBC00F075D5 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		6A3BC352243ACFA800F075D5 /* 14717-sedan-car-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "14717-sedan-car-animation.json"; sourceTree = "<group>"; };
+		6A6449D425EAD6B600DF2987 /* TripFromToTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripFromToTableViewCell.xib; sourceTree = "<group>"; };
 		6A64D7D6257E6F4E0042EBFA /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		6A64D7D9257E76050042EBFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6A64D808257ECE560042EBFA /* ActualRentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualRentViewController.swift; sourceTree = "<group>"; };
@@ -532,6 +534,7 @@
 				6AC386D425BC6149002F9D71 /* SearchCity.storyboard */,
 				6AC386D725BC616E002F9D71 /* SearchCityViewController.swift */,
 				6AA09D3B25BCA536005929CF /* TripFromToTableViewCell.swift */,
+				6A6449D425EAD6B600DF2987 /* TripFromToTableViewCell.xib */,
 				6ABB063B25EA04CB007375D9 /* PassengerPaymentViewController.swift */,
 			);
 			path = "Search city";
@@ -646,6 +649,7 @@
 				6ABB063725EA042D007375D9 /* ImageTableViewCell.xib in Resources */,
 				6AAEE25E25C645D8000E5335 /* CreditCardView.xib in Resources */,
 				6A80F3F42420282F00474555 /* Auth.storyboard in Resources */,
+				6A6449D525EAD6B600DF2987 /* TripFromToTableViewCell.xib in Resources */,
 				6AA18789243951AD004A568B /* GothamRoundedLight_21020.ttf in Resources */,
 				6A32AC72241D98E1009BF0C8 /* LaunchScreen.storyboard in Resources */,
 				6A71B2F524254AA7006612F1 /* Home.storyboard in Resources */,

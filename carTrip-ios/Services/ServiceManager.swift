@@ -214,14 +214,18 @@ class ServiceManager {
                    }
     }
     
-    func getOneCreditCard(id: String, successCallback: @escaping ((CreditCard) -> Void), failureCallback: @escaping ((String) -> Void)) {
+    func getOneCreditCard(id: String, successCallback: @escaping ((CreditCard?) -> Void), failureCallback: @escaping ((String) -> Void)) {
         let url = PathBuilder.sharedInstance.getOneCreditCard(id: id)
         AF.request(url,
                    method: .get).responseJSON { (serviceResponse) in
                     let response = BaseResponse().create(response: serviceResponse)
                     if response.status, let data = response.data {
-                        let creditCards = CreditCard(json: data["creditCards"])
-                        successCallback(creditCards)
+                        if data["creditCards"] == false {
+                            successCallback(nil)
+                        } else {
+                            let creditCards = CreditCard(json: data["creditCards"])
+                            successCallback(creditCards)
+                        }
                     } else {
                         failureCallback(response.message)
                     }
