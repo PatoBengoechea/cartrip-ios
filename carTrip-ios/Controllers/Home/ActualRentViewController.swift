@@ -56,7 +56,7 @@ class ActualRentViewController: UIViewController {
         toLabel.text = ""
         
         passengerTitle.set(font: .gothamRoundedBold(16), color: .blueCar)
-        passengetStackView.alignment = .center
+        passengetStackView.alignment = .leading
         passengetStackView.distribution = .equalCentering
         
         finishTrip.setTitle("Cancelar viaje", for: .normal)

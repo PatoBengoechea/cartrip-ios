@@ -15,7 +15,7 @@ class CarForRoad {
     var forService: Bool?
     var longitude: String
     var latitude: String
-    var idPlaceGivenBack: Int
+    var idPlaceGivenBack: Int?
     var car: Car?
     
     init(withJSON data: JSON) {
@@ -25,7 +25,7 @@ class CarForRoad {
         longitude = data["longitude"].string ?? ""
         latitude = data["latitude"].string ?? ""
         car = Car(data: data["car"])
-        idPlaceGivenBack = data["idPlaceGivenBack"].int!
+        idPlaceGivenBack = data["idPlaceGivenBack"].int ?? 0
     }
 
     

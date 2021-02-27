@@ -17,7 +17,7 @@ class ProfileCCTableViewCell: UITableViewCell {
     
     @IBOutlet weak var numberLabel : UILabel!
     @IBOutlet weak var ccImage: UIImageView!
-    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var chevronImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +26,7 @@ class ProfileCCTableViewCell: UITableViewCell {
 //        deleteButton.setImage(R.image.iconTrash()?.with(color: CinemexColors.darkGray()), for: .normal)
 //        ccImage.tintColor = CinemexColors.darkGray(CinemexColors.lightGray())
         numberLabel.set(font: .gothamRoundedMedium(16), color: .blueCar)
+        chevronImage.tintColor = .blueCar
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -40,9 +41,10 @@ class ProfileCCTableViewCell: UITableViewCell {
 //        numberLabel.text = creditCard.redactedNumber
 //    }
     
-    func setUp(card: CreditCard) {
+    func setUp(card: CreditCard, selecteable: Bool = false) {
         numberLabel.text = CCHelper.formatCreditCardNumber(creditCardString: card.number)
         ccImage.image = CCHelper.cardType(number: card.number).image
+        chevronImage.isHidden = !selecteable
     }
     
     @IBAction func onRemoveButton(_ sender: AnyObject) {

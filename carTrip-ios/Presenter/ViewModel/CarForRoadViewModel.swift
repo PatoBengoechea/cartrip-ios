@@ -35,7 +35,7 @@ class CarForRoadViewModel: MKPointAnnotation {
         longitude = Double(model.longitude)
         latitude = Double(model.latitude)
         car = CarViewModel(model.car)
-        idPlaceGivenBack = model.idPlaceGivenBack
+        idPlaceGivenBack = model.idPlaceGivenBack ?? 0
         let geoCoder = CLGeocoder()
         super.init()
         let clLocation = CLLocation(latitude: latitude ?? 0.0, longitude: longitude ?? 0.0)

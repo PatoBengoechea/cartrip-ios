@@ -17,52 +17,46 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LIb-4z-uNE">
-                        <rect key="frame" x="10" y="-3.5" width="53.5" height="40"/>
+                        <rect key="frame" x="10" y="2.5" width="53.5" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="f5Q-j3-Gyt"/>
                             <constraint firstAttribute="width" secondItem="LIb-4z-uNE" secondAttribute="height" multiplier="2:1.5" id="s3k-1D-hw6"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5454 5454 5454 5454" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkH-nU-SSR">
-                        <rect key="frame" x="73.5" y="9" width="132" height="15"/>
+                        <rect key="frame" x="73.5" y="15" width="132" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSA-EW-wx0">
-                        <rect key="frame" x="384" y="4" width="25" height="25"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dwb-5Q-3gl">
+                        <rect key="frame" x="354" y="15" width="20" height="15.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="33" id="3Sz-hw-qcX"/>
-                            <constraint firstAttribute="width" secondItem="aSA-EW-wx0" secondAttribute="height" id="UJn-l9-BPa"/>
+                            <constraint firstAttribute="width" constant="20" id="LyW-Fm-EZl"/>
+                            <constraint firstAttribute="width" secondItem="dwb-5Q-3gl" secondAttribute="height" multiplier="1:1" constant="1" id="voS-FT-227"/>
                         </constraints>
-                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" image="icon-trash"/>
-                        <connections>
-                            <action selector="onRemoveButton:" destination="38A-zB-WPc" eventType="touchUpInside" id="d9b-aE-cMQ"/>
-                        </connections>
-                    </button>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="FkH-nU-SSR" firstAttribute="leading" secondItem="LIb-4z-uNE" secondAttribute="trailing" constant="10" id="07e-9e-NGd"/>
                     <constraint firstItem="LIb-4z-uNE" firstAttribute="leading" secondItem="JR1-po-1JM" secondAttribute="leading" constant="10" id="2ft-4f-yPT"/>
                     <constraint firstItem="FkH-nU-SSR" firstAttribute="centerY" secondItem="JR1-po-1JM" secondAttribute="centerY" id="Ex9-O6-VVE"/>
-                    <constraint firstAttribute="trailing" secondItem="aSA-EW-wx0" secondAttribute="trailing" constant="5" id="cMy-zL-wIP"/>
                     <constraint firstItem="LIb-4z-uNE" firstAttribute="centerY" secondItem="JR1-po-1JM" secondAttribute="centerY" id="eC7-Mv-NZP"/>
-                    <constraint firstItem="aSA-EW-wx0" firstAttribute="height" secondItem="JR1-po-1JM" secondAttribute="height" multiplier="0.75" id="q9J-zK-TPq"/>
-                    <constraint firstItem="aSA-EW-wx0" firstAttribute="centerY" secondItem="JR1-po-1JM" secondAttribute="centerY" id="rdi-Ak-uWN"/>
+                    <constraint firstAttribute="trailing" secondItem="dwb-5Q-3gl" secondAttribute="trailing" constant="40" id="wZM-7v-Md5"/>
+                    <constraint firstItem="dwb-5Q-3gl" firstAttribute="centerY" secondItem="JR1-po-1JM" secondAttribute="centerY" id="xnh-k9-fV3"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="ccImage" destination="LIb-4z-uNE" id="iiD-8i-8P9"/>
-                <outlet property="deleteButton" destination="aSA-EW-wx0" id="NeT-1w-lZk"/>
+                <outlet property="chevronImage" destination="dwb-5Q-3gl" id="06Y-cq-oeY"/>
                 <outlet property="numberLabel" destination="FkH-nU-SSR" id="EqA-re-atX"/>
             </connections>
             <point key="canvasLocation" x="-67" y="-8"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icon-trash" width="21" height="25"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
     </resources>
 </document>

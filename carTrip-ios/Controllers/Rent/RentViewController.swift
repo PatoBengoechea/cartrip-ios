@@ -255,7 +255,7 @@ extension RentViewController: UITableViewDataSource, UITableViewDelegate {
             }
         case .creditCard:
             if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.profileCCTableViewCell, for: indexPath) {
-                cell.setUp(card: presenter.currentCreditCard ?? CreditCard())
+                cell.setUp(card: presenter.currentCreditCard ?? CreditCard(), selecteable: true)
                 return cell
             }
         case .prizeKM:

@@ -108,7 +108,7 @@ extension PassengerPaymentViewController: UITableViewDataSource, UITableViewDele
         
         case .creditCard:
             if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.profileCCTableViewCell, for: indexPath) {
-                cell.setUp(card: creditCard ?? CreditCard())
+                cell.setUp(card: creditCard ?? CreditCard(), selecteable: true)
                 return cell
             }
             

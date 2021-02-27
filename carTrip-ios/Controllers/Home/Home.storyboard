@@ -277,15 +277,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeE-1n-pM2">
-                                <rect key="frame" x="30" y="429.5" width="354" height="20.5"/>
+                                <rect key="frame" x="30" y="444.5" width="344" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Atp-cE-Q7L">
-                                <rect key="frame" x="30" y="458" width="354" height="150"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Atp-cE-Q7L">
+                                <rect key="frame" x="40" y="485" width="334" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="62d-JX-p9g"/>
+                                    <constraint firstAttribute="height" constant="100" id="62d-JX-p9g"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFT-SX-FsK">
@@ -300,20 +300,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="B7D-ZO-4fg" firstAttribute="top" secondItem="pWh-eQ-iNM" secondAttribute="bottom" constant="15" id="2OX-CZ-8qu"/>
-                            <constraint firstItem="oeE-1n-pM2" firstAttribute="top" secondItem="B7D-ZO-4fg" secondAttribute="bottom" constant="25" id="3dA-uc-063"/>
+                            <constraint firstItem="oeE-1n-pM2" firstAttribute="top" secondItem="B7D-ZO-4fg" secondAttribute="bottom" constant="40" id="3dA-uc-063"/>
                             <constraint firstItem="BlB-9f-ePm" firstAttribute="top" secondItem="efS-Mq-At9" secondAttribute="top" constant="25" id="AJ2-Gb-LKR"/>
                             <constraint firstItem="efS-Mq-At9" firstAttribute="trailing" secondItem="zFT-SX-FsK" secondAttribute="trailing" constant="40" id="B9H-BO-OeY"/>
-                            <constraint firstItem="efS-Mq-At9" firstAttribute="trailing" secondItem="Atp-cE-Q7L" secondAttribute="trailing" constant="30" id="D4x-zV-15H"/>
+                            <constraint firstItem="efS-Mq-At9" firstAttribute="trailing" secondItem="Atp-cE-Q7L" secondAttribute="trailing" constant="40" id="D4x-zV-15H"/>
                             <constraint firstItem="tem-3m-ZI0" firstAttribute="top" secondItem="BlB-9f-ePm" secondAttribute="bottom" constant="54" id="E7I-9u-mZb"/>
                             <constraint firstItem="zFT-SX-FsK" firstAttribute="leading" secondItem="efS-Mq-At9" secondAttribute="leading" constant="40" id="Et1-cA-qmc"/>
                             <constraint firstItem="pWh-eQ-iNM" firstAttribute="top" secondItem="J85-33-fYb" secondAttribute="bottom" constant="36" id="HF9-pn-0SR"/>
                             <constraint firstItem="B7D-ZO-4fg" firstAttribute="leading" secondItem="pWh-eQ-iNM" secondAttribute="leading" id="Jlj-y6-03H"/>
                             <constraint firstItem="oeE-1n-pM2" firstAttribute="trailing" secondItem="Atp-cE-Q7L" secondAttribute="trailing" id="P1m-qN-DcX"/>
                             <constraint firstItem="B7D-ZO-4fg" firstAttribute="trailing" secondItem="pWh-eQ-iNM" secondAttribute="trailing" id="QLl-rf-qO2"/>
-                            <constraint firstItem="Atp-cE-Q7L" firstAttribute="leading" secondItem="efS-Mq-At9" secondAttribute="leading" constant="30" id="VEb-Go-sET"/>
+                            <constraint firstItem="Atp-cE-Q7L" firstAttribute="leading" secondItem="efS-Mq-At9" secondAttribute="leading" constant="40" id="VEb-Go-sET"/>
                             <constraint firstItem="Atp-cE-Q7L" firstAttribute="centerX" secondItem="efS-Mq-At9" secondAttribute="centerX" id="WF2-GZ-D0H"/>
                             <constraint firstItem="J85-33-fYb" firstAttribute="leading" secondItem="efS-Mq-At9" secondAttribute="leading" constant="30" id="Wnc-qu-mFS"/>
-                            <constraint firstItem="Atp-cE-Q7L" firstAttribute="top" secondItem="oeE-1n-pM2" secondAttribute="bottom" constant="8" id="a3k-4O-FXS"/>
+                            <constraint firstItem="Atp-cE-Q7L" firstAttribute="top" secondItem="oeE-1n-pM2" secondAttribute="bottom" constant="20" id="a3k-4O-FXS"/>
                             <constraint firstItem="efS-Mq-At9" firstAttribute="bottom" secondItem="zFT-SX-FsK" secondAttribute="bottom" constant="18" id="bxd-l6-WS6"/>
                             <constraint firstItem="pWh-eQ-iNM" firstAttribute="leading" secondItem="J85-33-fYb" secondAttribute="leading" id="cO4-QO-fAm"/>
                             <constraint firstItem="oeE-1n-pM2" firstAttribute="leading" secondItem="B7D-ZO-4fg" secondAttribute="leading" id="dXV-Jq-eI6"/>
