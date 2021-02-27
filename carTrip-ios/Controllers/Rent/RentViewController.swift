@@ -20,10 +20,11 @@ class RentViewController: UIViewController, RentDelegate {
     // MARK: - RentDelegate
     var shareCar: Bool = false { didSet {
         checkShareCar()
+        checkIfButtonIsEnable()
         }}
     var howManyDays: Int = 1 { didSet {
         reloadPrice()
-        checkDays()
+        checkIfButtonIsEnable()
         }}
     
     
@@ -37,6 +38,7 @@ class RentViewController: UIViewController, RentDelegate {
     private let presenter = RentPrenter<RentViewController>()
     private var toCity: String = ""
     private var destinyPlace: Place? { didSet {
+        checkIfButtonIsEnable()
         setDestiny(destinyPlace)
     }}
     var distance = 0.0
@@ -115,14 +117,32 @@ class RentViewController: UIViewController, RentDelegate {
         }
     }
     
-    private func checkDays() {
-        if howManyDays != 0 {
-            nextButton.isEnabled = true
-            nextButton.backgroundColor = .blueCar
+    private func checkIfButtonIsEnable() {
+        if shareCar {
+            if presenter.currentCar == nil || destinyPlace == nil {
+                nextButtonDisable()
+            } else {
+                nextButtonIsEnable()
+            }
         } else {
-            nextButton.isEnabled = false
-            nextButton.backgroundColor = .darkGray
+            if presenter.currentCreditCard == nil || howManyDays == 0 {
+                nextButtonDisable()
+            } else {
+                nextButtonIsEnable()
+            }
         }
+    }
+    
+    private func nextButtonDisable() {
+        nextButton.isEnabled = false
+        nextButton.backgroundColor = .darkGray
+        nextView.backgroundColor = .darkGray
+    }
+    
+    private func nextButtonIsEnable() {
+        nextButton.isEnabled = true
+        nextButton.backgroundColor = .blueCar
+        nextView.backgroundColor = .blueCar
     }
 
     private func checkShareCar() {
