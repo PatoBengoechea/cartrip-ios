@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 9 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 11 view controllers.
   struct segue {
     /// This struct is generated for `CreditCardsViewController`, and contains static references to 1 segues.
     struct creditCardsViewController {
@@ -187,6 +187,23 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This struct is generated for `PassengerPaymentViewController`, and contains static references to 1 segues.
+    struct passengerPaymentViewController {
+      /// Segue identifier `goToAddCreditCard`.
+      static let goToAddCreditCard: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, PassengerPaymentViewController, CreditCardsViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToAddCreditCard")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `goToAddCreditCard`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func goToAddCreditCard(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, PassengerPaymentViewController, CreditCardsViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.passengerPaymentViewController.goToAddCreditCard, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This struct is generated for `PersonalDataRegisterViewController`, and contains static references to 1 segues.
     struct personalDataRegisterViewController {
       /// Segue identifier `goToAddLicense`.
@@ -260,6 +277,23 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func goToSplash(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, RootViewController, SplashViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.rootViewController.goToSplash, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    /// This struct is generated for `SearchCityViewController`, and contains static references to 1 segues.
+    struct searchCityViewController {
+      /// Segue identifier `goToPayment`.
+      static let goToPayment: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SearchCityViewController, PassengerPaymentViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToPayment")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `goToPayment`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func goToPayment(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SearchCityViewController, PassengerPaymentViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.searchCityViewController.goToPayment, segue: segue)
       }
       #endif
 
@@ -679,14 +713,18 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
   struct nib {
     /// Nib `CreditCardView`.
     static let creditCardView = _R.nib._CreditCardView()
+    /// Nib `ImageTableViewCell`.
+    static let imageTableViewCell = _R.nib._ImageTableViewCell()
     /// Nib `Loader`.
     static let loader = _R.nib._Loader()
     /// Nib `ModalRentCar`.
     static let modalRentCar = _R.nib._ModalRentCar()
+    /// Nib `PrizeKMTableViewCell`.
+    static let prizeKMTableViewCell = _R.nib._PrizeKMTableViewCell()
     /// Nib `ProfileCCTableViewCell`.
     static let profileCCTableViewCell = _R.nib._ProfileCCTableViewCell()
 
@@ -695,6 +733,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.creditCardView) instead")
     static func creditCardView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.creditCardView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ImageTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.imageTableViewCell) instead")
+    static func imageTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.imageTableViewCell)
     }
     #endif
 
@@ -715,6 +761,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PrizeKMTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.prizeKMTableViewCell) instead")
+    static func prizeKMTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.prizeKMTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "ProfileCCTableViewCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.profileCCTableViewCell) instead")
     static func profileCCTableViewCell(_: Void = ()) -> UIKit.UINib {
@@ -726,12 +780,20 @@ struct R: Rswift.Validatable {
       return R.nib.creditCardView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func imageTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ImageTableViewCell? {
+      return R.nib.imageTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ImageTableViewCell
+    }
+
     static func loader(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> Loader? {
       return R.nib.loader.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? Loader
     }
 
     static func modalRentCar(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.modalRentCar.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func prizeKMTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PrizeKMTableViewCell? {
+      return R.nib.prizeKMTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PrizeKMTableViewCell
     }
 
     static func profileCCTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProfileCCTableViewCell? {
@@ -741,7 +803,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 10 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 11 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `DaysTableViewCell`.
     static let daysTableViewCell: Rswift.ReuseIdentifier<DaysTableViewCell> = Rswift.ReuseIdentifier(identifier: "DaysTableViewCell")
@@ -755,6 +817,8 @@ struct R: Rswift.Validatable {
     static let locationTableViewCell: Rswift.ReuseIdentifier<LocationTableViewCell> = Rswift.ReuseIdentifier(identifier: "LocationTableViewCell")
     /// Reuse identifier `PriceTableViewCell`.
     static let priceTableViewCell: Rswift.ReuseIdentifier<PriceTableViewCell> = Rswift.ReuseIdentifier(identifier: "PriceTableViewCell")
+    /// Reuse identifier `PrizeKMTableViewCell`.
+    static let prizeKMTableViewCell: Rswift.ReuseIdentifier<PrizeKMTableViewCell> = Rswift.ReuseIdentifier(identifier: "PrizeKMTableViewCell")
     /// Reuse identifier `ProfileCCTableViewCell`.
     static let profileCCTableViewCell: Rswift.ReuseIdentifier<ProfileCCTableViewCell> = Rswift.ReuseIdentifier(identifier: "ProfileCCTableViewCell")
     /// Reuse identifier `ShareTableViewCell`.
@@ -1953,6 +2017,20 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _ImageTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = ImageTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "ImageTableViewCell"
+      let name = "ImageTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ImageTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ImageTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _Loader: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "Loader"
@@ -1976,6 +2054,20 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ford-mondeo-2019-delantera", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ford-mondeo-2019-delantera' is used in nib 'ModalRentCar', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PrizeKMTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = PrizeKMTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "PrizeKMTableViewCell"
+      let name = "PrizeKMTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PrizeKMTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PrizeKMTableViewCell
       }
 
       fileprivate init() {}

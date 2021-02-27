@@ -58,7 +58,7 @@ class PlaceViewController: UIViewController {
 extension PlaceViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let point = view.annotation as? Place {
-            let alert = CDAlertView(title: R.string.localizable.carRent(), message: point.cityName, type: .notification)
+            let alert = CDAlertView(title: "¿Desea devolver el vehículo aquí?", message: "\(point.locationAddres). \(point.cityName)", type: .notification)
             let action = CDAlertViewAction(title: "Elegir") { (action) -> Bool in
                 self.choosePlace?(point)
                 self.dismiss(animated: true, completion: nil)

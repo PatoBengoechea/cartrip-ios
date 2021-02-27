@@ -115,7 +115,7 @@ extension CreditCardsViewController: UITableViewDataSource, UITableViewDelegate 
         let card = cards[indexPath.row]
         cardSelecterDelegate?.onSelectCreditCard(card: card)
         if selectable {
-            navigationController?.popViewController(animated: true)
+            dismiss(animated: true, completion: nil)
         }
     }
 }

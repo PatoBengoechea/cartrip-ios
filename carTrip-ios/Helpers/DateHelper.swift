@@ -91,6 +91,11 @@ class DateHelper: NSObject {
         let age = calcAge.year
         return age!
     }
+    
+    static func dateLong(fromDateWithFullTime date: String) -> String {
+        let dateParsed = DateParsed(date, format: .dateWithFullTime)
+        return dateParsed?.dateLong() ?? "error"
+    }
 }
 
 struct DateParsed {

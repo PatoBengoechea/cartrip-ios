@@ -124,11 +124,79 @@
                     <connections>
                         <outlet property="searchBar" destination="nT8-dj-2mG" id="1tS-6u-Kdn"/>
                         <outlet property="tableView" destination="upu-Mw-AQV" id="NW6-Pi-srL"/>
+                        <segue destination="Crv-ob-bj3" kind="show" identifier="goToPayment" id="2a8-bn-Mhk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGH-HB-bw2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-65.217391304347828" y="69.642857142857139"/>
+        </scene>
+        <!--Passenger Payment View Controller-->
+        <scene sceneID="qdy-Yc-4OG">
+            <objects>
+                <viewController id="Crv-ob-bj3" customClass="PassengerPaymentViewController" customModule="carTrip_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OCp-uz-ma7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LqI-vV-SAg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="714"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVd-Ui-NPh">
+                                <rect key="frame" x="0.0" y="714" width="414" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DA8-Wm-gIN">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="onAddToTripButtonTapped" destination="Crv-ob-bj3" eventType="touchUpInside" id="X55-Y2-6ou"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="LcA-N9-Bgk"/>
+                                    <constraint firstAttribute="trailing" secondItem="DA8-Wm-gIN" secondAttribute="trailing" id="XLM-Bz-brE"/>
+                                    <constraint firstItem="DA8-Wm-gIN" firstAttribute="top" secondItem="dVd-Ui-NPh" secondAttribute="top" id="gq7-tY-T5W"/>
+                                    <constraint firstItem="DA8-Wm-gIN" firstAttribute="leading" secondItem="dVd-Ui-NPh" secondAttribute="leading" id="x3b-td-yS4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CRZ-vj-Z9O"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LqI-vV-SAg" firstAttribute="top" secondItem="CRZ-vj-Z9O" secondAttribute="top" id="Ce7-tG-02S"/>
+                            <constraint firstItem="CRZ-vj-Z9O" firstAttribute="bottom" secondItem="DA8-Wm-gIN" secondAttribute="bottom" id="Q1a-aa-ILI"/>
+                            <constraint firstItem="dVd-Ui-NPh" firstAttribute="leading" secondItem="CRZ-vj-Z9O" secondAttribute="leading" id="VaE-xb-S7X"/>
+                            <constraint firstItem="LqI-vV-SAg" firstAttribute="leading" secondItem="CRZ-vj-Z9O" secondAttribute="leading" id="WFg-JN-txz"/>
+                            <constraint firstItem="CRZ-vj-Z9O" firstAttribute="trailing" secondItem="dVd-Ui-NPh" secondAttribute="trailing" id="jnO-jr-fGw"/>
+                            <constraint firstItem="dVd-Ui-NPh" firstAttribute="top" secondItem="LqI-vV-SAg" secondAttribute="bottom" id="ob1-iX-80w"/>
+                            <constraint firstAttribute="bottom" secondItem="dVd-Ui-NPh" secondAttribute="bottom" id="oc5-xK-dHk"/>
+                            <constraint firstItem="CRZ-vj-Z9O" firstAttribute="trailing" secondItem="LqI-vV-SAg" secondAttribute="trailing" id="x1I-3V-NXh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5OH-10-EF7"/>
+                    <connections>
+                        <outlet property="addToTripButton" destination="DA8-Wm-gIN" id="2fl-bC-gO8"/>
+                        <outlet property="addToTripButtonView" destination="dVd-Ui-NPh" id="QLb-bg-lxj"/>
+                        <outlet property="tableView" destination="LqI-vV-SAg" id="qyg-Dv-bEh"/>
+                        <segue destination="EAT-Wk-lhu" kind="presentation" identifier="goToAddCreditCard" id="k5e-xZ-hre"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3mX-c3-vSa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="70"/>
+        </scene>
+        <!--Payment-->
+        <scene sceneID="L5A-He-hz4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Payment" id="EAT-Wk-lhu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="3sU-Qk-ctl"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KdV-LH-JqC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="832" y="570"/>
         </scene>
     </scenes>
     <resources>

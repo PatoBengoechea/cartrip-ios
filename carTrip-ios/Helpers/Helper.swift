@@ -28,4 +28,8 @@ class Helper {
             handler(addres)
         }
     }
+    
+    static func CGPointManhattanDistance(from: CGPoint, to: CGPoint) -> CGFloat {
+        return (abs(from.x - to.x) + abs(from.y - to.y))
+    }
 }

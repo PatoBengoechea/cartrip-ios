@@ -33,8 +33,8 @@ class InformationSharedTableViewCell: UITableViewCell {
     }
 
     func setUpForInfo() {
-        informationLabel.set(font: .gothamRoundedMedium(14), color: .systemYellow)
-        informationLabel.text = "El viaje sera compartido"
+        informationLabel.set(font: .gothamRoundedMedium(14), color: .blueCar)
+        informationLabel.text = "Otros pasajeros se podran unir a tu viaje una vez que realices el alquiler"
     }
     
     func setUpForLocation(_ car: CarForRoadViewModel ) {

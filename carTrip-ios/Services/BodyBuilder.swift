@@ -63,4 +63,19 @@ class BodyBuilder  {
         
         return dict
     }
+    
+    static func postTripsFromTo() -> [String: Any] {
+        var dict = [String: Any]()
+        dict["idUser"] = UserDefaults.standard.string(forKey: "idUser") ?? 0
+        
+        return dict
+    }
+    
+    static func postAddAsPassenger(idTrip: Int) -> [String: Any] {
+        var dict = [String: Any]()
+        dict["idTrip"] = idTrip
+        dict["idUser"] = UserDefaults.standard.string(forKey: "idUser") ?? 0
+        
+        return dict
+    }
 }

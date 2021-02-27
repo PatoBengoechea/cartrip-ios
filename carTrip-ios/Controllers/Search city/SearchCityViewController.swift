@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class SearchCityViewController: UIViewController {
     
@@ -21,6 +22,8 @@ class SearchCityViewController: UIViewController {
         }
     }
     private var trips: [Trip] = []
+    
+    private var whenBackAction: (()->())?
     
 
     override func viewDidLoad() {
@@ -46,8 +49,23 @@ class SearchCityViewController: UIViewController {
         } failureCallback: { (message) in
             
         }
+        
+        whenBackAction?()
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let ppVC = segue.destination as? PassengerPaymentViewController, let trip = sender as? Trip {
+            ppVC.trip = trip
+            let coordinate0 = CLLocation(latitude: trip.destinyPlace.latitude , longitude: trip.destinyPlace.longitude )
+            let coordinate1 = CLLocation(latitude: -32.9544955, longitude: -60.6441632)
+            ppVC.kilometers = Int(coordinate0.distance(from: coordinate1)/1000 + 40)
+            
+            whenBackAction = {
+                self.navigationController?.popViewController(animated: true)
+            }
+            
+        }
+    }
 }
 
 
@@ -78,6 +96,13 @@ extension SearchCityViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let trip = tripsDataSource[indexPath.row]
+        performSegue(withIdentifier: R.segue.searchCityViewController.goToPayment, sender: trip)
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.setHighlighted(false, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

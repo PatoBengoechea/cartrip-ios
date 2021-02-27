@@ -24,6 +24,7 @@ class ActualRentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        finishTrip.isHidden = true
         customize()
     }
     
@@ -40,19 +41,21 @@ class ActualRentViewController: UIViewController {
 
     
     private func customize() {
-        titleLabel.set(font: .gothamRoundedBold(20), color: .blueCar)
+        titleLabel.set(font: .gothamRoundedBold(18), color: .blueCar)
         titleLabel.textAlignment = .center
         
-        carLabel.set(font: .gothamRoundedMedium(18), color: .blueCar)
+        carLabel.set(font: .gothamRoundedMedium(16), color: .blueCar)
         carLabel.textAlignment = .center
         
-        fromLabel.set(font: .gothamRoundedMedium(18), color: .blueCar)
+        fromLabel.set(font: .gothamRoundedMedium(16), color: .blueCar)
+        fromLabel.numberOfLines = 2
         fromLabel.text = ""
         
-        toLabel.set(font: .gothamRoundedMedium(18), color: .blueCar)
+        toLabel.set(font: .gothamRoundedMedium(16), color: .blueCar)
+        toLabel.numberOfLines = 2
         toLabel.text = ""
         
-        passengerTitle.set(font: .gothamRoundedBold(18), color: .blueCar)
+        passengerTitle.set(font: .gothamRoundedBold(16), color: .blueCar)
         passengetStackView.alignment = .center
         passengetStackView.distribution = .equalCentering
         
@@ -68,32 +71,43 @@ class ActualRentViewController: UIViewController {
         carLabel.text = "\(actualTrip?.carForRoad.car?.brand ?? "") \(actualTrip?.carForRoad.car?.name ?? "")"
         
         
-        Helper.addresFrom(latitude: actualTrip?.originPlace.latitude ?? 0.0, longitude: actualTrip?.originPlace.longitude ?? 0.0) { (addres) -> (Void) in
-            self.fromLabel.text = "\(R.string.localizable.from()): \(addres)"
-        }
-        
-        Helper.addresFrom(latitude: actualTrip?.destinyPlace.latitude ?? 0.0, longitude: actualTrip?.destinyPlace.longitude ?? 0.0) { (addres) -> (Void) in
-            self.toLabel.text = "\(R.string.localizable.to()): \(addres)"
-        }
+
             
         carImageView.setImage(image: actualTrip?.carForRoad.car?.img_path ?? "")
         
-        passengerTitle.text = R.string.localizable.passengers()
+        passengerTitle.text = R.string.localizable.passengers() + ":"
         
 
         if actualTrip?.shared ?? false {
+            
+            Helper.addresFrom(latitude: actualTrip?.originPlace.latitude ?? 0.0, longitude: actualTrip?.originPlace.longitude ?? 0.0) { (addres) -> (Void) in
+                self.fromLabel.text = "\(R.string.localizable.from()): \(addres)"
+            }
+            
+            Helper.addresFrom(latitude: actualTrip?.destinyPlace.latitude ?? 0.0, longitude: actualTrip?.destinyPlace.longitude ?? 0.0) { (addres) -> (Void) in
+                self.toLabel.text = "\(R.string.localizable.to()): \(addres)"
+            }
+            
+            
             actualTrip?.passengers.forEach {
                 let label = UILabel()
-                label.set(font: .gothamRoundedMedium(18), color: .blueCar)
+                label.set(font: .gothamRoundedMedium(14), color: .blueCar)
                 label.text = $0.nameUser! + " " + $0.lastNameUser!
                 passengetStackView.addArrangedSubview(label)
             }
             if actualTrip?.passengers.isEmpty ?? true{
                 let label = UILabel()
-                label.set(font: .gothamRoundedMedium(18), color: .blueCar)
+                label.set(font: .gothamRoundedMedium(14), color: .blueCar)
+                label.numberOfLines = 2
                 label.text = R.string.localizable.theTripHavenTGotPassengersYet()
+                passengetStackView.addArrangedSubview(label)
             }
         } else {
+            Helper.addresFrom(latitude: actualTrip?.originPlace.latitude ?? 0.0, longitude: actualTrip?.originPlace.longitude ?? 0.0) { (addres) -> (Void) in
+                self.fromLabel.text = "Debes retirar el vehiculo en: \(addres). Y devolverlo en el mismo lugar"
+            }
+            
+            toLabel.text = "Tienes hasta el día: \(DateHelper.dateLong(fromDateWithFullTime: actualTrip?.dateEnd ?? ""))"
             passengerTitle.text = ""
         }
     

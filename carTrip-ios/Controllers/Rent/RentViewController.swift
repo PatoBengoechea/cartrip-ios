@@ -8,6 +8,7 @@
 
 import UIKit
 import CDAlertView
+import MapKit
 
 protocol RentDelegate: NSObjectProtocol {
     var shareCar: Bool { get set }
@@ -38,6 +39,7 @@ class RentViewController: UIViewController, RentDelegate {
     private var destinyPlace: Place? { didSet {
         setDestiny(destinyPlace)
     }}
+    var distance = 0.0
     
     var popVC: (() -> Void)?
     
@@ -51,10 +53,9 @@ class RentViewController: UIViewController, RentDelegate {
         super.viewDidLoad()
         presenter.attachView(self)
         presenter.getCarForRoad(id: currentCar.idCarForRoad)
-        let ccNib = UINib(nibName: R.nib.profileCCTableViewCell.name, bundle: nil)
-        tableView.register(ccNib, forCellReuseIdentifier: R.reuseIdentifier.profileCCTableViewCell.identifier)
         presenter.getOneCreditCard()
         customize()
+        register()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -127,20 +128,15 @@ class RentViewController: UIViewController, RentDelegate {
     private func checkShareCar() {
         presenter.setDataSource(share: shareCar)
         tableView.reloadData()
-//        if shareCar {
-//            if let priceIndex = presenter.datasource.firstIndex(where: { $0 == .price}),
-//                let dayIndex = presenter.datasource.firstIndex(where: { $0 == .days}) {
-//            let indexPaths = [IndexPath(row: dayIndex, section: 0), IndexPath(row: priceIndex, section: 0)]
-//                tableView.deleteRows(at: indexPaths, with: .fade)
-//            }
-//        } else {
-//            let count = presenter.datasource.count
-//            let indexPaths = [IndexPath(row: count, section: 0), IndexPath(row: (count + 1), section: 0)]
-//            tableView.insertRows(at: indexPaths, with: .fade)
-//        }
     }
     
     private func setDestiny(_ place: Place?) {
+        let coordinate0 = CLLocation(latitude: place?.latitude ?? 0.0, longitude: place?.longitude ?? 0.0)
+        let coordinate1 = CLLocation(latitude: -32.9544955, longitude: -60.6441632)
+        distance = coordinate0.distance(from: coordinate1)/1000 + 40
+        let prizeKM = presenter.currentCar?.car?.type?.prizeKM ?? 0
+        presenter.amount = distance*Double(prizeKM)
+        
         tableView.reloadData()
     }
     
@@ -151,6 +147,17 @@ class RentViewController: UIViewController, RentDelegate {
         }
         alert.add(action: action)
         alert.show()
+    }
+    
+    private func register() {
+        let kmnib = UINib(nibName: R.nib.prizeKMTableViewCell.name, bundle: nil)
+        tableView.register(kmnib, forCellReuseIdentifier: R.reuseIdentifier.prizeKMTableViewCell.identifier)
+        
+        let imageNib = UINib(nibName: R.nib.imageTableViewCell.name, bundle: nil)
+        tableView.register(imageNib, forCellReuseIdentifier: R.reuseIdentifier.imageTableViewCell.identifier)
+        
+        let ccNib = UINib(nibName: R.nib.profileCCTableViewCell.name, bundle: nil)
+        tableView.register(ccNib, forCellReuseIdentifier: R.reuseIdentifier.profileCCTableViewCell.identifier)
     }
 }
 
@@ -171,7 +178,7 @@ extension RentViewController: RentPresenterDelegate {
     }
     
     func onRentCar() {
-        let alert = CDAlertView(title: R.string.localizable.carRent(), message: "", type: .success)
+        let alert = CDAlertView(title: "Felicitaciones", message: "Alquilaste un: \(presenter.currentCar?.car?.fullName ?? "auto")", type: .success)
         let action = CDAlertViewAction(title: "OK") { (action) -> Bool in
             self.navigationController?.popViewController(animated: true)
             self.popVC?()
@@ -250,6 +257,11 @@ extension RentViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.setUp(card: presenter.currentCreditCard ?? CreditCard())
                 return cell
             }
+        case .prizeKM:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.prizeKMTableViewCell, for: indexPath) {
+                cell.setup(kilometers: Int(distance.rounded()), prizeKM: presenter.currentCar?.car?.type?.prizeKM ?? 0)
+                return cell
+            }
         default:
             break
         }
@@ -271,7 +283,7 @@ extension RentViewController: UITableViewDataSource, UITableViewDelegate {
         switch presenter.datasource[indexPath.row] {
         case .image:
             return ImageTableViewCell.height
-        case .days, .share, .price, .informationShare, .from, .to:
+        case .days, .share, .price, .prizeKM, .informationShare, .from, .to:
             return UITableView.automaticDimension
         case .creditCard:
             return ProfileCCTableViewCell.height

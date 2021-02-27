@@ -18,6 +18,7 @@ class TripFromToTableViewCell: UITableViewCell {
     @IBOutlet weak var toLabel: UILabel!
     @IBOutlet weak var passengerLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

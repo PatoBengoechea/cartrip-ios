@@ -79,4 +79,8 @@ class PathBuilder  {
     func postLicense() -> String {
         return "\(url)/user/license"
     }
+    
+    func postAddAsPassenger() -> String {
+        return "\(url)/trip/passenger"
+    }
 }
