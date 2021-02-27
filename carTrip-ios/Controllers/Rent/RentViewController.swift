@@ -136,6 +136,7 @@ class RentViewController: UIViewController, RentDelegate {
         distance = coordinate0.distance(from: coordinate1)/1000 + 40
         let prizeKM = presenter.currentCar?.car?.type?.prizeKM ?? 0
         presenter.amount = distance*Double(prizeKM)
+        presenter.destiny = place
         
         tableView.reloadData()
     }

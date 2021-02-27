@@ -17,11 +17,11 @@ class TripInputModel: NSObject {
     var longitudeOrigin: Double
     var idPlaceGivenBack: Int
     var shared: Bool
-    var idDestiny: String?
+    var idDestiny: Int?
     var idCreditCard: Int?
     var amount: Double?
     
-    init(dateInit: String, dateFinish: String, idCarForRoad: Int, owner: String, latitudeOrigin: Double, longitudeOrigin: Double, idPlaceGivenBack: Int, shared: Bool, idDestiny: String? = nil, idCreditCard: Int? = nil, amount: Double? = nil) {
+    init(dateInit: String, dateFinish: String, idCarForRoad: Int, owner: String, latitudeOrigin: Double, longitudeOrigin: Double, idPlaceGivenBack: Int, shared: Bool, idDestiny: Int? = nil, idCreditCard: Int? = nil, amount: Double? = nil) {
         self.dateInit = dateInit
         self.dateFinish = dateFinish
         self.idCarForRoad = idCarForRoad

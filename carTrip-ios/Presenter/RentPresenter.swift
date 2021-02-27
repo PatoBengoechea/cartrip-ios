@@ -28,6 +28,7 @@ class RentPrenter<T: RentPresenterDelegate>: BasePresenter<T> {
     var currentCar: CarForRoadViewModel?
     var currentCreditCard: CreditCard?
     var amount = 0.0
+    var destiny: Place?
     
     
     func getCarForRoad(id: Int) {
@@ -52,14 +53,14 @@ class RentPrenter<T: RentPresenterDelegate>: BasePresenter<T> {
         CreditCardManager.shared.getOneCreditCard(id: id, delegate: self)
     }
     
-    func createTrip(dateInit: Date, dateFinish: Date?, idDestiny: String?) {
+    func createTrip(dateInit: Date, dateFinish: Date?, idDestiny: Int?) {
         let dateInit2 = dateInit.dateToString()
         let dateFinish = dateFinish?.dateToString() ?? dateInit.dateToString()
         let idCardForRoad = currentCar?.idCarForRoad ?? 0
         let owner = UserDefaults.standard.string(forKey: "idUser") ?? "0"
         let latitudeOrigin = currentCar?.latitude ?? 0.0
         let longitudeOrigin = currentCar?.longitude ?? 0.0
-        let idPlaceGivenBack = currentCar?.idPlaceGivenBack ?? 0
+        let idPlaceGivenBack = destiny?.id ?? 0
         let idCreditCard = currentCreditCard?.idCreditCard
         
         let inputModel = TripInputModel(dateInit: dateInit2,
@@ -70,7 +71,7 @@ class RentPrenter<T: RentPresenterDelegate>: BasePresenter<T> {
                                         longitudeOrigin: longitudeOrigin,
                                         idPlaceGivenBack: idPlaceGivenBack,
                                         shared: carShared,
-                                        idDestiny: idDestiny,
+                                        idDestiny: idDestiny ?? 0,
                                         idCreditCard: idCreditCard,
                                         amount: amount)
         

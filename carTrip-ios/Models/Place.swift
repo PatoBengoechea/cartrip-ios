@@ -12,7 +12,7 @@ import MapKit
 
 class Place: MKPointAnnotation {
 
-    var id: String = ""
+    var id: Int = 0
     private var _longitude: String = ""
     var longitude: Double = 0.0
     private var _latitude: String = ""
@@ -24,7 +24,7 @@ class Place: MKPointAnnotation {
     override var coordinate: CLLocationCoordinate2D { get { return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)} set { } }
     
     init(json: JSON) {
-        id = json["idPlace"].string ?? ""
+        id = json["idPlace"].int ?? 0
         _latitude = json["latitude"].string ?? ""
         _longitude = json["longitude"].string ?? ""
         cityName = json["cityName"].string ?? ""

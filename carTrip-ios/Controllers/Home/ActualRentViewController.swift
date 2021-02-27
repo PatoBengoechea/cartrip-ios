@@ -77,10 +77,12 @@ class ActualRentViewController: UIViewController {
         
         passengerTitle.text = R.string.localizable.passengers() + ":"
         
+        let latitude = actualTrip?.carForRoad.latitude ?? "0.0"
+        let longitude = actualTrip?.carForRoad.longitude ?? "0.0"
 
         if actualTrip?.shared ?? false {
             
-            Helper.addresFrom(latitude: actualTrip?.originPlace.latitude ?? 0.0, longitude: actualTrip?.originPlace.longitude ?? 0.0) { (addres) -> (Void) in
+            Helper.addresFrom(latitude: Double(latitude) ?? 0.0, longitude: Double(longitude) ?? 0.0) { (addres) -> (Void) in
                 self.fromLabel.text = "\(R.string.localizable.from()): \(addres)"
             }
             
@@ -103,7 +105,7 @@ class ActualRentViewController: UIViewController {
                 passengetStackView.addArrangedSubview(label)
             }
         } else {
-            Helper.addresFrom(latitude: actualTrip?.originPlace.latitude ?? 0.0, longitude: actualTrip?.originPlace.longitude ?? 0.0) { (addres) -> (Void) in
+            Helper.addresFrom(latitude: Double(latitude) ?? 0.0, longitude: Double(longitude) ?? 0.0) { (addres) -> (Void) in
                 self.fromLabel.text = "Debes retirar el vehiculo en: \(addres). Y devolverlo en el mismo lugar"
             }
             
