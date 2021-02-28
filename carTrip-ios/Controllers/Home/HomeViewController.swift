@@ -157,6 +157,10 @@ class HomeViewController: UIViewController {
         view.layoutIfNeeded()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let rentVC = segue.destination as? RentViewController, let car = sender as? CarForRoadViewModel {
             rentVC.currentCar = car
@@ -296,6 +300,7 @@ extension HomeViewController: HomePresenterDelegate {
     
     func onGetCarForRoad() {
         mapView.addAnnotations(presenter.dataCarForRoad)
+        performSegue(withIdentifier: R.segue.homeViewController.goToTutorial.identifier, sender: nil)
     }
     
     func startLoading() {

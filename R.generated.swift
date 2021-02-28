@@ -109,7 +109,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This struct is generated for `HomeViewController`, and contains static references to 5 segues.
+    /// This struct is generated for `HomeViewController`, and contains static references to 6 segues.
     struct homeViewController {
       /// Segue identifier `goToActualTrip`.
       static let goToActualTrip: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, ActualRentViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToActualTrip")
@@ -121,6 +121,8 @@ struct R: Rswift.Validatable {
       static let goToRent: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, RentViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToRent")
       /// Segue identifier `goToSearchTrip`.
       static let goToSearchTrip: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, SearchCityViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToSearchTrip")
+      /// Segue identifier `goToTutorial`.
+      static let goToTutorial: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, TutorialViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToTutorial")
 
       #if os(iOS) || os(tvOS)
       /// Optionally returns a typed version of segue `goToActualTrip`.
@@ -164,6 +166,15 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func goToSearchTrip(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HomeViewController, SearchCityViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.homeViewController.goToSearchTrip, segue: segue)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `goToTutorial`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func goToTutorial(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HomeViewController, TutorialViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.homeViewController.goToTutorial, segue: segue)
       }
       #endif
 
@@ -2227,6 +2238,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "car-solid", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'car-solid' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "crosshairs-solid", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'crosshairs-solid' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ellipsis-v-solid", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ellipsis-v-solid' is used in storyboard 'Home', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "mappin.circle.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mappin.circle.fill' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "route-solid", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'route-solid' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "user-solid", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user-solid' is used in storyboard 'Home', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
