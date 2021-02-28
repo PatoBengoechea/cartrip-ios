@@ -97,3 +97,38 @@ class GradientView: UIView, CAAnimationDelegate {
         return CAGradientLayer.self
     }
 }
+
+
+protocol CheckBoxDelegate {
+    func onCheckBockTapped(check: Bool)
+}
+class CheckBox: UIButton {
+    // Images
+    let checkedImage = UIImage(systemName: "checkmark.square")! as UIImage
+    let uncheckedImage = UIImage(systemName: "square")! as UIImage
+    var delegate: CheckBoxDelegate?
+    
+    // Bool property
+    var isChecked: Bool = false {
+        didSet {
+            if isChecked == true {
+                self.setImage(checkedImage, for: UIControl.State.normal)
+            } else {
+                self.setImage(uncheckedImage, for: UIControl.State.normal)
+            }
+        }
+    }
+        
+    override func awakeFromNib() {
+        self.addTarget(self, action:#selector(buttonClicked(sender:)), for: UIControl.Event.touchUpInside)
+        self.tintColor = .white
+        self.isChecked = false
+    }
+        
+    @objc func buttonClicked(sender: UIButton) {
+        if sender == self {
+            isChecked = !isChecked
+            delegate?.onCheckBockTapped(check: isChecked)
+        }
+    }
+}

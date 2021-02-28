@@ -21,14 +21,22 @@ class PersonalDataRegisterViewController: RegisterBaseViewController {
     @IBOutlet weak var birthDateTextField: CarTripTextField!
     @IBOutlet weak var haveAccountView: UIControl!
     @IBOutlet weak var haveAccountLabel: UILabel!
+    @IBOutlet weak var termsAndConditionsCheckBox: CheckBox!
+    @IBOutlet weak var termsAndConditionsLabel: UILabel!
+    @IBOutlet weak var termsAndConditionsControl: UIControl!
 
     // MARK: - Properties
     let datePicker = UIDatePicker()
     weak var rootDelegate: RootViewControllerDelegate?
+    var termsAndConditionsAccepted = false
     
     // MARK: - @IBActions
     @IBAction func textChange(_ sender: UITextField) {
         handleTextField(sender)
+    }
+    
+    @IBAction func termsAndConditionsTapped() {
+        performSegue(withIdentifier: R.segue.personalDataRegisterViewController.goToTermsAndConditions.identifier, sender: nil)
     }
     
     // MARK: - Override Functions
@@ -83,6 +91,13 @@ class PersonalDataRegisterViewController: RegisterBaseViewController {
         haveAccountLabel.set(font: .gothamRoundedLight(12), color: .white)
         haveAccountLabel.textAlignment = .center
         haveAccountLabel.text = R.string.localizable.alreadyHaveAccount().capitalizingFirstLetter()
+        
+        termsAndConditionsCheckBox.delegate = self
+        
+        let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue]
+        let underlineAttributedString = NSAttributedString(string: "He leído y acepto los términos y condiciones", attributes: underlineAttribute)
+        termsAndConditionsLabel.set(font: .gothamRoundedLight(12), color: .white)
+        termsAndConditionsLabel.attributedText = underlineAttributedString
     }
     
     private func handleTextField(_ textField: UITextField) {
@@ -102,7 +117,7 @@ class PersonalDataRegisterViewController: RegisterBaseViewController {
     }
     
     private func checkFormFormForRegister() {
-        if nameTextField.text?.isEmpty ?? true || lastNameTextField.text?.isEmpty ?? true || dniTextField.text?.isEmpty ?? true || birthDateTextField.text?.isEmpty ?? true {
+        if nameTextField.text?.isEmpty ?? true || lastNameTextField.text?.isEmpty ?? true || dniTextField.text?.isEmpty ?? true || birthDateTextField.text?.isEmpty ?? true || !termsAndConditionsAccepted {
             return
         }
         if presenter?.isUser18YearOld() ?? false {
@@ -200,5 +215,12 @@ extension PersonalDataRegisterViewController: RegisterPresenterDelegate {
         rootDelegate?.showHome()
     }
     
-    
+}
+
+// MARK: - CheckBox Delegate
+extension PersonalDataRegisterViewController: CheckBoxDelegate {
+    func onCheckBockTapped(check: Bool) {
+        termsAndConditionsAccepted = check
+        checkFormFormForRegister()
+    }
 }

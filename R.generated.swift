@@ -204,10 +204,12 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This struct is generated for `PersonalDataRegisterViewController`, and contains static references to 1 segues.
+    /// This struct is generated for `PersonalDataRegisterViewController`, and contains static references to 2 segues.
     struct personalDataRegisterViewController {
       /// Segue identifier `goToAddLicense`.
       static let goToAddLicense: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, PersonalDataRegisterViewController, LicenseViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToAddLicense")
+      /// Segue identifier `goToTermsAndConditions`.
+      static let goToTermsAndConditions: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, PersonalDataRegisterViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToTermsAndConditions")
 
       #if os(iOS) || os(tvOS)
       /// Optionally returns a typed version of segue `goToAddLicense`.
@@ -215,6 +217,15 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func goToAddLicense(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, PersonalDataRegisterViewController, LicenseViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.personalDataRegisterViewController.goToAddLicense, segue: segue)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `goToTermsAndConditions`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func goToTermsAndConditions(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, PersonalDataRegisterViewController, UIKit.UIViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.personalDataRegisterViewController.goToTermsAndConditions, segue: segue)
       }
       #endif
 
@@ -2166,6 +2177,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "freeLogo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'freeLogo' is used in storyboard 'Auth', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "square", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'square' is used in storyboard 'Auth', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
