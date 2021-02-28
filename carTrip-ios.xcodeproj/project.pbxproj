@@ -21,6 +21,8 @@
 		6A3BC351243ACCBC00F075D5 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3BC350243ACCBC00F075D5 /* Loader.swift */; };
 		6A3BC353243ACFA800F075D5 /* 14717-sedan-car-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A3BC352243ACFA800F075D5 /* 14717-sedan-car-animation.json */; };
 		6A6449D525EAD6B600DF2987 /* TripFromToTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A6449D425EAD6B600DF2987 /* TripFromToTableViewCell.xib */; };
+		6A6449D925EBD9DE00DF2987 /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A6449D825EBD9DE00DF2987 /* DateTableViewCell.xib */; };
+		6A6449DC25EBDA1400DF2987 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6449DB25EBDA1400DF2987 /* DateTableViewCell.swift */; };
 		6A64D7D7257E6F4E0042EBFA /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A64D7D6257E6F4E0042EBFA /* LicenseViewController.swift */; };
 		6A64D7DA257E76050042EBFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A64D7D9257E76050042EBFA /* GoogleService-Info.plist */; };
 		6A64D809257ECE560042EBFA /* ActualRentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A64D808257ECE560042EBFA /* ActualRentViewController.swift */; };
@@ -129,6 +131,8 @@
 		6A3BC350243ACCBC00F075D5 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		6A3BC352243ACFA800F075D5 /* 14717-sedan-car-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "14717-sedan-car-animation.json"; sourceTree = "<group>"; };
 		6A6449D425EAD6B600DF2987 /* TripFromToTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripFromToTableViewCell.xib; sourceTree = "<group>"; };
+		6A6449D825EBD9DE00DF2987 /* DateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTableViewCell.xib; sourceTree = "<group>"; };
+		6A6449DB25EBDA1400DF2987 /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		6A64D7D6257E6F4E0042EBFA /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		6A64D7D9257E76050042EBFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6A64D808257ECE560042EBFA /* ActualRentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualRentViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +249,8 @@
 			isa = PBXGroup;
 			children = (
 				6AEC1BD2259E0C98002C6A96 /* Rent.storyboard */,
+				6A6449D825EBD9DE00DF2987 /* DateTableViewCell.xib */,
+				6A6449DB25EBDA1400DF2987 /* DateTableViewCell.swift */,
 				6A701D952509938500BFD594 /* RentViewController.swift */,
 				6ABB063925EA0437007375D9 /* Image  */,
 				6A04474C25199AD1009E14D2 /* ShareTableViewCell.swift */,
@@ -638,6 +644,7 @@
 				6A80F3FA24202CFB00474555 /* Localizable.strings in Resources */,
 				6ABB061525E7BC3A007375D9 /* ProfileCCTableViewCell.xib in Resources */,
 				6AA18783243951AD004A568B /* GothamRounded-BookItalic.otf in Resources */,
+				6A6449D925EBD9DE00DF2987 /* DateTableViewCell.xib in Resources */,
 				6A64E66624F1638400E7622B /* User.storyboard in Resources */,
 				6ABB063225EA039E007375D9 /* PrizeKMTableViewCell.xib in Resources */,
 				6A3BC34E243ACC6800F075D5 /* Loader.xib in Resources */,
@@ -769,6 +776,7 @@
 				6A39B24A2439212100803B14 /* ModalRentCar.swift in Sources */,
 				6A80F413242145B300474555 /* UserManager.swift in Sources */,
 				6A04474F25199AE1009E14D2 /* DaysTableViewCell.swift in Sources */,
+				6A6449DC25EBDA1400DF2987 /* DateTableViewCell.swift in Sources */,
 				6AEB322E249073F800984196 /* Helper.swift in Sources */,
 				6AA6FBD1257D7DAC00E189D9 /* DateHelper.swift in Sources */,
 				6A833B1E249ADF450000FF5B /* RegisterPresenter.swift in Sources */,

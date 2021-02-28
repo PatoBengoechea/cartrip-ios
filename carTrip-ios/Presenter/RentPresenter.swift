@@ -16,7 +16,7 @@ protocol RentPresenterDelegate: BasePresenterDelegate {
 }
 
 enum RentDataSource {
-    case image, share, days, price, informationShare, from, to, creditCard, prizeKM
+    case image, share, days, price, informationShare, from, to, creditCard, prizeKM, dateInit
 }
 
 class RentPrenter<T: RentPresenterDelegate>: BasePresenter<T> {
@@ -42,7 +42,7 @@ class RentPrenter<T: RentPresenterDelegate>: BasePresenter<T> {
     func setDataSource(share: Bool) {
         carShared = share
         if share {
-            datasource = [.image, .share, .informationShare, .from, .to, .creditCard, .prizeKM]
+            datasource = [.image, .share, .informationShare, .dateInit, .from, .to, .creditCard, .prizeKM]
         } else {
             datasource = [.image, .share, .days, .creditCard, .price]
         }

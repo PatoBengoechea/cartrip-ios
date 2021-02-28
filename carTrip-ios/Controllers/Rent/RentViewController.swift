@@ -45,6 +45,8 @@ class RentViewController: UIViewController, RentDelegate {
     
     var popVC: (() -> Void)?
     
+    var dateInitSharedCar = Date()
+    
     // MARK: - @IBAction
     @IBAction func nextButtonPressed() {
         onNextButtonPressed()
@@ -102,7 +104,7 @@ class RentViewController: UIViewController, RentDelegate {
         var dateComponents = DateComponents()
         dateComponents.day = howManyDays
         if shareCar {
-            presenter.createTrip(dateInit: today, dateFinish: nil, idDestiny: destinyPlace?.id)
+            presenter.createTrip(dateInit: dateInitSharedCar, dateFinish: dateInitSharedCar, idDestiny: destinyPlace?.id)
         } else {
             presenter.createTrip(dateInit: today, dateFinish: Calendar.current.date(byAdding: dateComponents, to: today), idDestiny: nil)
         }
@@ -179,6 +181,9 @@ class RentViewController: UIViewController, RentDelegate {
         
         let ccNib = UINib(nibName: R.nib.profileCCTableViewCell.name, bundle: nil)
         tableView.register(ccNib, forCellReuseIdentifier: R.reuseIdentifier.profileCCTableViewCell.identifier)
+        
+        let dateNib = UINib(nibName: R.nib.dateTableViewCell.name, bundle: nil)
+        tableView.register(dateNib, forCellReuseIdentifier: R.reuseIdentifier.dateTableViewCell.identifier)
     }
 }
 
@@ -283,6 +288,11 @@ extension RentViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.setup(kilometers: Int(distance.rounded()), prizeKM: presenter.currentCar?.car?.type?.prizeKM ?? 0)
                 return cell
             }
+        case .dateInit:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.dateTableViewCell, for: indexPath) {
+                cell.setUp(delegate: self)
+                return cell
+            }
         default:
             break
         }
@@ -304,7 +314,7 @@ extension RentViewController: UITableViewDataSource, UITableViewDelegate {
         switch presenter.datasource[indexPath.row] {
         case .image:
             return ImageTableViewCell.height
-        case .days, .share, .price, .prizeKM, .informationShare, .from, .to:
+        case .days, .share, .price, .prizeKM, .informationShare, .from, .to, .dateInit:
             return UITableView.automaticDimension
         case .creditCard:
             return ProfileCCTableViewCell.height
@@ -334,5 +344,11 @@ extension RentViewController: CreditCardSelectable {
     func onSelectCreditCard(card: CreditCard) {
         presenter.currentCreditCard = card
         tableView.reloadData()
+    }
+}
+
+extension RentViewController: DateSelectedProtocol {
+    func onDateSelected(date: Date) {
+        self.dateInitSharedCar = date
     }
 }

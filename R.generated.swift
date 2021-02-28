@@ -724,10 +724,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
   struct nib {
     /// Nib `CreditCardView`.
     static let creditCardView = _R.nib._CreditCardView()
+    /// Nib `DateTableViewCell`.
+    static let dateTableViewCell = _R.nib._DateTableViewCell()
     /// Nib `ImageTableViewCell`.
     static let imageTableViewCell = _R.nib._ImageTableViewCell()
     /// Nib `Loader`.
@@ -746,6 +748,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.creditCardView) instead")
     static func creditCardView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.creditCardView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "DateTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.dateTableViewCell) instead")
+    static func dateTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.dateTableViewCell)
     }
     #endif
 
@@ -801,6 +811,10 @@ struct R: Rswift.Validatable {
       return R.nib.creditCardView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func dateTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DateTableViewCell? {
+      return R.nib.dateTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DateTableViewCell
+    }
+
     static func imageTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ImageTableViewCell? {
       return R.nib.imageTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ImageTableViewCell
     }
@@ -828,8 +842,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 11 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 12 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `DateTableViewCell`.
+    static let dateTableViewCell: Rswift.ReuseIdentifier<DateTableViewCell> = Rswift.ReuseIdentifier(identifier: "DateTableViewCell")
     /// Reuse identifier `DaysTableViewCell`.
     static let daysTableViewCell: Rswift.ReuseIdentifier<DaysTableViewCell> = Rswift.ReuseIdentifier(identifier: "DaysTableViewCell")
     /// Reuse identifier `ImageTableViewCell`.
@@ -2037,6 +2053,20 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "icon-trash", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon-trash' is used in nib 'CreditCardView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _DateTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = DateTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "DateTableViewCell"
+      let name = "DateTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DateTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DateTableViewCell
       }
 
       fileprivate init() {}

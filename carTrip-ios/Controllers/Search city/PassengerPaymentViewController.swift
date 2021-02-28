@@ -139,7 +139,7 @@ extension PassengerPaymentViewController: UITableViewDataSource, UITableViewDele
         switch dataSource[indexPath.row] {
         case .image:
             return ImageTableViewCell.height
-        case .days, .share, .price, .prizeKM, .informationShare, .from, .to:
+        case .days, .share, .price, .prizeKM, .informationShare, .from, .to, .dateInit:
             return UITableView.automaticDimension
         case .creditCard:
             return ProfileCCTableViewCell.height
