@@ -94,18 +94,21 @@ class RentViewController: UIViewController, RentDelegate {
     private func customize() {
         nextButton.backgroundColor = .blueCar
         nextButton.setTitleColor(.white, for: .normal)
-        nextButton.setTitle(R.string.localizable.next(), for: .normal)
+        nextButton.setTitle(R.string.localizable.rent(), for: .normal)
         
         nextView.backgroundColor = nextButton.backgroundColor
     }
     
     private func onNextButtonPressed() {
         let today = Date()
-        var dateComponents = DateComponents()
-        dateComponents.day = howManyDays
         if shareCar {
-            presenter.createTrip(dateInit: dateInitSharedCar, dateFinish: dateInitSharedCar, idDestiny: destinyPlace?.id)
+            var components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: today)
+            components.hour = ((components.hour ?? 4) - 3)
+            components.day = ((components.day ?? 26) + 1)
+            presenter.createTrip(dateInit: dateInitSharedCar, dateFinish: components.date, idDestiny: destinyPlace?.id)
         } else {
+            var dateComponents = DateComponents()
+            dateComponents.day = howManyDays
             presenter.createTrip(dateInit: today, dateFinish: Calendar.current.date(byAdding: dateComponents, to: today), idDestiny: nil)
         }
     }

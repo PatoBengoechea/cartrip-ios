@@ -48,6 +48,11 @@ class CreditCardsViewController: UIViewController {
         super.viewWillAppear(animated)
         let id = UserDefaults.standard.string(forKey: "idUser")!
         CreditCardManager.shared.getCreditCard(id: id, delegate: self)
+        
+        navigationItem.title = "Tarjetas cargadas"
+        navigationController?.navigationBar.tintColor = .blueCar
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.blueCar]
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

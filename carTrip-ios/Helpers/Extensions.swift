@@ -283,7 +283,7 @@ extension UITextField {
 extension Date {
     func dateToString() -> String {
        let formatter = DateFormatter()
-       formatter.dateStyle = .short
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
        return formatter.string(from: self)
    }
 }

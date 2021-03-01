@@ -62,7 +62,10 @@ class ServiceManager {
                                 method: .post,
                                 parameters: body).responseJSON { (serviceResponse) in
                                     let response = BaseResponse().create(response: serviceResponse)
-                                    if response.status, let _ = response.data {
+                                    if response.status, let data = response.data {
+                                        let id = data["iduser"].int ?? 0
+                                        let idString = "\(id)"
+                                        UserDefaults.standard.setValue(idString, forKey: "idUser")
                                         successCallback()
                                     } else {
                                         failureCallback(response.message)

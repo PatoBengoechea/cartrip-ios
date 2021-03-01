@@ -558,10 +558,17 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVT-IB-8gJ">
+                                <rect key="frame" x="30" y="625" width="354" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="efS-Mq-At9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="HVT-IB-8gJ" firstAttribute="trailing" secondItem="pWh-eQ-iNM" secondAttribute="trailing" id="1gu-x7-bNa"/>
                             <constraint firstItem="B7D-ZO-4fg" firstAttribute="top" secondItem="pWh-eQ-iNM" secondAttribute="bottom" constant="15" id="2OX-CZ-8qu"/>
                             <constraint firstItem="oeE-1n-pM2" firstAttribute="top" secondItem="B7D-ZO-4fg" secondAttribute="bottom" constant="40" id="3dA-uc-063"/>
                             <constraint firstItem="BlB-9f-ePm" firstAttribute="top" secondItem="efS-Mq-At9" secondAttribute="top" constant="25" id="AJ2-Gb-LKR"/>
@@ -584,15 +591,18 @@
                             <constraint firstItem="tem-3m-ZI0" firstAttribute="leading" secondItem="efS-Mq-At9" secondAttribute="leading" constant="30" id="io5-9c-lcL"/>
                             <constraint firstItem="pWh-eQ-iNM" firstAttribute="trailing" secondItem="J85-33-fYb" secondAttribute="trailing" id="pAr-G4-xPe"/>
                             <constraint firstItem="BlB-9f-ePm" firstAttribute="leading" secondItem="efS-Mq-At9" secondAttribute="leading" constant="40" id="pOS-ap-9oI"/>
+                            <constraint firstItem="HVT-IB-8gJ" firstAttribute="leading" secondItem="pWh-eQ-iNM" secondAttribute="leading" id="qh3-YR-Mcs"/>
                             <constraint firstItem="efS-Mq-At9" firstAttribute="trailing" secondItem="tem-3m-ZI0" secondAttribute="trailing" constant="30" id="rlP-Zm-TuX"/>
                             <constraint firstItem="efS-Mq-At9" firstAttribute="trailing" secondItem="J85-33-fYb" secondAttribute="trailing" constant="30" id="ucj-ic-Mr2"/>
                             <constraint firstItem="efS-Mq-At9" firstAttribute="trailing" secondItem="BlB-9f-ePm" secondAttribute="trailing" constant="40" id="vEH-VA-kAa"/>
+                            <constraint firstItem="HVT-IB-8gJ" firstAttribute="top" secondItem="Atp-cE-Q7L" secondAttribute="bottom" constant="40" id="y3x-YR-kZg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LEk-0N-KP1"/>
                     <connections>
                         <outlet property="carImageView" destination="tem-3m-ZI0" id="Rqk-KN-uZp"/>
                         <outlet property="carLabel" destination="J85-33-fYb" id="5Tc-ac-gVF"/>
+                        <outlet property="dateTripLabel" destination="HVT-IB-8gJ" id="Oqg-8S-fz4"/>
                         <outlet property="finishTrip" destination="zFT-SX-FsK" id="NeT-pr-ru5"/>
                         <outlet property="fromLabel" destination="pWh-eQ-iNM" id="iWX-QX-RDz"/>
                         <outlet property="passengerTitle" destination="oeE-1n-pM2" id="R9Y-Us-s20"/>

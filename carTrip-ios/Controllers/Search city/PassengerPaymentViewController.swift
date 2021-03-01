@@ -54,6 +54,9 @@ class PassengerPaymentViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let id = UserDefaults.standard.string(forKey: "idUser") ?? ""
+        navigationController?.navigationBar.tintColor = .blueCar
+        navigationItem.title = "Sumarse a un viaje"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.blueCar]
         CreditCardManager.shared.getOneCreditCard(id: id, delegate: self)
     }
     

@@ -25,7 +25,8 @@ class PathBuilder  {
     }
     
     func getCarsForRoad() -> String {
-        return "\(url)/carForRoad"
+        let id = UserDefaults.standard.string(forKey: "idUser") ?? "0"
+        return "\(url)/carForRoad/user/\(id)"
     }
     
     func registerUser() -> String {

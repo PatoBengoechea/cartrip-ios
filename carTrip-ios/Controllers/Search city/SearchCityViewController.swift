@@ -41,6 +41,9 @@ class SearchCityViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationItem.title = "Viajes disponibles"
+        navigationController?.navigationBar.tintColor = .blueCar
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.blueCar]
         navigationController?.setNavigationBarHidden(false, animated: false)
         
         let city = UserDefaults.standard.string(forKey: "actual_city")

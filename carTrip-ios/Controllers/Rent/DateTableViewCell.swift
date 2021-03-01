@@ -46,7 +46,7 @@ class DateTableViewCell: UITableViewCell {
     
     private func showDatePicker(){
         //Formate Date
-        datePicker.datePickerMode = .date
+        datePicker.datePickerMode = .dateAndTime
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
         } else {
@@ -79,8 +79,14 @@ class DateTableViewCell: UITableViewCell {
     }
     
     @objc func datePickerChanged(picker: UIDatePicker) {
+        let date = picker.date
+        let components = Calendar.current.dateComponents([.hour, .minute], from: date)
+        let hour = components.hour ?? 0
+        let minutes = components.minute ?? 0
+        
+        let hourAndMinutes = "\(hour):\(minutes)"
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = "dd/MM/yyyy \(hourAndMinutes)"
         dateTextField.text = formatter.string(from: picker.date)
     }
     

@@ -46,7 +46,7 @@ class CarForRoadViewModel: MKPointAnnotation {
     }
     
     func getDistanceFromCurrentLocation() -> String {
-        return "\(distance/100) km"
+        return "\(distance/1000) km"
         
     }
 }

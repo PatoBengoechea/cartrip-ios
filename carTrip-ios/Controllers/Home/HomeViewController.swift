@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CDAlertView
 
 class HomeViewController: UIViewController {
 
@@ -311,6 +312,14 @@ extension HomeViewController: HomePresenterDelegate {
         Loader.dismiss()
     }
     
+    func onError(message: String) {
+        let alert = CDAlertView(title: "Ups", message: message, type: .warning)
+        let doneAction = CDAlertViewAction(title: R.string.localizable.done()) { (action) -> Bool in
+            return true
+        }
+        alert.add(action: doneAction)
+        alert.show()
+    }
     
 }
 

@@ -28,6 +28,9 @@ class ListCarsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        navigationItem.title = "Autos cercanos"
+        navigationController?.navigationBar.tintColor = .blueCar
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.blueCar]
         navigationController?.setNavigationBarHidden(false, animated: false)
         
     }

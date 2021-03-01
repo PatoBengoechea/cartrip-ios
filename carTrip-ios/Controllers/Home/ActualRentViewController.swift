@@ -17,6 +17,7 @@ class ActualRentViewController: UIViewController {
     @IBOutlet weak var toLabel: UILabel!
     @IBOutlet weak var passengerTitle: UILabel!
     @IBOutlet weak var passengetStackView: UIStackView!
+    @IBOutlet weak var dateTripLabel: UILabel!
     @IBOutlet weak var finishTrip: UIButton!
     
     var actualTrip: Trip?
@@ -63,15 +64,17 @@ class ActualRentViewController: UIViewController {
         finishTrip.backgroundColor = .red
         finishTrip.setTitleColor(.white, for: .normal)
         
+        dateTripLabel.set(font: .gothamRoundedMedium(14), color: .blueCar)
+        dateTripLabel.numberOfLines = 2
+        
+        dateTripLabel.text = ""
+        
     }
 
     private func setUp() {
         titleLabel.text = R.string.localizable.actualTrip()
         
         carLabel.text = "\(actualTrip?.carForRoad.car?.brand ?? "") \(actualTrip?.carForRoad.car?.name ?? "")"
-        
-        
-
             
         carImageView.setImage(image: actualTrip?.carForRoad.car?.img_path ?? "")
         
@@ -104,6 +107,10 @@ class ActualRentViewController: UIViewController {
                 label.text = R.string.localizable.theTripHavenTGotPassengersYet()
                 passengetStackView.addArrangedSubview(label)
             }
+            
+            let dateWithTime = DateHelper.dateWithTime(fromDateWithFullTime: actualTrip?.dateInit ?? "")
+            dateTripLabel.text = "El viaje sale el día: \(dateWithTime)"
+            
         } else {
             Helper.addresFrom(latitude: Double(latitude) ?? 0.0, longitude: Double(longitude) ?? 0.0) { (addres) -> (Void) in
                 self.fromLabel.text = "Debes retirar el vehiculo en: \(addres). Y devolverlo en el mismo lugar"

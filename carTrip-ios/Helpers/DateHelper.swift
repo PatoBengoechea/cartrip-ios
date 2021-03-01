@@ -96,6 +96,11 @@ class DateHelper: NSObject {
         let dateParsed = DateParsed(date, format: .dateWithFullTime)
         return dateParsed?.dateLong() ?? "error"
     }
+    
+    static func dateWithTime(fromDateWithFullTime date: String) -> String {
+        let dateParsed = DateParsed(date, format: .dateWithFullTime)
+        return dateParsed?.dateWithTime() ??  "error"
+    }
 }
 
 struct DateParsed {
@@ -184,6 +189,16 @@ struct DateParsed {
         formatter.locale = .current
         formatter.timeZone = TimeZone(abbreviation: "UTC")
         formatter.setLocalizedDateFormatFromTemplate("dd, MMMM yyy")
+        guard let dateUn = date else { return "" }
+        let date = formatter.string(from: dateUn)
+        return date
+    }
+    
+    func dateWithTime() -> String {
+        let formatter = DateFormatter()
+        formatter.locale = .current
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        formatter.setLocalizedDateFormatFromTemplate("dd, MMMM yyy hh:mm")
         guard let dateUn = date else { return "" }
         let date = formatter.string(from: dateUn)
         return date
