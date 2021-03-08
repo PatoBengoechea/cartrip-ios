@@ -68,7 +68,9 @@ class UserViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        TripManager.sharedInstance.getTrips(delegate: self, id: 11)
+        let id = UserDefaults.standard.string(forKey: "idUser") ?? "0"
+        let idInt = Int(id) ?? 0
+        TripManager.sharedInstance.getTrips(delegate: self, id: idInt)
         UserManager.sharedInstance.getLicense(delegate: self)
         name = UserDefaults.standard.string(forKey: "name") ?? ""
         nameLabel.text = name ?? ""
